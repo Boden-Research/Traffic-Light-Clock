@@ -5,4 +5,23 @@
 	(uuid "8e70499a-ed2c-4f86-ae30-3bff73ded46d")
 	(paper "A4")
 	(lib_symbols)
+	(text_box "Ref 103"
+		(exclude_from_sim no)
+		(at 16.51 0 90)
+		(size 3.9483 10.16)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e6280d34-3b6a-4525-8e5e-2ebe7b41a830")
+	)
 )

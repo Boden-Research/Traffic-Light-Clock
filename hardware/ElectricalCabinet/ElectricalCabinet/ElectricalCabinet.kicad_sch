@@ -782,6 +782,25 @@
 		)
 		(uuid "5043cb06-797d-4d48-a037-954f6bc188b6")
 	)
+	(text_box "All fuses are slow blow unless otherwise noted."
+		(exclude_from_sim no)
+		(at 124.46 5.08 0)
+		(size 35.56 14.1698)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+		)
+		(uuid "6993736d-63be-41d1-a068-10763dd835cf")
+	)
 	(text_box "Relay Module 15\nRef 1700-1"
 		(exclude_from_sim no)
 		(at 55.88 175.26 0)
@@ -921,6 +940,25 @@
 			(justify left top)
 		)
 		(uuid "c71e9873-790a-41b3-b06a-ae393161382e")
+	)
+	(text_box "Ref 200-1"
+		(exclude_from_sim no)
+		(at 73.66 19.05 0)
+		(size 12.7 3.9483)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ca2357fc-2c26-4c2e-8eae-3e32e4b30c33")
 	)
 	(text_box "Relay Module 13\nRef 1500-1"
 		(exclude_from_sim no)
@@ -1800,6 +1838,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 20.32) (xy 73.66 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93924bb7-38a8-4ff8-a7ed-8765b25a30f5")
+	)
+	(wire
+		(pts
 			(xy 25.4 115.57) (xy 25.4 124.46)
 		)
 		(stroke
@@ -2188,7 +2236,7 @@
 		)
 		(uuid "f9c4c400-1268-4697-a835-a56b344fc303")
 	)
-	(label "110-8"
+	(label "6110-8"
 		(at 27.94 71.12 0)
 		(effects
 			(font
@@ -2198,7 +2246,7 @@
 		)
 		(uuid "0cb69602-c3bd-4549-bcd5-44d274a69fd5")
 	)
-	(label "110-10"
+	(label "6110-10"
 		(at 27.94 80.01 0)
 		(effects
 			(font
@@ -2208,7 +2256,7 @@
 		)
 		(uuid "15364a76-dcda-4b30-a013-689654612d7e")
 	)
-	(label "100-36"
+	(label "6100-36"
 		(at 27.94 199.39 0)
 		(effects
 			(font
@@ -2218,8 +2266,8 @@
 		)
 		(uuid "1654bfab-35f9-4d61-8038-c250be698d57")
 	)
-	(label "110-7"
-		(at 46.99 62.23 0)
+	(label "6110-7"
+		(at 45.72 62.23 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2228,8 +2276,8 @@
 		)
 		(uuid "16dbe307-442a-47dc-bb23-0b0f14df7e98")
 	)
-	(label "110-11"
-		(at 46.99 80.01 0)
+	(label "6110-11"
+		(at 45.72 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2238,7 +2286,7 @@
 		)
 		(uuid "1bdcb14e-f30f-4b32-812a-1fc77c3a8a81")
 	)
-	(label "100-28"
+	(label "6100-28"
 		(at 27.94 163.83 0)
 		(effects
 			(font
@@ -2248,8 +2296,8 @@
 		)
 		(uuid "1eac3528-2769-447c-8b5c-88dc26c53546")
 	)
-	(label "110-29"
-		(at 46.99 160.02 0)
+	(label "6110-29"
+		(at 45.72 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2258,7 +2306,7 @@
 		)
 		(uuid "25f7bca8-47c7-44e3-806b-34123fd58d21")
 	)
-	(label "110-36"
+	(label "6110-36"
 		(at 27.94 195.58 0)
 		(effects
 			(font
@@ -2268,7 +2316,7 @@
 		)
 		(uuid "2b1b8207-8c33-47bb-ae67-d60c9f2a8629")
 	)
-	(label "100-30"
+	(label "6100-30"
 		(at 27.94 172.72 0)
 		(effects
 			(font
@@ -2278,8 +2326,8 @@
 		)
 		(uuid "3714a7ff-d188-4a24-a2ac-1bf6d6e1bfda")
 	)
-	(label "110-37"
-		(at 46.99 195.58 0)
+	(label "6110-37"
+		(at 45.72 195.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2288,8 +2336,8 @@
 		)
 		(uuid "37ffcf91-e7c2-4e89-b33d-01adce27077b")
 	)
-	(label "110-27"
-		(at 46.99 151.13 0)
+	(label "6110-27"
+		(at 45.72 151.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2298,7 +2346,7 @@
 		)
 		(uuid "38148aff-62f2-498a-a99d-3299e8244ee6")
 	)
-	(label "110-30"
+	(label "6110-30"
 		(at 27.837 168.91 0)
 		(effects
 			(font
@@ -2308,7 +2356,7 @@
 		)
 		(uuid "3ebde1a7-c758-4426-a771-099b293242bf")
 	)
-	(label "110-28"
+	(label "6110-28"
 		(at 27.837 160.02 0)
 		(effects
 			(font
@@ -2318,7 +2366,7 @@
 		)
 		(uuid "4621c95b-2946-4aac-8550-3e0b7901760d")
 	)
-	(label "110-6"
+	(label "6110-6"
 		(at 27.94 62.23 0)
 		(effects
 			(font
@@ -2348,8 +2396,8 @@
 		)
 		(uuid "4911c98a-2a02-409e-83ed-69d7e927429e")
 	)
-	(label "110-15"
-		(at 46.99 97.79 0)
+	(label "6110-15"
+		(at 45.72 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2358,8 +2406,18 @@
 		)
 		(uuid "492b3368-29ac-48f9-9120-7488746d46b7")
 	)
-	(label "110-23"
-		(at 46.99 133.35 0)
+	(label "USB-C Cable"
+		(at 58.42 20.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4b9496e0-9e06-42de-97b2-ad25dec4f5c5")
+	)
+	(label "6110-23"
+		(at 45.72 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2369,7 +2427,7 @@
 		(uuid "4e21625e-9d51-4950-8a31-0bdd1d5321c4")
 	)
 	(label "6110-3"
-		(at 46.99 38.1 0)
+		(at 45.72 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2378,7 +2436,7 @@
 		)
 		(uuid "4fd1e9dc-b724-4aa2-a695-4e0ae35e5c8d")
 	)
-	(label "100-10"
+	(label "6100-10"
 		(at 27.94 83.82 0)
 		(effects
 			(font
@@ -2388,7 +2446,7 @@
 		)
 		(uuid "51be6353-bf51-4a66-9b9d-d5635c5b1e6d")
 	)
-	(label "500-1"
+	(label "5000-1"
 		(at 81.28 44.45 0)
 		(effects
 			(font
@@ -2398,7 +2456,7 @@
 		)
 		(uuid "5598a4c6-fc6d-481c-a9fa-aa43a66483e3")
 	)
-	(label "100-32"
+	(label "6100-32"
 		(at 27.94 181.61 0)
 		(effects
 			(font
@@ -2408,7 +2466,7 @@
 		)
 		(uuid "5f3c093c-b2c3-40bd-be3b-6bb3338f34e4")
 	)
-	(label "110-1"
+	(label "6110-1"
 		(at 35.56 26.67 180)
 		(effects
 			(font
@@ -2418,7 +2476,7 @@
 		)
 		(uuid "639586d3-13b0-427d-8f35-e3df895afb65")
 	)
-	(label "110-34"
+	(label "6110-34"
 		(at 27.94 186.69 0)
 		(effects
 			(font
@@ -2428,8 +2486,8 @@
 		)
 		(uuid "6c8491aa-8f1c-4cf2-ad6a-f74726d6bcf6")
 	)
-	(label "110-35"
-		(at 46.99 186.69 0)
+	(label "6110-35"
+		(at 45.72 186.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2438,7 +2496,7 @@
 		)
 		(uuid "6e2c308c-c85c-42c2-8591-a92137b099fa")
 	)
-	(label "110-22"
+	(label "6110-22"
 		(at 27.837 133.35 0)
 		(effects
 			(font
@@ -2448,8 +2506,8 @@
 		)
 		(uuid "7abb2876-623b-4167-b3ae-d47dde7f5fd5")
 	)
-	(label "110-5"
-		(at 46.99 53.34 0)
+	(label "6110-5"
+		(at 45.72 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2458,7 +2516,7 @@
 		)
 		(uuid "7c4a167e-fc67-4061-83f8-9466b96b4619")
 	)
-	(label "100-18"
+	(label "6100-18"
 		(at 27.94 119.38 0)
 		(effects
 			(font
@@ -2468,8 +2526,8 @@
 		)
 		(uuid "8acd29ae-6033-4ccc-9528-5b1038b1ec91")
 	)
-	(label "110-17"
-		(at 46.99 106.68 0)
+	(label "6110-17"
+		(at 45.72 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2478,7 +2536,7 @@
 		)
 		(uuid "8da22b7a-a5ce-4e61-ac6e-da94131a2c2d")
 	)
-	(label "100-8"
+	(label "6100-8"
 		(at 27.94 74.93 0)
 		(effects
 			(font
@@ -2488,7 +2546,7 @@
 		)
 		(uuid "8e534339-ffb4-4770-bde8-652cfe7982f7")
 	)
-	(label "110-4"
+	(label "6110-4"
 		(at 27.94 53.34 0)
 		(effects
 			(font
@@ -2498,7 +2556,7 @@
 		)
 		(uuid "942dda76-5885-47d5-b6a0-45a411c4ee80")
 	)
-	(label "110-16"
+	(label "6110-16"
 		(at 27.94 106.68 0)
 		(effects
 			(font
@@ -2508,7 +2566,7 @@
 		)
 		(uuid "95ec398e-124d-423b-bd58-c0aa4e8a18f4")
 	)
-	(label "100-14"
+	(label "6100-14"
 		(at 27.94 101.6 0)
 		(effects
 			(font
@@ -2518,7 +2576,7 @@
 		)
 		(uuid "98b334ea-b740-4790-bf69-c2d4f10e34c0")
 	)
-	(label "110-32"
+	(label "6110-32"
 		(at 27.94 177.8 0)
 		(effects
 			(font
@@ -2528,7 +2586,7 @@
 		)
 		(uuid "9921d9ce-3e50-46b8-b0d7-ec6a8ac1a687")
 	)
-	(label "110-12"
+	(label "6110-12"
 		(at 27.94 88.9 0)
 		(effects
 			(font
@@ -2538,7 +2596,7 @@
 		)
 		(uuid "9b4a605a-32d6-44a0-9c1e-939b0d551764")
 	)
-	(label "110-14"
+	(label "6110-14"
 		(at 27.94 97.79 0)
 		(effects
 			(font
@@ -2548,7 +2606,7 @@
 		)
 		(uuid "a078c7cd-dcec-484a-90ca-e7c87c8da657")
 	)
-	(label "110-24"
+	(label "6110-24"
 		(at 27.837 142.24 0)
 		(effects
 			(font
@@ -2558,8 +2616,8 @@
 		)
 		(uuid "a359f9b5-839e-4ab4-9a11-a0fc076313ee")
 	)
-	(label "110-9"
-		(at 46.99 71.12 0)
+	(label "6110-9"
+		(at 45.72 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2568,7 +2626,7 @@
 		)
 		(uuid "a7dd8212-ba98-4b10-be25-2676292a5d24")
 	)
-	(label "110-18"
+	(label "6110-18"
 		(at 27.94 115.57 0)
 		(effects
 			(font
@@ -2578,7 +2636,7 @@
 		)
 		(uuid "a84ed9d4-5863-4df7-a462-f560543c5419")
 	)
-	(label "100-4"
+	(label "6100-4"
 		(at 27.94 57.15 0)
 		(effects
 			(font
@@ -2598,7 +2656,7 @@
 		)
 		(uuid "ada975d6-f3e0-40dd-b322-871c8cff6155")
 	)
-	(label "100-22"
+	(label "6100-22"
 		(at 27.94 137.16 0)
 		(effects
 			(font
@@ -2608,7 +2666,7 @@
 		)
 		(uuid "b7f171fe-9c4e-463d-8586-c15da38c65a1")
 	)
-	(label "100-6"
+	(label "6100-6"
 		(at 27.94 66.04 0)
 		(effects
 			(font
@@ -2618,8 +2676,8 @@
 		)
 		(uuid "bc7d28ef-8e29-438b-9652-3a9cff50a5cd")
 	)
-	(label "110-25"
-		(at 46.99 142.24 0)
+	(label "6110-25"
+		(at 45.72 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2628,8 +2686,8 @@
 		)
 		(uuid "be2a2716-c75f-4f9a-9146-2c54a56e2d1f")
 	)
-	(label "110-13"
-		(at 46.99 88.9 0)
+	(label "6110-13"
+		(at 45.72 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2638,8 +2696,8 @@
 		)
 		(uuid "c4e172ff-8d4a-45b0-9f43-2fa01f445289")
 	)
-	(label "110-19"
-		(at 46.99 115.57 0)
+	(label "6110-19"
+		(at 45.72 115.57 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2648,7 +2706,7 @@
 		)
 		(uuid "cef63ac6-db15-48ee-a90e-c17704fc2142")
 	)
-	(label "550-1"
+	(label "5500-1"
 		(at 81.28 36.83 0)
 		(effects
 			(font
@@ -2658,7 +2716,7 @@
 		)
 		(uuid "d22fc2d9-96c8-414f-a959-17851ca258ba")
 	)
-	(label "100-26"
+	(label "6100-26"
 		(at 27.94 154.94 0)
 		(effects
 			(font
@@ -2668,7 +2726,7 @@
 		)
 		(uuid "d2c75549-3ceb-486a-ba9f-5e822c87da47")
 	)
-	(label "100-34"
+	(label "6100-34"
 		(at 27.94 190.5 0)
 		(effects
 			(font
@@ -2678,7 +2736,7 @@
 		)
 		(uuid "d924cb05-9b2c-48c5-88dc-bab60d7e36d5")
 	)
-	(label "110-26"
+	(label "6110-26"
 		(at 27.837 151.13 0)
 		(effects
 			(font
@@ -2688,7 +2746,7 @@
 		)
 		(uuid "dc5a53d1-ecf3-48f1-8d3b-b1768eef3394")
 	)
-	(label "110-20"
+	(label "6110-20"
 		(at 27.837 124.46 0)
 		(effects
 			(font
@@ -2698,8 +2756,8 @@
 		)
 		(uuid "e041bc52-62bc-4b06-8385-9c4cd03696d4")
 	)
-	(label "110-33"
-		(at 46.99 177.8 0)
+	(label "6110-33"
+		(at 45.72 177.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2708,8 +2766,8 @@
 		)
 		(uuid "e2de539c-0235-4f10-bc13-ccaa80bb506f")
 	)
-	(label "110-21"
-		(at 46.99 124.46 0)
+	(label "6110-21"
+		(at 45.72 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2718,7 +2776,7 @@
 		)
 		(uuid "ea5e9431-961e-4267-a468-d9f589e8cf64")
 	)
-	(label "100-24"
+	(label "6100-24"
 		(at 27.94 146.05 0)
 		(effects
 			(font
@@ -2728,7 +2786,7 @@
 		)
 		(uuid "ef5664cd-990b-49a0-95f8-fa58c15f90ac")
 	)
-	(label "100-16"
+	(label "6100-16"
 		(at 27.94 110.49 0)
 		(effects
 			(font
@@ -2738,8 +2796,8 @@
 		)
 		(uuid "efc36716-e450-47dd-aaec-4a7a20732642")
 	)
-	(label "110-31"
-		(at 46.99 168.91 0)
+	(label "6110-31"
+		(at 45.72 168.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2748,7 +2806,7 @@
 		)
 		(uuid "f211c271-cc34-485c-bf33-8884659ccce4")
 	)
-	(label "100-1"
+	(label "6100-1"
 		(at 35.56 30.48 180)
 		(effects
 			(font
@@ -2758,7 +2816,7 @@
 		)
 		(uuid "f6c87b05-010b-40fc-ba4c-a3315a2dfffa")
 	)
-	(label "100-12"
+	(label "6100-12"
 		(at 27.94 92.71 0)
 		(effects
 			(font
@@ -2768,7 +2826,7 @@
 		)
 		(uuid "fd0fd640-737b-408f-bb9e-20cf4d5b2d4a")
 	)
-	(label "100-20"
+	(label "6100-20"
 		(at 27.94 128.27 0)
 		(effects
 			(font
@@ -4769,7 +4827,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "550Block.kicad_sch"
+		(property "Sheetfile" "5500Block.kicad_sch"
 			(at 172.72 178.3846 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4953,7 +5011,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "100Block.kicad_sch"
+		(property "Sheetfile" "6100Block.kicad_sch"
 			(at 172.72 187.2746 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5034,7 +5092,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "a5fd4270-ec42-4272-a6bb-c062e1587383")
-		(property "Sheetname" "6110Block (page 23)"
+		(property "Sheetname" "6110Block"
 			(at 172.72 191.0584 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5045,7 +5103,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "110Block.kicad_sch"
+		(property "Sheetfile" "6110Block.kicad_sch"
 			(at 172.72 196.1646 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5459,7 +5517,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "500Block.kicad_sch"
+		(property "Sheetfile" "5000Block.kicad_sch"
 			(at 172.72 169.4946 0)
 			(show_name no)
 			(do_not_autoplace no)
