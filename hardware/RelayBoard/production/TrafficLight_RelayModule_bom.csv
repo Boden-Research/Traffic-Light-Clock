@@ -1,0 +1,8 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,0805,1,0.1uF,
+"D1, D2, D3, D4, D5, D6, D7, D8",0805,8,LED,
+J1,TerminalBlock_MaiXu_MX126-5.0-09P_1x09_P5.00mm,1,Screw_Terminal_01x09,
+J2,TerminalBlock_MaiXu_MX126-5.0-06P_1x06_P5.00mm,1,Screw_Terminal_01x06,
+"K1, K2, K3, K4, K5, K6, K7, K8",G3MB_202P_DC5,8,G3MB-202P DC5,
+"R1, R2, R3, R4, R5, R6, R7, R8",0805,8,1kΩ,
+U1,TPIC6B595N,1,TPIC6B595N,TPIC6B595N

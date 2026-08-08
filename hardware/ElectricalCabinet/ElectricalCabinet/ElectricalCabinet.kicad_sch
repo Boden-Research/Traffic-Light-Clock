@@ -1,0 +1,5550 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "c34866b5-fe82-42ea-9d09-ac7e183279a1")
+	(paper "A4")
+	(lib_symbols
+		(symbol "PCM_Device_AKL:Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 0 4.572 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse, Alternate KiCAD Library"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(arc
+					(start -2.54 0)
+					(mid -1.27 1.2645)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.54 0)
+					(mid 1.27 -1.2645)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "PCM_SparkFun-PowerSymbol:110v_Outlet"
+			(power global)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "O"
+				(at 0 16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "110v_Outlet"
+				(at 11.176 7.62 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "110v_Outlet_0_1"
+				(rectangle
+					(start 0 15)
+					(end 10 0)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 13.97) (xy 7.62 13.97)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 8.255) (xy 7.62 8.255)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 6.985) (xy 7.62 6.985)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy 7.62 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.175 13.335)
+					(end 3.81 10.795)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 3.175 6.35)
+					(end 3.81 3.81)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 4.445 9.525)
+					(end 5.715 8.89)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 4.445 2.54)
+					(end 5.715 1.905)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 7.62 13.97)
+					(mid 8.8036 11.1125)
+					(end 7.62 8.255)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 7.62 6.985)
+					(mid 8.8036 4.1275)
+					(end 7.62 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.08 9.525)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 5.08 2.54)
+					(radius 0.635)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 2.54 8.255)
+					(mid 1.3564 11.1125)
+					(end 2.54 13.97)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.54 1.27)
+					(mid 1.3564 4.1275)
+					(end 2.54 6.985)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 6.35 13.335)
+					(end 6.985 11.43)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 6.35 6.35)
+					(end 6.985 4.445)
+					(stroke
+						(width 0)
+						(type default)
+						(color 0 0 0 1)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:AC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AC"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"AC\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AC_0_1"
+				(arc
+					(start -1.27 3.175)
+					(mid -0.635 3.8073)
+					(end 0 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 3.175)
+					(radius 1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.27 3.175)
+					(mid 0.635 2.5427)
+					(end 0 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text_box "Relay Module 4\nRef 600-1"
+		(exclude_from_sim no)
+		(at 55.88 77.47 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "047685a8-22fb-4484-becc-2e79811a8b15")
+	)
+	(text_box "USB-C Charger\nfor ESP32 Power"
+		(exclude_from_sim no)
+		(at 48.26 18.5885 0)
+		(size 8.89 6.8115)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 0.762 0.762)
+			)
+			(justify left top)
+		)
+		(uuid "0bf886fe-0083-4459-9f97-3a666da50bd5")
+	)
+	(text_box "Ref 2000-1"
+		(exclude_from_sim no)
+		(at 99.06 40.64 0)
+		(size 13.97 3.9483)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "0d667b68-9ec4-4655-8b4b-bd24ca2c6855")
+	)
+	(text_box "Relay Module 6\nRef 800-1"
+		(exclude_from_sim no)
+		(at 55.88 95.25 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "1e4d9f4f-38cd-4127-bc9f-7507084703a6")
+	)
+	(text_box "Relay Module 3\nRef 500-1"
+		(exclude_from_sim no)
+		(at 55.88 68.58 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "23623870-0dbe-4895-a70e-f07a6a1ba5e2")
+	)
+	(text_box "Relay Module 12\nRef 1400-1"
+		(exclude_from_sim no)
+		(at 55.88 148.59 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2d1b490d-ee82-4382-83f2-10b5454683a9")
+	)
+	(text_box "Relay Module 7\nRef 900-1"
+		(exclude_from_sim no)
+		(at 55.88 104.14 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "40b3435c-e1d7-461a-8a62-e0c594afa4d9")
+	)
+	(text_box "Relay Module 1\nRef 300-1"
+		(exclude_from_sim no)
+		(at 55.88 50.8 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "421eec9f-01dc-48b0-997f-f2edd533334c")
+	)
+	(text_box "Relay Module 17\nRef 1900-1"
+		(exclude_from_sim no)
+		(at 55.88 193.04 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "4c9b3563-5054-45a5-a93e-07bf8ea96ffd")
+	)
+	(text_box "Relay Module 8\nRef 1000-1"
+		(exclude_from_sim no)
+		(at 55.88 113.03 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5043cb06-797d-4d48-a037-954f6bc188b6")
+	)
+	(text_box "Relay Module 15\nRef 1700-1"
+		(exclude_from_sim no)
+		(at 55.88 175.26 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "6b463416-cd68-4f91-ae04-52e5231e562a")
+	)
+	(text_box "Relay Module 10\nRef 1200-1"
+		(exclude_from_sim no)
+		(at 55.88 130.81 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "91cce4b3-ae99-4d6b-92ef-139234927a3f")
+	)
+	(text_box "Relay Module 5\nRef 700-1"
+		(exclude_from_sim no)
+		(at 55.88 86.36 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "9c689f20-e8da-4736-8ebe-b81c3f51cd3d")
+	)
+	(text_box "Relay Module 11\nRef 1300-1"
+		(exclude_from_sim no)
+		(at 55.88 139.7 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a2559350-53c0-498e-af5f-f36670c83ec4")
+	)
+	(text_box "Relay Module 9\nRef 1100-1"
+		(exclude_from_sim no)
+		(at 55.88 121.92 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a8d5d987-2a53-475d-87ad-21c4be67eca0")
+	)
+	(text_box "Relay Module 16\nRef 1800-1"
+		(exclude_from_sim no)
+		(at 55.88 184.15 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "b74115d1-7cbe-44db-a60e-005f8990ec8c")
+	)
+	(text_box "DC power supply 5.5v"
+		(exclude_from_sim no)
+		(at 55.88 34.29 0)
+		(size 21.59 13.97)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c71e9873-790a-41b3-b06a-ae393161382e")
+	)
+	(text_box "Relay Module 13\nRef 1500-1"
+		(exclude_from_sim no)
+		(at 55.88 157.48 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "cd5fef33-f7d2-4733-b7b4-83df4691f5d6")
+	)
+	(text_box "Relay Module 14\nRef 1600-1"
+		(exclude_from_sim no)
+		(at 55.88 166.37 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "d469242d-6052-424d-955d-7826afef9a99")
+	)
+	(text_box "Ref 2100-1"
+		(exclude_from_sim no)
+		(at 99.06 32.8817 0)
+		(size 13.97 3.9483)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e437975e-a269-4a20-a06b-b3856109d309")
+	)
+	(text_box "Relay Module 2\nRef 400-1"
+		(exclude_from_sim no)
+		(at 55.88 59.69 0)
+		(size 21.59 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "ec654163-2885-4918-8b25-a3991fe35473")
+	)
+	(junction
+		(at 19.05 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0867fb83-fc21-4d12-9cb2-436e53efb8eb")
+	)
+	(junction
+		(at 19.05 190.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1413b7ac-b821-4c4c-8222-258f152e14e3")
+	)
+	(junction
+		(at 19.05 181.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "156380d8-064d-4364-bf99-768247b36d60")
+	)
+	(junction
+		(at 19.05 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1645146f-9b96-4b41-8223-b104a44690a8")
+	)
+	(junction
+		(at 25.4 151.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ec4fa69-31ed-42ab-9da1-cf52dcccc51e")
+	)
+	(junction
+		(at 19.05 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "234b071f-a5a1-4a05-a4b7-d32e63fe68fe")
+	)
+	(junction
+		(at 25.4 80.01)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "278678d9-6840-47ee-8daf-4c50164b70a1")
+	)
+	(junction
+		(at 25.4 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4cf16cab-4abd-4823-8c0c-bdd714afb8d7")
+	)
+	(junction
+		(at 19.05 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6a5fbc6d-2104-4725-b619-beac816ce6af")
+	)
+	(junction
+		(at 19.05 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6b5d10f3-c9c0-41b8-96df-3eaeb022631a")
+	)
+	(junction
+		(at 25.4 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ba1e919-5659-4505-be3e-e8244deb5861")
+	)
+	(junction
+		(at 25.4 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6be3c8eb-bc89-4a4c-9ea9-ecde82e877a2")
+	)
+	(junction
+		(at 19.05 57.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6ff7931e-0b60-47f5-a3be-9a85d4228c61")
+	)
+	(junction
+		(at 25.4 186.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "73f0e758-f93e-4292-a990-37f7f4a6c53f")
+	)
+	(junction
+		(at 25.4 168.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "747c5f23-13f9-478a-b253-fd09173a74d0")
+	)
+	(junction
+		(at 25.4 38.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7652e774-be97-4e1e-9c27-fdeda4e8c5e5")
+	)
+	(junction
+		(at 19.05 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c33b82d-808e-4582-b57a-798b697e6848")
+	)
+	(junction
+		(at 25.4 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "80cc0533-be55-46f9-842a-6925695085e1")
+	)
+	(junction
+		(at 25.4 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "86019afa-4efb-4079-9762-ba5873ef50b9")
+	)
+	(junction
+		(at 25.4 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "96720617-d81e-4404-b1c5-b20f3a935064")
+	)
+	(junction
+		(at 25.4 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b531706-2623-4a5a-849c-7b7aa3dd2cda")
+	)
+	(junction
+		(at 19.05 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7a54fe8-267e-4079-83d6-98633c5b5e3d")
+	)
+	(junction
+		(at 19.05 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b08092ad-3bbf-40c0-abb0-35a0c9979dea")
+	)
+	(junction
+		(at 25.4 115.57)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5b31fdd-4725-4cb9-8043-ceef7ad44aed")
+	)
+	(junction
+		(at 25.4 177.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb27288f-a64e-4e0d-9f60-388a2f3f975d")
+	)
+	(junction
+		(at 25.4 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbd8b66b-e205-44e0-8ebc-668e17e860a3")
+	)
+	(junction
+		(at 19.05 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c41cbcba-20a1-4071-b463-0c457fa8404c")
+	)
+	(junction
+		(at 19.05 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4b26b61-6a9b-4ba8-87f7-dd199f7167ed")
+	)
+	(junction
+		(at 19.05 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c799f9a4-eed0-4bfd-a5f0-1bc6f7226280")
+	)
+	(junction
+		(at 25.4 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ca28ce59-6391-4179-9186-a3269841d0c8")
+	)
+	(junction
+		(at 25.4 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "caa2d89d-f74b-4e2a-8c7c-5e909b13693c")
+	)
+	(junction
+		(at 19.05 163.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d98bcc41-b1a9-4023-971a-54bde8b7bed1")
+	)
+	(junction
+		(at 19.05 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e2d86cf2-e6b0-4dbc-a94d-b78960f88579")
+	)
+	(junction
+		(at 19.05 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec68a40f-11ac-4d59-ac55-17e869bd0088")
+	)
+	(junction
+		(at 19.05 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ef05f607-2ddc-4f01-a3a2-1dd30fc2a17d")
+	)
+	(junction
+		(at 25.4 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f2fd356b-d593-4c55-bc22-762c582ca49e")
+	)
+	(wire
+		(pts
+			(xy 19.05 43.18) (xy 19.05 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "027bf108-8b0d-4ea8-89ef-a31ca15dbdc0")
+	)
+	(wire
+		(pts
+			(xy 19.05 110.49) (xy 55.88 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "078a0855-a887-44d9-a922-0a29346ab085")
+	)
+	(wire
+		(pts
+			(xy 25.4 133.35) (xy 25.4 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07aacab7-a84d-4863-8bd0-318e11c7c97b")
+	)
+	(wire
+		(pts
+			(xy 43.18 133.35) (xy 55.88 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f7e7296-3630-437d-929f-88dcc2df5164")
+	)
+	(wire
+		(pts
+			(xy 19.05 74.93) (xy 19.05 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10b85b6a-af32-46e5-b86e-5f3a29215411")
+	)
+	(wire
+		(pts
+			(xy 25.4 97.79) (xy 35.56 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16eb6fe8-c87d-459f-93be-8210ecb4a5b6")
+	)
+	(wire
+		(pts
+			(xy 19.05 101.6) (xy 55.88 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "174cf5ed-db6a-4276-9bc7-59ebeb46c48c")
+	)
+	(wire
+		(pts
+			(xy 25.4 124.46) (xy 35.56 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b6d43bf-c468-4b5b-8fd9-a30f87f60a7d")
+	)
+	(wire
+		(pts
+			(xy 43.18 80.01) (xy 55.88 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c894620-bc1b-4dfe-bbba-77ce90b87827")
+	)
+	(wire
+		(pts
+			(xy 25.4 177.8) (xy 25.4 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d4b5d71-c94b-44ff-be78-22274b6473ed")
+	)
+	(wire
+		(pts
+			(xy 25.4 186.69) (xy 25.4 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e1eabaf-cc6d-451d-ae25-869b358a508a")
+	)
+	(wire
+		(pts
+			(xy 43.18 62.23) (xy 55.88 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "235bc615-706d-47b8-a31f-891794b4bb6f")
+	)
+	(wire
+		(pts
+			(xy 43.18 186.69) (xy 55.88 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "253f1619-2883-4222-b84c-8cca1ea2b8a8")
+	)
+	(wire
+		(pts
+			(xy 19.05 92.71) (xy 55.88 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26be62c3-ec56-4464-8bd9-13aa1ef4f001")
+	)
+	(wire
+		(pts
+			(xy 43.18 71.12) (xy 55.88 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a2a3cf7-41c0-4a5e-a729-2836cdc88257")
+	)
+	(wire
+		(pts
+			(xy 25.4 53.34) (xy 35.56 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a5517ae-8cc7-4108-9a14-a8957b19060f")
+	)
+	(wire
+		(pts
+			(xy 19.05 154.94) (xy 55.88 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b60c0a0-e79d-4249-a757-5caf7b5e7320")
+	)
+	(wire
+		(pts
+			(xy 19.05 57.15) (xy 55.88 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bbbd7e6-e469-4e2b-8ee0-e9e366162fd2")
+	)
+	(wire
+		(pts
+			(xy 19.05 57.15) (xy 19.05 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb0fdb2-9b84-4ca4-9310-10147c0ed7f3")
+	)
+	(wire
+		(pts
+			(xy 19.05 110.49) (xy 19.05 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33a7ab96-fac7-4e75-ba13-373a7ad9894b")
+	)
+	(wire
+		(pts
+			(xy 25.4 168.91) (xy 25.4 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39872f4e-400f-4c1c-99c3-58dfc1d6b711")
+	)
+	(wire
+		(pts
+			(xy 25.4 106.68) (xy 25.4 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c31f0ea-9a64-4b76-a27c-6167a119e38c")
+	)
+	(wire
+		(pts
+			(xy 43.18 177.8) (xy 55.88 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3a28a6-3a3c-4dd3-90ab-268791ddf009")
+	)
+	(wire
+		(pts
+			(xy 19.05 92.71) (xy 19.05 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c7c920f-c932-4d0e-bbb1-15745dcd7ae9")
+	)
+	(wire
+		(pts
+			(xy 19.05 128.27) (xy 19.05 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cde5724-cf65-4a77-8e67-6ef90eb29c94")
+	)
+	(wire
+		(pts
+			(xy 25.4 106.68) (xy 35.56 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d25b1e6-4d1c-47fb-816e-00a914d4b21a")
+	)
+	(wire
+		(pts
+			(xy 25.4 186.69) (xy 35.56 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ddc5ec3-d7a0-4d79-b050-7a26926ed012")
+	)
+	(wire
+		(pts
+			(xy 19.05 163.83) (xy 55.88 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4322812b-bc31-48fc-8dc2-9bf0395c3ba7")
+	)
+	(wire
+		(pts
+			(xy 43.18 142.24) (xy 55.88 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44a5fa3d-34e6-4d80-8a9c-315730efbbaf")
+	)
+	(wire
+		(pts
+			(xy 25.4 88.9) (xy 25.4 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4705031c-6221-4c54-91ac-3c94d9fc54be")
+	)
+	(wire
+		(pts
+			(xy 25.4 38.1) (xy 25.4 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "482e82d7-cb1d-4518-ad64-0da9b3492cca")
+	)
+	(wire
+		(pts
+			(xy 25.4 38.1) (xy 35.56 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c6634f7-7ac4-40b9-93d4-f8a208159696")
+	)
+	(wire
+		(pts
+			(xy 19.05 119.38) (xy 55.88 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d388807-3eb9-46c6-98b8-3023b620e4fd")
+	)
+	(wire
+		(pts
+			(xy 25.4 142.24) (xy 25.4 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50d92230-f034-45db-ae7f-331e21c4ad41")
+	)
+	(wire
+		(pts
+			(xy 19.05 172.72) (xy 19.05 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54bdba51-1734-451a-9a78-3234a4294fb5")
+	)
+	(wire
+		(pts
+			(xy 43.18 97.79) (xy 55.88 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5600b980-7928-43af-9aba-042f11551ef1")
+	)
+	(wire
+		(pts
+			(xy 25.4 151.13) (xy 25.4 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b1487b2-ecb9-4137-ba8e-fe92461ecd87")
+	)
+	(wire
+		(pts
+			(xy 19.05 172.72) (xy 55.88 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d344089-fcf5-4cc7-818f-f4eaced8992b")
+	)
+	(wire
+		(pts
+			(xy 19.05 83.82) (xy 19.05 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62b671fb-1d6e-4f5b-81e1-6ff029eb9236")
+	)
+	(wire
+		(pts
+			(xy 19.05 66.04) (xy 55.88 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62c40b8d-3ce9-4d1b-be5e-7780f2ffc3c4")
+	)
+	(wire
+		(pts
+			(xy 43.18 151.13) (xy 55.88 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "691378c6-37e9-4d63-b5b1-4d29b4d4d6c5")
+	)
+	(wire
+		(pts
+			(xy 25.4 195.58) (xy 35.56 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6973ed2e-7ee5-4e66-9a86-7e96e805fe7b")
+	)
+	(wire
+		(pts
+			(xy 19.05 163.83) (xy 19.05 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "698f970d-78e1-4d87-8fa0-5dab1513bd15")
+	)
+	(wire
+		(pts
+			(xy 19.05 101.6) (xy 19.05 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a53123b-ae21-43f2-afbf-2c9c7cde3670")
+	)
+	(wire
+		(pts
+			(xy 25.4 115.57) (xy 35.56 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b260866-d219-44da-84c0-45335c423275")
+	)
+	(wire
+		(pts
+			(xy 77.47 44.45) (xy 99.06 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7156c6b8-fc01-4937-8327-68cdf134e3b4")
+	)
+	(wire
+		(pts
+			(xy 25.4 160.02) (xy 35.56 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7382527d-181b-4f24-bf27-f7657bc6a02e")
+	)
+	(wire
+		(pts
+			(xy 25.4 71.12) (xy 35.56 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73d95494-fbc9-4b03-be76-6a4fae6480b4")
+	)
+	(wire
+		(pts
+			(xy 43.18 53.34) (xy 55.88 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77c43b04-d839-49ca-a75f-90aae1fbfe32")
+	)
+	(wire
+		(pts
+			(xy 43.18 160.02) (xy 55.88 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78e8f724-5c52-43b8-adbd-d0aecee8da00")
+	)
+	(wire
+		(pts
+			(xy 19.05 30.48) (xy 35.56 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79cccee0-b33a-404b-bec9-33737a6ecad6")
+	)
+	(wire
+		(pts
+			(xy 43.18 195.58) (xy 55.88 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a1fa8d3-c4fc-437e-9033-e64217d6c6a8")
+	)
+	(wire
+		(pts
+			(xy 25.4 124.46) (xy 25.4 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ca24819-1ee0-441a-9bc5-88bf30ab65d0")
+	)
+	(wire
+		(pts
+			(xy 19.05 190.5) (xy 55.88 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f06fbee-cc22-414f-b1ef-3f81fa7f04f6")
+	)
+	(wire
+		(pts
+			(xy 25.4 88.9) (xy 35.56 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f0ffef5-8d4c-43ba-a86c-5484d94e8da5")
+	)
+	(wire
+		(pts
+			(xy 25.4 97.79) (xy 25.4 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d9c41c6-f2c8-4372-94a4-a895b9acb9ef")
+	)
+	(wire
+		(pts
+			(xy 43.18 106.68) (xy 55.88 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "917d71b9-afb2-47b4-b09b-8243aed24490")
+	)
+	(wire
+		(pts
+			(xy 25.4 80.01) (xy 25.4 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91b3d838-4b97-4f9c-9690-7b71e3e7d26f")
+	)
+	(wire
+		(pts
+			(xy 25.4 115.57) (xy 25.4 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95c384e2-c9f5-4e3a-853a-3889ead41779")
+	)
+	(wire
+		(pts
+			(xy 43.18 124.46) (xy 55.88 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9705aff5-c8d4-4316-b6eb-bc3d756aabfd")
+	)
+	(wire
+		(pts
+			(xy 25.4 151.13) (xy 35.56 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97841139-8180-4ca9-90f9-1cba681498d9")
+	)
+	(wire
+		(pts
+			(xy 19.05 74.93) (xy 55.88 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a083a01e-7275-4843-942c-75b575c37bb8")
+	)
+	(wire
+		(pts
+			(xy 19.05 83.82) (xy 55.88 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a378732d-9113-4a15-a150-a1ace48bf702")
+	)
+	(wire
+		(pts
+			(xy 43.18 38.1) (xy 55.88 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a52eb539-a349-4db9-9d68-4e84bb65cc50")
+	)
+	(wire
+		(pts
+			(xy 19.05 43.18) (xy 55.88 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9f0f36d-c28a-48f7-889e-75c10688b2b9")
+	)
+	(wire
+		(pts
+			(xy 43.18 115.57) (xy 55.88 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "addb1ccc-a4d8-4a88-84f1-c7c250873742")
+	)
+	(wire
+		(pts
+			(xy 19.05 30.48) (xy 19.05 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b08df0e3-d544-45d6-9ef0-5bda24a15eda")
+	)
+	(wire
+		(pts
+			(xy 25.4 71.12) (xy 25.4 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0bb56a6-e2b2-47d4-aff1-2b4ed287b18b")
+	)
+	(wire
+		(pts
+			(xy 19.05 137.16) (xy 19.05 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1574f0c-2b78-4120-8d21-9f34e338670e")
+	)
+	(wire
+		(pts
+			(xy 25.4 168.91) (xy 35.56 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b411a3f6-a1cd-4f29-a8f6-b4896edeb8f7")
+	)
+	(wire
+		(pts
+			(xy 25.4 80.01) (xy 35.56 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b620fcde-ea60-44c9-b2aa-76f9669b8f75")
+	)
+	(wire
+		(pts
+			(xy 25.4 62.23) (xy 25.4 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b856e918-59ea-4cd7-95fb-a15d620fed0e")
+	)
+	(wire
+		(pts
+			(xy 19.05 128.27) (xy 55.88 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b897f206-53c3-4047-b11a-9a9e929101cb")
+	)
+	(wire
+		(pts
+			(xy 25.4 160.02) (xy 25.4 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcfd61eb-b5ef-4a0f-b423-77c64eafd7cf")
+	)
+	(wire
+		(pts
+			(xy 19.05 146.05) (xy 19.05 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd285f99-41bb-42b7-a316-49f2f0b3a272")
+	)
+	(wire
+		(pts
+			(xy 19.05 66.04) (xy 19.05 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0bf5021-0e7e-4c03-af19-99a0df95e208")
+	)
+	(wire
+		(pts
+			(xy 19.05 154.94) (xy 19.05 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c43eb2c8-473f-4f2b-ba5c-447ce9b97c7b")
+	)
+	(wire
+		(pts
+			(xy 43.18 88.9) (xy 55.88 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8f4aa7b-0b97-4d7c-8e5a-2ba4feba333a")
+	)
+	(wire
+		(pts
+			(xy 19.05 181.61) (xy 55.88 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6f22256-c992-4c07-9ccf-9aa745d3aee9")
+	)
+	(wire
+		(pts
+			(xy 25.4 62.23) (xy 35.56 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7691884-70a6-48ef-bbd0-3204b8c95825")
+	)
+	(wire
+		(pts
+			(xy 19.05 137.16) (xy 55.88 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8f37515-dee5-47c1-b962-a713d95caeed")
+	)
+	(wire
+		(pts
+			(xy 25.4 177.8) (xy 35.56 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc7228fe-33a6-4df4-a0ce-2c2d21386010")
+	)
+	(wire
+		(pts
+			(xy 19.05 146.05) (xy 55.88 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df102015-1e24-471e-86a1-e014fee07ba8")
+	)
+	(wire
+		(pts
+			(xy 25.4 26.67) (xy 35.56 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e09fc931-d1cb-4956-bdb2-17d106e95ccb")
+	)
+	(wire
+		(pts
+			(xy 19.05 119.38) (xy 19.05 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0abd4a9-08f8-4049-aaee-8c6d8a103272")
+	)
+	(wire
+		(pts
+			(xy 19.05 10.16) (xy 19.05 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e19db9e5-744d-40b2-9933-f6fc4de33034")
+	)
+	(wire
+		(pts
+			(xy 25.4 10.16) (xy 25.4 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e23b62cf-a4ae-4567-9659-c261a5104c84")
+	)
+	(wire
+		(pts
+			(xy 25.4 53.34) (xy 25.4 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4209520-4118-42d5-9c24-c0f17541a622")
+	)
+	(wire
+		(pts
+			(xy 77.47 36.83) (xy 99.06 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6a675f7-34ec-4d27-8d1a-1da6f53fd6fe")
+	)
+	(wire
+		(pts
+			(xy 43.18 168.91) (xy 55.88 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e78f86ef-119a-468c-b9e3-c834c2b6a3f6")
+	)
+	(polyline
+		(pts
+			(xy 43.18 20.32) (xy 48.26 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebee205c-210b-4d52-b879-91b10c0519a7")
+	)
+	(wire
+		(pts
+			(xy 25.4 142.24) (xy 35.56 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efd27569-c90a-4059-9f75-4034215a6179")
+	)
+	(wire
+		(pts
+			(xy 25.4 26.67) (xy 25.4 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eff71c9d-1281-4f06-a853-85cce99644de")
+	)
+	(wire
+		(pts
+			(xy 19.05 199.39) (xy 55.88 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5a44f50-2e93-40d0-914c-bfbd0f17c7d8")
+	)
+	(wire
+		(pts
+			(xy 19.05 181.61) (xy 19.05 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6abdb66-da57-4a05-abea-4006a29252e0")
+	)
+	(wire
+		(pts
+			(xy 19.05 190.5) (xy 19.05 199.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f790e80a-aed2-43cf-bb86-53d39f8975b5")
+	)
+	(wire
+		(pts
+			(xy 25.4 133.35) (xy 35.56 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9c4c400-1268-4697-a835-a56b344fc303")
+	)
+	(label "110-8"
+		(at 27.94 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0cb69602-c3bd-4549-bcd5-44d274a69fd5")
+	)
+	(label "110-10"
+		(at 27.94 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "15364a76-dcda-4b30-a013-689654612d7e")
+	)
+	(label "100-36"
+		(at 27.94 199.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1654bfab-35f9-4d61-8038-c250be698d57")
+	)
+	(label "110-7"
+		(at 46.99 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "16dbe307-442a-47dc-bb23-0b0f14df7e98")
+	)
+	(label "110-11"
+		(at 46.99 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bdcb14e-f30f-4b32-812a-1fc77c3a8a81")
+	)
+	(label "100-28"
+		(at 27.94 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1eac3528-2769-447c-8b5c-88dc26c53546")
+	)
+	(label "110-29"
+		(at 46.99 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "25f7bca8-47c7-44e3-806b-34123fd58d21")
+	)
+	(label "110-36"
+		(at 27.94 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2b1b8207-8c33-47bb-ae67-d60c9f2a8629")
+	)
+	(label "100-30"
+		(at 27.94 172.72 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3714a7ff-d188-4a24-a2ac-1bf6d6e1bfda")
+	)
+	(label "110-37"
+		(at 46.99 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "37ffcf91-e7c2-4e89-b33d-01adce27077b")
+	)
+	(label "110-27"
+		(at 46.99 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "38148aff-62f2-498a-a99d-3299e8244ee6")
+	)
+	(label "110-30"
+		(at 27.837 168.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ebde1a7-c758-4426-a771-099b293242bf")
+	)
+	(label "110-28"
+		(at 27.837 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4621c95b-2946-4aac-8550-3e0b7901760d")
+	)
+	(label "110-6"
+		(at 27.94 62.23 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "466099f1-41be-4894-98f4-d2ee43ead18a")
+	)
+	(label "6110-2"
+		(at 26.67 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "483c4559-b8a5-4c0b-bf27-14714910ad0d")
+	)
+	(label "110v Hawt"
+		(at 25.4 19.05 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4911c98a-2a02-409e-83ed-69d7e927429e")
+	)
+	(label "110-15"
+		(at 46.99 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "492b3368-29ac-48f9-9120-7488746d46b7")
+	)
+	(label "110-23"
+		(at 46.99 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4e21625e-9d51-4950-8a31-0bdd1d5321c4")
+	)
+	(label "6110-3"
+		(at 46.99 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4fd1e9dc-b724-4aa2-a695-4e0ae35e5c8d")
+	)
+	(label "100-10"
+		(at 27.94 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "51be6353-bf51-4a66-9b9d-d5635c5b1e6d")
+	)
+	(label "500-1"
+		(at 81.28 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5598a4c6-fc6d-481c-a9fa-aa43a66483e3")
+	)
+	(label "100-32"
+		(at 27.94 181.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5f3c093c-b2c3-40bd-be3b-6bb3338f34e4")
+	)
+	(label "110-1"
+		(at 35.56 26.67 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "639586d3-13b0-427d-8f35-e3df895afb65")
+	)
+	(label "110-34"
+		(at 27.94 186.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6c8491aa-8f1c-4cf2-ad6a-f74726d6bcf6")
+	)
+	(label "110-35"
+		(at 46.99 186.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6e2c308c-c85c-42c2-8591-a92137b099fa")
+	)
+	(label "110-22"
+		(at 27.837 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7abb2876-623b-4167-b3ae-d47dde7f5fd5")
+	)
+	(label "110-5"
+		(at 46.99 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c4a167e-fc67-4061-83f8-9466b96b4619")
+	)
+	(label "100-18"
+		(at 27.94 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8acd29ae-6033-4ccc-9528-5b1038b1ec91")
+	)
+	(label "110-17"
+		(at 46.99 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8da22b7a-a5ce-4e61-ac6e-da94131a2c2d")
+	)
+	(label "100-8"
+		(at 27.94 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8e534339-ffb4-4770-bde8-652cfe7982f7")
+	)
+	(label "110-4"
+		(at 27.94 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "942dda76-5885-47d5-b6a0-45a411c4ee80")
+	)
+	(label "110-16"
+		(at 27.94 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "95ec398e-124d-423b-bd58-c0aa4e8a18f4")
+	)
+	(label "100-14"
+		(at 27.94 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "98b334ea-b740-4790-bf69-c2d4f10e34c0")
+	)
+	(label "110-32"
+		(at 27.94 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9921d9ce-3e50-46b8-b0d7-ec6a8ac1a687")
+	)
+	(label "110-12"
+		(at 27.94 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9b4a605a-32d6-44a0-9c1e-939b0d551764")
+	)
+	(label "110-14"
+		(at 27.94 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a078c7cd-dcec-484a-90ca-e7c87c8da657")
+	)
+	(label "110-24"
+		(at 27.837 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a359f9b5-839e-4ab4-9a11-a0fc076313ee")
+	)
+	(label "110-9"
+		(at 46.99 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a7dd8212-ba98-4b10-be25-2676292a5d24")
+	)
+	(label "110-18"
+		(at 27.94 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a84ed9d4-5863-4df7-a462-f560543c5419")
+	)
+	(label "100-4"
+		(at 27.94 57.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ac592b1b-d0e2-4a21-8504-9fd7867f934f")
+	)
+	(label "6100-2"
+		(at 26.67 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ada975d6-f3e0-40dd-b322-871c8cff6155")
+	)
+	(label "100-22"
+		(at 27.94 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b7f171fe-9c4e-463d-8586-c15da38c65a1")
+	)
+	(label "100-6"
+		(at 27.94 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bc7d28ef-8e29-438b-9652-3a9cff50a5cd")
+	)
+	(label "110-25"
+		(at 46.99 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "be2a2716-c75f-4f9a-9146-2c54a56e2d1f")
+	)
+	(label "110-13"
+		(at 46.99 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c4e172ff-8d4a-45b0-9f43-2fa01f445289")
+	)
+	(label "110-19"
+		(at 46.99 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cef63ac6-db15-48ee-a90e-c17704fc2142")
+	)
+	(label "550-1"
+		(at 81.28 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d22fc2d9-96c8-414f-a959-17851ca258ba")
+	)
+	(label "100-26"
+		(at 27.94 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d2c75549-3ceb-486a-ba9f-5e822c87da47")
+	)
+	(label "100-34"
+		(at 27.94 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d924cb05-9b2c-48c5-88dc-bab60d7e36d5")
+	)
+	(label "110-26"
+		(at 27.837 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dc5a53d1-ecf3-48f1-8d3b-b1768eef3394")
+	)
+	(label "110-20"
+		(at 27.837 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e041bc52-62bc-4b06-8385-9c4cd03696d4")
+	)
+	(label "110-33"
+		(at 46.99 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e2de539c-0235-4f10-bc13-ccaa80bb506f")
+	)
+	(label "110-21"
+		(at 46.99 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea5e9431-961e-4267-a468-d9f589e8cf64")
+	)
+	(label "100-24"
+		(at 27.94 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ef5664cd-990b-49a0-95f8-fa58c15f90ac")
+	)
+	(label "100-16"
+		(at 27.94 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "efc36716-e450-47dd-aaec-4a7a20732642")
+	)
+	(label "110-31"
+		(at 46.99 168.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f211c271-cc34-485c-bf33-8884659ccce4")
+	)
+	(label "100-1"
+		(at 35.56 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6c87b05-010b-40fc-ba4c-a3315a2dfffa")
+	)
+	(label "100-12"
+		(at 27.94 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd0fd640-737b-408f-bb9e-20cf4d5b2d4a")
+	)
+	(label "100-20"
+		(at 27.94 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fda990a5-4bd2-4bf4-9ce2-b998c1849199")
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 177.8 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0a09ea1c-7db9-489a-84ae-b6a61fdfac46")
+		(property "Reference" "F17"
+			(at 41.402 174.498 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 176.276 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 181.102 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 177.8 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "004b2f43-f8c4-4f4f-b836-2c61ab46c79a")
+		)
+		(pin "2"
+			(uuid "7be7a116-2a9c-44ff-bf68-6692aa46af99")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 97.79 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "17984e3c-9c0b-4c1f-b4d7-557eae5851ef")
+		(property "Reference" "F8"
+			(at 41.402 94.488 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 96.266 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 101.092 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 97.79 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b1f61160-f96d-45c6-819d-5921861e725f")
+		)
+		(pin "2"
+			(uuid "88c8a70d-3f62-4039-b911-c58a4498f64d")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:AC")
+		(at 19.05 10.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "19546c67-0d50-4b4b-8569-7dc757f705df")
+		(property "Reference" "#PWR01"
+			(at 19.05 12.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AC"
+			(at 19.05 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.05 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 19.05 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"AC\""
+			(at 19.05 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "db1248b2-b7b8-410d-9344-8b870d77c255")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SparkFun-PowerSymbol:110v_Outlet")
+		(at 35.56 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1eadda04-fd1a-4075-b573-227dea03f48e")
+		(property "Reference" "O01"
+			(at 35.56 16.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "110v_Outlet"
+			(at 35.052 17.018 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 35.56 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "O01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 168.91 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2dfd2b28-b133-49c1-9a29-0dae6cd5a650")
+		(property "Reference" "F16"
+			(at 41.402 165.608 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 167.386 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 172.212 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 168.91 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee94c317-6b42-4344-8a2f-de89160bbfbb")
+		)
+		(pin "2"
+			(uuid "5a12153a-3236-4251-b2cb-bbe2a0769035")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:AC")
+		(at 25.4 10.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2f00eb5b-aedc-4726-9f9e-aacc4a919109")
+		(property "Reference" "#PWR03"
+			(at 25.4 12.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "AC"
+			(at 25.4 2.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"AC\""
+			(at 25.4 10.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "db1248b2-b7b8-410d-9344-8b870d77c256")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 133.35 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3c3377c6-8cad-4876-9ec1-43dac126ea58")
+		(property "Reference" "F12"
+			(at 41.402 130.048 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 131.826 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 136.652 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9adae261-ee95-4474-b47e-e914a79d52bc")
+		)
+		(pin "2"
+			(uuid "d34593bd-36db-4bd3-96f6-1d9a461bc8ab")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 115.57 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3dc4500e-cee3-40b1-ae3c-a84a87a8ff1a")
+		(property "Reference" "F10"
+			(at 41.402 112.268 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 114.046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 118.872 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 115.57 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "abe1b129-7e19-4c76-a05b-e83d4dfafaad")
+		)
+		(pin "2"
+			(uuid "ab371c5c-0b22-449d-8d82-58c3c97bf3ab")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 186.69 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3f77606e-4892-4aec-8f61-23ba3be8efef")
+		(property "Reference" "F18"
+			(at 41.402 183.388 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 185.166 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 189.992 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 186.69 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b833a364-cd7a-4292-87d9-2ec3890915df")
+		)
+		(pin "2"
+			(uuid "8b3e3e1d-3b5a-4909-bba2-2a9615352d1c")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 195.58 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "41590b6a-d339-4373-9179-930a28e2b9d9")
+		(property "Reference" "F19"
+			(at 41.402 192.278 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 194.056 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 198.882 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 195.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92b7ccbf-661c-47c7-ac19-154aa613f869")
+		)
+		(pin "2"
+			(uuid "cfbb9bea-f2fa-46d5-a86e-e278507c9005")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 106.68 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "486eb5a9-858f-4746-ab0a-a68f9bb91553")
+		(property "Reference" "F9"
+			(at 41.402 103.378 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 105.156 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 109.982 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 106.68 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b95736da-1599-458d-a05c-9c5019374d78")
+		)
+		(pin "2"
+			(uuid "775f8126-9eb2-456d-a821-e85af91102b7")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 53.34 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "493fc119-e109-44f3-9268-1b8ec80e8ba0")
+		(property "Reference" "F3"
+			(at 41.402 50.038 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 51.816 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 56.642 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 53.34 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b19ac421-e1f3-446c-a1c9-39d65229e3a1")
+		)
+		(pin "2"
+			(uuid "420fc643-ad12-4801-bd99-f5dba5590ef3")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 142.24 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6bbb28bc-7523-4924-be94-691205448af8")
+		(property "Reference" "F13"
+			(at 41.402 138.938 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 140.716 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 145.542 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 142.24 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7fa1126d-ade6-425f-979e-704356631205")
+		)
+		(pin "2"
+			(uuid "51231884-fb62-4bde-9f0c-b21345305cd1")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 71.12 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6d0a723f-6e4c-4c84-a5cc-9496b88d5500")
+		(property "Reference" "F5"
+			(at 41.402 67.818 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 69.596 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 74.422 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 71.12 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "77cde013-917f-4b35-9f3e-fb0384d0b066")
+		)
+		(pin "2"
+			(uuid "a6f899b3-5b42-4eb1-a5c5-791babc0768e")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 38.1 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74f83114-fd7d-418b-b92c-a5d01395ca94")
+		(property "Reference" "F2"
+			(at 41.402 34.798 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 36.576 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 41.402 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 38.1 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c7725d9c-6c93-4dc4-902e-ebf410c9c7d2")
+		)
+		(pin "2"
+			(uuid "c6b3c494-c434-4625-8e1d-b0b8b86a5967")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 88.9 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "883ceb46-4a3b-425d-9d7b-aab8d86b95a0")
+		(property "Reference" "F7"
+			(at 41.402 85.598 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 87.376 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 92.202 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 88.9 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6b6b8670-0018-4d2b-ac86-a6e37d16c497")
+		)
+		(pin "2"
+			(uuid "020d31d6-5b4a-4a8d-83f5-42126637d054")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 160.02 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b0b636b2-da08-4cda-96fb-995d14040998")
+		(property "Reference" "F15"
+			(at 41.402 156.718 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 158.496 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 163.322 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 160.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "61430847-a00f-454b-94a2-f4a77ce3c859")
+		)
+		(pin "2"
+			(uuid "04e6f645-651d-43b6-aa4e-ce7df59d5950")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 124.46 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bd9e5d66-1c18-4bd1-b9f9-cdcc7fcb2e20")
+		(property "Reference" "F11"
+			(at 41.402 121.158 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 122.936 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 127.762 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 124.46 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc77d786-76b6-419b-8f56-cf9b91958b52")
+		)
+		(pin "2"
+			(uuid "755519c8-4ce2-4e1e-9226-939531aeeb6b")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 80.01 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d5c7c5d0-8473-4367-8844-cfdf71a11731")
+		(property "Reference" "F6"
+			(at 41.402 76.708 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 78.486 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 83.312 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "26f5a926-0355-41d5-bd8f-d385595239f3")
+		)
+		(pin "2"
+			(uuid "3f44f230-9567-498d-8d1b-aee4de37ffc0")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 151.13 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eb9ce750-0618-49b4-8105-7c257a441631")
+		(property "Reference" "F14"
+			(at 41.402 147.828 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 149.606 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 154.432 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 151.13 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40c801ab-768b-435e-8e1b-243f8d22b57f")
+		)
+		(pin "2"
+			(uuid "3ef379b6-9e63-468d-abac-34f91b0d62b8")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 39.37 62.23 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ebd5cbad-b85b-4c13-ac0c-d1cb961deabc")
+		(property "Reference" "F4"
+			(at 41.402 58.928 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 41.656 60.706 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 65.532 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 39.37 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f5182bd0-d638-4b3b-ac2a-ce2f08a493cb")
+		)
+		(pin "2"
+			(uuid "44b6b60c-59d1-42b5-b95b-e8a0fc4f65af")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Device_AKL:Fuse")
+		(at 25.4 22.86 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f0bbbc4b-2286-45e3-b1e5-9c0c1c646183")
+		(property "Reference" "F1"
+			(at 27.432 19.05 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "15A"
+			(at 26.924 21.0821 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.098 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 22.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse, Alternate KiCAD Library"
+			(at 25.4 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "de08a98e-88e8-4613-8c60-34e44be8a0d6")
+		)
+		(pin "2"
+			(uuid "b4cfd818-b6cc-47ec-ae1c-7d412e0718a7")
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 5.08)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "036f28a5-a72d-47b7-876b-bc3e8353e916")
+		(property "Sheetname" "Control Board"
+			(at 172.72 4.3684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "2_ControlBoard.kicad_sch"
+			(at 172.72 9.4746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 138.43)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "3b179dde-dddc-41ce-9cef-e034eb09a34a")
+		(property "Sheetname" "RelayBoard15"
+			(at 172.72 137.7184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard15.kicad_sch"
+			(at 172.72 142.8246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "17")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 58.42)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4a618d10-3b96-4695-820f-e7c0a067ac75")
+		(property "Sheetname" "RelayBoard6"
+			(at 172.72 57.7084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard6.kicad_sch"
+			(at 172.72 62.8146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 156.21)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "54ad3ac5-84ac-4e6d-a685-832e35ee3907")
+		(property "Sheetname" "RelayBoard17"
+			(at 172.72 155.4984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard17.kicad_sch"
+			(at 172.72 160.6046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "19")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 93.98)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "586bf71e-0557-4b98-986d-b3429f3df397")
+		(property "Sheetname" "RelayBoard10"
+			(at 172.72 93.2684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard10.kicad_sch"
+			(at 172.72 98.3746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 173.99)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5b6c6e27-0c60-468e-a1f1-7c664c85c2bc")
+		(property "Sheetname" "5500Block"
+			(at 172.72 173.2784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "550Block.kicad_sch"
+			(at 172.72 178.3846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "21")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 85.09)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "618b7397-c26c-4bdc-aee2-ef7fd5707b30")
+		(property "Sheetname" "RelayBoard9"
+			(at 172.72 84.3784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard9.kicad_sch"
+			(at 172.72 89.4846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 22.86)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6aa296e4-c2cb-4356-9297-9a0037656619")
+		(property "Sheetname" "RelayBoard2"
+			(at 172.72 22.1484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard2.kicad_sch"
+			(at 172.72 27.2546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 120.65)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6d9434d8-b89b-4dca-9aa6-fb6eb126237d")
+		(property "Sheetname" "RelayBoard13"
+			(at 172.72 119.9384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard13.kicad_sch"
+			(at 172.72 125.0446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "15")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 182.88)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "71834d8c-305c-4470-84a7-693aa7579de7")
+		(property "Sheetname" "6100Block"
+			(at 172.72 182.1684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "100Block.kicad_sch"
+			(at 172.72 187.2746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "22")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 76.2)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a1d3cbf5-c97c-42ee-812d-5b29ae143044")
+		(property "Sheetname" "RelayBoard8"
+			(at 172.72 75.4884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard8.kicad_sch"
+			(at 172.72 80.5946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 191.77)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a5fd4270-ec42-4272-a6bb-c062e1587383")
+		(property "Sheetname" "6110Block (page 23)"
+			(at 172.72 191.0584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "110Block.kicad_sch"
+			(at 172.72 196.1646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "23")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 129.54)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a9eaca14-1b23-4c8c-82d3-81df58f56a84")
+		(property "Sheetname" "RelayBoard14"
+			(at 172.72 128.8284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard14.kicad_sch"
+			(at 172.72 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "16")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 102.87)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b942f975-d84c-4fdb-b687-e3e0908d33f9")
+		(property "Sheetname" "RelayBoard11"
+			(at 172.72 102.1584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard11.kicad_sch"
+			(at 172.72 107.2646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "13")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 111.76)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "bf09c8e6-04c7-4ea8-9c85-b0321bb0c3d7")
+		(property "Sheetname" "RelayBoard12"
+			(at 172.72 111.0484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard12.kicad_sch"
+			(at 172.72 116.1546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "14")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 40.64)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "cbb516d3-9a68-425f-827b-da65f033e0a4")
+		(property "Sheetname" "RelayBoard4"
+			(at 172.72 39.9284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard4.kicad_sch"
+			(at 172.72 45.0346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 147.32)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ddcc41a1-8781-402b-bc7c-61989c07c6d3")
+		(property "Sheetname" "RelayBoard16"
+			(at 172.72 146.6084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard16.kicad_sch"
+			(at 172.72 151.7146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "18")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 31.75)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e355e5f8-62c3-427a-aa9b-80c9af009663")
+		(property "Sheetname" "RelayBoard3"
+			(at 172.72 31.0384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard3.kicad_sch"
+			(at 172.72 36.1446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 13.97)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e85a355f-daca-4125-8208-aaad6b280667")
+		(property "Sheetname" "RelayBoard1"
+			(at 172.72 13.2584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard1.kicad_sch"
+			(at 172.72 18.3646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 49.53)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f105870b-acb8-465e-97a0-a288f74a8012")
+		(property "Sheetname" "RelayBoard5"
+			(at 172.72 48.8184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard5.kicad_sch"
+			(at 172.72 53.9246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 165.1)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f5a34656-8055-4c42-8a09-ea9db2942985")
+		(property "Sheetname" "5000Block"
+			(at 172.72 164.3884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "500Block.kicad_sch"
+			(at 172.72 169.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "20")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 172.72 67.31)
+		(size 12.7 3.81)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f92a5d66-6824-42af-99e2-04d1cf414ada")
+		(property "Sheetname" "RelayBoard7"
+			(at 172.72 66.5984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RelayBoard7.kicad_sch"
+			(at 172.72 71.7046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "ElectricalCabinet"
+				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(embedded_files
+		(file
+			(name "NumberedTemplate.kicad_wks")
+			(type worksheet)
+			(data |KLUv/WBAFVUOAGYZRh1QdTqA1rillf4ytQ4xM2PqlltuuZPOApMmZp1SME0APwA0AJPEc0ASA0OE
+				HchrRBdIiiQGhkAHykTVw0CvAAAEBJTKgyojjE/ioaYXNaCEhPI41PQUFCRBD8Mi4rrvSFNUUZCl
+				AAgIqsgl0VAwokgh6S+6r75Zk+3KL80b07jMfVWbNdm2/NK9MR063jvVRHkeB5oopOdwsDcDDeFx
+				Fm8yvTctKNODPCLK6EjRg1IEusx9VZs12bb80r0xHTrsaHZwX23WZIv5pb8xnbvcV7NZky3LL9Ub
+				02ub++o2a7J1+aW+MQGB4eC+2qzJFvNLf2Pa7XJfzWZNtiy/VG9M7zb31W3WZOvyS31jui26r75Z
+				k+3KL80b0wGA16ghoE6SFJWk0hiwpZAOESAIQoAghBEBIUJiZCERIvfkj8e/6v5DhL7EotB97v5D
+				hL7EotB9Lk1/KPbYh4Vg9OheB/j2MwbE06N7HeCzc8Yh8I/j9K9uP0XwSwyK3e5uP0XwSwyK3e7T
+				ef8g1tinBWHU6F8LePYzB8hTo38t4Lmz3ob/tzXJvVqWAERKK5DkQo0IJ5JWOmKlSzCgbVaSlXAD
+				VLCtfAfgJtc/AqQK|
+			)
+			(checksum "B86B5DC97E47CA3BFAF1AFD98EFA2574")
+		)
+	)
+)
