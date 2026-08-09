@@ -285,7 +285,11 @@
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "USB-C": [
+        "Ref 103"
+      ]
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -294,6 +298,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
+      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -387,7 +392,7 @@
       "intersheets_ref_own_page": false,
       "intersheets_ref_prefix": "Page",
       "intersheets_ref_short": false,
-      "intersheets_ref_show": true,
+      "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
       "label_size_ratio": 0.375,
@@ -404,7 +409,7 @@
     "meta": {
       "version": 1
     },
-    "page_layout_descr_file": "kicad-embed://NumberedTemplate.kicad_wks",
+    "page_layout_descr_file": "kicad-embed://HalfNumberedTemplate.kicad_wks",
     "plot_directory": "",
     "reuse_designators": true,
     "subpart_first_id": 65,
@@ -416,7 +421,7 @@
         "uuid": "c34866b5-fe82-42ea-9d09-ac7e183279a1"
       }
     ],
-    "used_designators": "#PWR1-6,T1-2,J1-14,F1-20,O1-2",
+    "used_designators": "#PWR1-6,T1-2,R1-8,#FLG1-2,1000BLOCK1,J1-14,F1-20,O1-2,U1-226,C1,D1-8,K1-8",
     "variants": []
   },
   "sheets": [
@@ -510,7 +515,19 @@
     ],
     [
       "a5fd4270-ec42-4272-a6bb-c062e1587383",
-      "6110Block (page 23)"
+      "6110Block"
+    ],
+    [
+      "4a264715-bccc-4b96-9142-d0be0711db55",
+      "8300Block"
+    ],
+    [
+      "765483da-5805-45fc-8bd1-776488c32096",
+      "8200Block"
+    ],
+    [
+      "f6fb12df-a950-4f7a-a75e-570f1a64e422",
+      "8100Block"
     ]
   ],
   "text_variables": {},

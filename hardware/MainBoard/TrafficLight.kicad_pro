@@ -649,7 +649,7 @@
         "uuid": "4b7e8b7e-5513-4996-b1a8-a739e2577c0f"
       }
     ],
-    "used_designators": "LA1-4,U1-20,V1-2,OC1-34,#PWR1-2,J1-25,R1-12",
+    "used_designators": "LA1-4,U1-20,V1-2,OC1-34,#PWR1-2,J1-25,R1-12,C1-2",
     "variants": []
   },
   "sheets": [

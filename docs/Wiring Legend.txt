@@ -1,0 +1,10 @@
+5000 = 5vDC Ground
+5500 = 5vDC
+6110 = 110vAC Hot
+6100 = 110vAC Neutral
+7000 = Serial In
+7500 = Serial Out
+8100 = 5v Enable
+8200 = 5v Latch
+8300 = 5v Clock
+
