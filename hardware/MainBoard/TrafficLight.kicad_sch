@@ -1615,6 +1615,66 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "5500-2"
+		(exclude_from_sim no)
+		(at 211.074 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4e0c02d1-b7c1-4262-9472-dc590e6eb9d4")
+	)
+	(text "5000-2"
+		(exclude_from_sim no)
+		(at 208.534 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "63e5cb38-6f70-4a8b-a7ed-99c8764d5674")
+	)
+	(text "7500-1"
+		(exclude_from_sim no)
+		(at 205.994 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6d3da6e7-8243-4142-8990-c572f49a5a9d")
+	)
+	(text "8200-1"
+		(exclude_from_sim no)
+		(at 200.914 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "929e63dc-2c55-4571-8b4b-82799114954e")
+	)
+	(text "8100-1"
+		(exclude_from_sim no)
+		(at 198.374 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c5da1276-9385-44a4-8f34-e0f0da2b12cb")
+	)
+	(text "8300-1"
+		(exclude_from_sim no)
+		(at 203.454 48.768 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cace2bd0-1050-46a9-924d-3d8338b53736")
+	)
 	(junction
 		(at 173.99 109.22)
 		(diameter 0)

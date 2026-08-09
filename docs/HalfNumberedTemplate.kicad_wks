@@ -1,0 +1,214 @@
+(kicad_wks
+	(version 20231118)
+	(generator "pl_editor")
+	(generator_version "10.0")
+	(setup
+		(textsize 1.5 1.5)
+		(linewidth 0.15)
+		(textlinewidth 0.15)
+		(left_margin 10)
+		(right_margin 10)
+		(top_margin 10)
+		(bottom_margin 10)
+	)
+	(tbtext "${#}00--"
+		(name "")
+		(pos 263.5 194)
+	)
+	(tbtext "${#}01--"
+		(name "")
+		(pos 263.5 190)
+	)
+	(tbtext "${#}02--"
+		(name "")
+		(pos 263.5 186)
+	)
+	(tbtext "${#}03--"
+		(name "")
+		(pos 263.5 182)
+	)
+	(tbtext "${#}04--"
+		(name "")
+		(pos 263.5 178)
+	)
+	(tbtext "${#}05--"
+		(name "")
+		(pos 263.5 174)
+	)
+	(tbtext "${#}06--"
+		(name "")
+		(pos 263.5 170)
+	)
+	(tbtext "${#}07--"
+		(name "")
+		(pos 263.5 166)
+	)
+	(tbtext "${#}08--"
+		(name "")
+		(pos 263.5 162)
+	)
+	(tbtext "${#}09--"
+		(name "")
+		(pos 263.5 158)
+	)
+	(tbtext "${#}10--"
+		(name "")
+		(pos 263.5 154)
+	)
+	(tbtext "${#}11--"
+		(name "")
+		(pos 263.5 150)
+	)
+	(tbtext "${#}12--"
+		(name "")
+		(pos 263.5 146)
+	)
+	(tbtext "${#}13--"
+		(name "")
+		(pos 263.5 142)
+	)
+	(tbtext "${#}14--"
+		(name "")
+		(pos 263.5 138)
+	)
+	(tbtext "${#}15--"
+		(name "")
+		(pos 263.5 134)
+	)
+	(tbtext "${#}16--"
+		(name "")
+		(pos 263.5 130)
+	)
+	(tbtext "${#}17--"
+		(name "")
+		(pos 263.5 126)
+	)
+	(tbtext "${#}18--"
+		(name "")
+		(pos 263.5 122)
+	)
+	(tbtext "${#}19--"
+		(name "")
+		(pos 263.5 118)
+	)
+	(tbtext "${#}20--"
+		(name "")
+		(pos 263.5 114)
+	)
+	(tbtext "${#}21--"
+		(name "")
+		(pos 263.5 110)
+	)
+	(tbtext "${#}22--"
+		(name "")
+		(pos 263.5 106)
+	)
+	(tbtext "${#}23--"
+		(name "")
+		(pos 263.5 102)
+	)
+	(tbtext "${#}24--"
+		(name "")
+		(pos 263.5 98)
+	)
+	(tbtext "${#}25--"
+		(name "")
+		(pos 263.5 94)
+	)
+	(tbtext "${#}26--"
+		(name "")
+		(pos 263.5 90)
+	)
+	(tbtext "${#}27--"
+		(name "")
+		(pos 263.5 86)
+	)
+	(tbtext "${#}28--"
+		(name "")
+		(pos 263.5 82)
+	)
+	(tbtext "${#}29--"
+		(name "")
+		(pos 263.5 78)
+	)
+	(tbtext "${#}30--"
+		(name "")
+		(pos 263.5 74)
+	)
+	(tbtext "${#}31--"
+		(name "")
+		(pos 263.5 70)
+	)
+	(tbtext "${#}32--"
+		(name "")
+		(pos 263.5 66)
+	)
+	(tbtext "${#}33--"
+		(name "")
+		(pos 263.5 62)
+	)
+	(tbtext "${#}34--"
+		(name "")
+		(pos 263.5 58)
+	)
+	(tbtext "${#}35--"
+		(name "")
+		(pos 263.5 54)
+	)
+	(tbtext "${#}36--"
+		(name "")
+		(pos 263.5 50)
+	)
+	(tbtext "${#}37--"
+		(name "")
+		(pos 263.5 46)
+	)
+	(tbtext "${#}38--"
+		(name "")
+		(pos 263.5 42)
+	)
+	(tbtext "${#}39--"
+		(name "")
+		(pos 263.5 38)
+	)
+	(tbtext "${#}40--"
+		(name "")
+		(pos 263.5 34)
+	)
+	(tbtext "${#}41--"
+		(name "")
+		(pos 263.5 30)
+	)
+	(tbtext "${#}42--"
+		(name "")
+		(pos 263.5 26)
+	)
+	(tbtext "${#}43--"
+		(name "")
+		(pos 263.5 22)
+	)
+	(tbtext "${#}44--"
+		(name "")
+		(pos 263.5 18)
+	)
+	(tbtext "${#}45--"
+		(name "")
+		(pos 263.5 14)
+	)
+	(tbtext "${#}46--"
+		(name "")
+		(pos 263.5 10)
+	)
+	(tbtext "${#}47--"
+		(name "")
+		(pos 263.5 6)
+	)
+	(tbtext "${#}48--"
+		(name "")
+		(pos 263.5 2)
+	)
+	(tbtext "${#}49--"
+		(name "")
+		(pos 263.5 -2)
+	)
+)
