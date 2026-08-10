@@ -4571,6 +4571,7 @@
 		)
 		(property "Ref" "Ref 2103"
 			(at 27.94 134.62 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4753,6 +4754,7 @@
 		)
 		(property "Ref" "Ref 2502"
 			(at 27.94 139.7 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4879,6 +4881,7 @@
 		)
 		(property "Ref" "Ref 2003"
 			(at 18.796 144.78 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5061,6 +5064,7 @@
 		)
 		(property "Ref" "Ref 2402"
 			(at 27.94 142.24 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

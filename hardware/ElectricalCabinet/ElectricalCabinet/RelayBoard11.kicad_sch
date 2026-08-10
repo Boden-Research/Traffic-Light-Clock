@@ -2684,6 +2684,12 @@
 		(uuid "04869d05-6be2-400f-885d-61a277fd72ae")
 	)
 	(junction
+		(at 43.18 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "05792295-5bb8-46f2-8eda-152ba6b54736")
+	)
+	(junction
 		(at 67.31 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2706,6 +2712,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "272b1114-6fb7-44cc-8353-b7fb25f679d3")
+	)
+	(junction
+		(at 43.18 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2b8d5260-c7df-4267-ab3a-2c35b1b44d83")
 	)
 	(junction
 		(at 67.31 125.73)
@@ -2756,6 +2768,18 @@
 		(uuid "6284f15c-b319-478b-b3ea-4e590fdf2c9b")
 	)
 	(junction
+		(at 43.18 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78c59b0e-f232-4c30-837a-40599c17e7dc")
+	)
+	(junction
+		(at 43.18 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8033e5b3-1fe4-4efd-a906-54794d52272d")
+	)
+	(junction
 		(at 95.25 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2780,6 +2804,12 @@
 		(uuid "a2320e98-007b-4ce6-9986-91f0c660d535")
 	)
 	(junction
+		(at 43.18 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a4650163-a516-4542-a8c3-bae880e592a1")
+	)
+	(junction
 		(at 101.6 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2790,6 +2820,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b7001e69-fa19-4b16-b5bc-3aac2556dbca")
+	)
+	(junction
+		(at 43.18 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b99c65c0-bc20-44b0-8138-b0eb0998551a")
 	)
 	(junction
 		(at 95.25 60.96)
@@ -2906,6 +2942,16 @@
 			(type default)
 		)
 		(uuid "13a2e0de-e999-4655-a1ee-3a0816bfb079")
+	)
+	(wire
+		(pts
+			(xy 36.83 139.7) (xy 43.18 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13be4468-121c-4697-850d-66ac1292aaec")
 	)
 	(wire
 		(pts
@@ -3076,6 +3122,16 @@
 			(type default)
 		)
 		(uuid "26b5c650-4c61-499b-8661-25f2164713b6")
+	)
+	(wire
+		(pts
+			(xy 36.83 142.24) (xy 43.18 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "292097d3-cbc0-47b4-942f-d351be47e026")
 	)
 	(wire
 		(pts
@@ -3569,6 +3625,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 144.78) (xy 43.18 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e33be27-d4c3-44af-8c41-4a175aff962e")
+	)
+	(wire
+		(pts
 			(xy 99.06 83.82) (xy 101.6 83.82)
 		)
 		(stroke
@@ -3699,6 +3765,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 147.32) (xy 43.18 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e52a1e5-8698-41e8-b91c-2673396eb08a")
+	)
+	(wire
+		(pts
 			(xy 165.1 86.36) (xy 165.1 99.06)
 		)
 		(stroke
@@ -3779,6 +3855,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 137.16) (xy 43.18 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a525e1cb-17c3-4e65-9608-1b8b59bd2144")
+	)
+	(wire
+		(pts
 			(xy 95.25 62.23) (xy 95.25 63.5)
 		)
 		(stroke
@@ -3816,6 +3902,16 @@
 			(type default)
 		)
 		(uuid "aa4d4338-1a69-49be-aad2-7d21029ec013")
+	)
+	(wire
+		(pts
+			(xy 36.83 134.62) (xy 43.18 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acec7548-2477-4eb8-a189-2a7f2ccd075d")
 	)
 	(wire
 		(pts
@@ -4553,6 +4649,99 @@
 			)
 		)
 	)
+	(global_label "7500-11"
+		(shape input)
+		(at 36.83 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3473e9a0-dfc4-4f91-a415-f82fa72361bf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.2249 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Ref" "Ref 1234"
+			(at 26.67 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Field" "Serial Input"
+			(at 26.67 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "8300-12"
+		(shape input)
+		(at 36.83 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6a43b11d-ba8b-42fd-85bb-f9e0f9c7f229")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.2249 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Field" "5V Clock"
+			(at 27.94 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Ref" "Ref 2410"
+			(at 26.67 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "9000-86"
 		(shape input)
 		(at 187.96 71.12 0)
@@ -4577,6 +4766,41 @@
 		)
 		(property "REF" "26"
 			(at 198.12 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "5000-13"
+		(shape input)
+		(at 36.83 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bd3f9e9c-58f4-41e8-939d-a947ca15c729")
+		(property "Intersheetrefs" "5vGND"
+			(at 26.2249 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Ref" "Ref 2011"
+			(at 17.526 144.78 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4652,6 +4876,88 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "8200-12"
+		(shape input)
+		(at 36.83 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cd605f8c-073d-4340-b194-caf05e7bbed6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.2249 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Ref" "Ref 2510"
+			(at 26.67 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Field" "5V Latch"
+			(at 27.94 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "5500-13"
+		(shape input)
+		(at 36.83 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e6b46b4e-69e9-4382-9201-7d3f883bfe66")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 26.2249 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Ref" "Ref 2112"
+			(at 26.67 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)

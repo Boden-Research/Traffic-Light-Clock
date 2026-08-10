@@ -1565,6 +1565,7 @@
 		)
 		(property "Ref" "Ref 2100"
 			(at 93.726 41.91 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1633,6 +1634,7 @@
 		)
 		(property "Ref" "Ref 2000"
 			(at 93.726 48.26 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2026,6 +2028,7 @@
 		)
 		(property "Ref" "Ref 108"
 			(at 71.12 43.18 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3888,52 +3891,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(page "10")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 153.67 133.35)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "a5fd4270-ec42-4272-a6bb-c062e1587383")
-		(property "Sheetname" "6110Block"
-			(at 153.67 132.6384 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "6110Block.kicad_sch"
-			(at 153.67 137.7446 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "23")
 				)
 			)
 		)
