@@ -604,7 +604,7 @@
 	)
 	(text_box "RelayBoard7"
 		(exclude_from_sim no)
-		(at 64.77 106.68 0)
+		(at 76.2 105.41 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -624,7 +624,7 @@
 	)
 	(text_box "RelayBoard2"
 		(exclude_from_sim no)
-		(at 63.5 62.23 0)
+		(at 74.93 60.96 0)
 		(size 15.24 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -642,49 +642,9 @@
 		)
 		(uuid "2383d65d-9d0c-4c0e-8781-6c77b80c9661")
 	)
-	(text_box "RelayBoard15"
-		(exclude_from_sim no)
-		(at 64.77 177.8 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "282e9604-4ad4-450c-8853-03338ce5117f")
-	)
-	(text_box "RelayBoard13"
-		(exclude_from_sim no)
-		(at 64.77 160.02 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3a282f0d-1335-41f8-9052-d00bf5ecd2a4")
-	)
 	(text_box "RelayBoard5"
 		(exclude_from_sim no)
-		(at 64.77 88.9 0)
+		(at 76.2 87.63 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -704,7 +664,7 @@
 	)
 	(text_box "RelayBoard1"
 		(exclude_from_sim no)
-		(at 63.5 53.34 0)
+		(at 74.93 52.07 0)
 		(size 15.24 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -722,29 +682,9 @@
 		)
 		(uuid "421eec9f-01dc-48b0-997f-f2edd533334c")
 	)
-	(text_box "RelayBoard17"
-		(exclude_from_sim no)
-		(at 64.77 195.58 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "43f72d52-e53f-49c5-bb5e-a70b87ab0af4")
-	)
 	(text_box "RelayBoard9"
 		(exclude_from_sim no)
-		(at 64.77 124.46 0)
+		(at 76.2 123.19 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -764,7 +704,7 @@
 	)
 	(text_box "RelayBoard10"
 		(exclude_from_sim no)
-		(at 64.77 133.35 0)
+		(at 76.2 132.08 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -784,7 +724,7 @@
 	)
 	(text_box "RelayBoard4\n"
 		(exclude_from_sim no)
-		(at 64.77 80.01 0)
+		(at 76.2 78.74 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -804,7 +744,7 @@
 	)
 	(text_box "RelayBoard6"
 		(exclude_from_sim no)
-		(at 64.77 97.79 0)
+		(at 76.2 96.52 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -843,7 +783,7 @@
 	)
 	(text_box "RelayBoard11"
 		(exclude_from_sim no)
-		(at 64.77 142.24 0)
+		(at 76.2 140.97 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -861,29 +801,9 @@
 		)
 		(uuid "ae640ce7-6539-4183-ab07-3e25a2fe18ca")
 	)
-	(text_box "RelayBoard16"
-		(exclude_from_sim no)
-		(at 64.77 186.69 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "af29cf26-9094-4e37-ae05-d9d1d5a659a6")
-	)
 	(text_box "RelayBoard8"
 		(exclude_from_sim no)
-		(at 64.77 115.57 0)
+		(at 76.2 114.3 0)
 		(size 13.97 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -900,26 +820,6 @@
 			(justify right)
 		)
 		(uuid "b060a9c6-99d7-43ca-b2e7-2786bf14b70c")
-	)
-	(text_box "RelayBoard12"
-		(exclude_from_sim no)
-		(at 64.77 151.13 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b30ae742-3bee-4a14-88f6-fef09af8cb5a")
 	)
 	(text_box "DC power supply 5.5v"
 		(exclude_from_sim no)
@@ -941,29 +841,9 @@
 		)
 		(uuid "c71e9873-790a-41b3-b06a-ae393161382e")
 	)
-	(text_box "RelayBoard14"
-		(exclude_from_sim no)
-		(at 64.77 168.91 0)
-		(size 13.97 6.35)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "dbb8245b-2dd1-4b89-8483-d54e649bd6c7")
-	)
 	(text_box "RelayBoard3"
 		(exclude_from_sim no)
-		(at 63.5 71.12 0)
+		(at 74.93 69.85 0)
 		(size 15.24 6.35)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -1027,15 +907,6 @@
 		(uuid "21b6e199-25f1-4e7c-b240-efa45c422f53")
 	)
 	(bus_entry
-		(at 25.4 185.42)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "376af613-bca3-496e-9f19-84cf618f46cd")
-	)
-	(bus_entry
 		(at 25.4 40.64)
 		(size 2.54 2.54)
 		(stroke
@@ -1081,25 +952,16 @@
 		(uuid "83291c11-c4a3-4ee8-b86f-c3c8e457dc1f")
 	)
 	(bus_entry
-		(at 25.4 176.53)
+		(at 19.05 50.8)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93fdfc42-dc71-491a-9210-d2203635544c")
+		(uuid "87432959-ebf5-47eb-9cc2-9c7b9fed3c29")
 	)
 	(bus_entry
-		(at 25.4 167.64)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96a62753-b7cd-4e46-b7a8-ef0fa95e5310")
-	)
-	(bus_entry
-		(at 25.4 29.21)
+		(at 25.4 27.94)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1124,24 +986,6 @@
 			(type default)
 		)
 		(uuid "9e7de198-597f-4a60-b561-f824090e4a47")
-	)
-	(bus_entry
-		(at 25.4 158.75)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a362c3d8-9f20-40fb-8862-8896a54bcbcf")
-	)
-	(bus_entry
-		(at 25.4 194.31)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a875c925-d868-4215-a0c5-3bda8ea00979")
 	)
 	(bus_entry
 		(at 25.4 69.85)
@@ -1179,25 +1023,6 @@
 		)
 		(uuid "fb67912e-b845-4c3a-9252-197c1219d344")
 	)
-	(bus_entry
-		(at 25.4 149.86)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe492388-5ae8-445a-aaf6-e0003ffe3c24")
-	)
-	(bus
-		(pts
-			(xy 25.4 26.67) (xy 25.4 194.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0dcdecbb-5e06-4a2d-a3ec-2bc4c3b20b42")
-	)
 	(wire
 		(pts
 			(xy 49.53 134.62) (xy 53.34 134.62)
@@ -1207,16 +1032,6 @@
 			(type default)
 		)
 		(uuid "0f7e7296-3630-437d-929f-88dcc2df5164")
-	)
-	(wire
-		(pts
-			(xy 27.94 170.18) (xy 41.91 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "115880fc-53a4-4494-8425-354404e3af83")
 	)
 	(wire
 		(pts
@@ -1240,13 +1055,13 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 187.96) (xy 53.34 187.96)
+			(xy 27.94 30.48) (xy 31.75 30.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "253f1619-2883-4222-b84c-8cca1ea2b8a8")
+		(uuid "241503e3-72ca-405b-ba1f-4d5a0ea2bad9")
 	)
 	(wire
 		(pts
@@ -1268,35 +1083,15 @@
 		)
 		(uuid "2a2a3cf7-41c0-4a5e-a729-2836cdc88257")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 27.94 179.07) (xy 41.91 179.07)
+			(xy 25.4 26.67) (xy 25.4 140.97)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3bb1a74c-3743-4163-91ad-6902ae9c3fa7")
-	)
-	(wire
-		(pts
-			(xy 49.53 179.07) (xy 53.34 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c3a28a6-3a3c-4dd3-90ab-268791ddf009")
-	)
-	(wire
-		(pts
-			(xy 27.94 161.29) (xy 41.91 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d93de9e-3a23-4e3f-affc-ace283f76645")
+		(uuid "2aae434b-346c-4263-b9bd-cc9e17d0c4e6")
 	)
 	(wire
 		(pts
@@ -1338,6 +1133,16 @@
 		)
 		(uuid "509d8bf2-389a-48f1-961b-4bc11a7b766c")
 	)
+	(bus
+		(pts
+			(xy 19.05 45.72) (xy 19.05 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51935d2b-65b4-409f-a86e-b6f35db51ebc")
+	)
 	(wire
 		(pts
 			(xy 49.53 99.06) (xy 53.34 99.06)
@@ -1357,16 +1162,6 @@
 			(type default)
 		)
 		(uuid "685eaca3-d4cd-4592-883e-f939f3a3f0de")
-	)
-	(wire
-		(pts
-			(xy 49.53 152.4) (xy 53.34 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "691378c6-37e9-4d63-b5b1-4d29b4d4d6c5")
 	)
 	(wire
 		(pts
@@ -1390,26 +1185,6 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 161.29) (xy 53.34 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "78e8f724-5c52-43b8-adbd-d0aecee8da00")
-	)
-	(wire
-		(pts
-			(xy 49.53 196.85) (xy 53.34 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a1fa8d3-c4fc-437e-9033-e64217d6c6a8")
-	)
-	(wire
-		(pts
 			(xy 27.94 63.5) (xy 41.91 63.5)
 		)
 		(stroke
@@ -1417,6 +1192,16 @@
 			(type default)
 		)
 		(uuid "87a5dcf3-9ebf-413e-a388-9015c99a51ea")
+	)
+	(wire
+		(pts
+			(xy 21.59 35.56) (xy 31.75 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b3425d9-7b30-4fb1-b915-7e9c67e85bff")
 	)
 	(wire
 		(pts
@@ -1510,16 +1295,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 31.75) (xy 41.91 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bca4c1d7-8d45-49f5-942a-ba4642edb243")
-	)
-	(wire
-		(pts
 			(xy 19.05 15.24) (xy 21.59 15.24)
 		)
 		(stroke
@@ -1527,26 +1302,6 @@
 			(type default)
 		)
 		(uuid "c0118fe1-5a5a-470f-94b6-9535f3eb14b1")
-	)
-	(wire
-		(pts
-			(xy 27.94 152.4) (xy 41.91 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c41e8533-fcee-47fc-b7cd-22d60cc29c55")
-	)
-	(wire
-		(pts
-			(xy 27.94 196.85) (xy 41.91 196.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c4f7a770-d3b1-48a4-a59d-8fe81fe05cda")
 	)
 	(wire
 		(pts
@@ -1560,16 +1315,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 187.96) (xy 41.91 187.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cda520df-a1d5-4313-a39a-2c46d32c3e8f")
-	)
-	(wire
-		(pts
 			(xy 27.94 107.95) (xy 41.91 107.95)
 		)
 		(stroke
@@ -1577,16 +1322,6 @@
 			(type default)
 		)
 		(uuid "cf4a87f1-6cf9-4472-bcad-9fb8c9f8014d")
-	)
-	(wire
-		(pts
-			(xy 21.59 35.56) (xy 41.91 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d961dde5-e3b1-4b6f-91ce-e1a80c16aa66")
 	)
 	(bus
 		(pts
@@ -1597,16 +1332,6 @@
 			(type default)
 		)
 		(uuid "de075439-f4fd-4dd1-8e9d-ed6da03e6c1e")
-	)
-	(wire
-		(pts
-			(xy 49.53 170.18) (xy 53.34 170.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e78f86ef-119a-468c-b9e3-c834c2b6a3f6")
 	)
 	(polyline
 		(pts
@@ -1658,16 +1383,6 @@
 		)
 		(uuid "0cb69602-c3bd-4549-bcd5-44d274a69fd5")
 	)
-	(label "6110"
-		(at 25.4 34.29 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0d6d783b-69b3-4692-a09f-c5a0fbfab141")
-	)
 	(label "6110-10"
 		(at 30.48 81.28 0)
 		(effects
@@ -1677,46 +1392,6 @@
 			(justify left bottom)
 		)
 		(uuid "15364a76-dcda-4b30-a013-689654612d7e")
-	)
-	(label "6110-36"
-		(at 30.48 196.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2b1b8207-8c33-47bb-ae67-d60c9f2a8629")
-	)
-	(label "6100"
-		(at 19.05 30.48 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2ddabb22-c74a-4923-9a4e-41104b6021ac")
-	)
-	(label "6110-30"
-		(at 30.377 170.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3ebde1a7-c758-4426-a771-099b293242bf")
-	)
-	(label "6110-28"
-		(at 30.377 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4621c95b-2946-4aac-8550-3e0b7901760d")
 	)
 	(label "6110-6"
 		(at 30.48 63.5 0)
@@ -1752,26 +1427,6 @@
 			)
 		)
 	)
-	(label "6110-1"
-		(at 41.91 31.75 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "639586d3-13b0-427d-8f35-e3df895afb65")
-	)
-	(label "6110-34"
-		(at 30.48 187.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6c8491aa-8f1c-4cf2-ad6a-f74726d6bcf6")
-	)
 	(label "6110-22"
 		(at 30.48 134.62 0)
 		(effects
@@ -1801,16 +1456,6 @@
 			(justify left bottom)
 		)
 		(uuid "942dda76-5885-47d5-b6a0-45a411c4ee80")
-	)
-	(label "6110-32"
-		(at 30.48 179.07 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9921d9ce-3e50-46b8-b0d7-ec6a8ac1a687")
 	)
 	(label "6110-12"
 		(at 30.48 90.17 0)
@@ -1852,16 +1497,6 @@
 		)
 		(uuid "a84ed9d4-5863-4df7-a462-f560543c5419")
 	)
-	(label "6110-26"
-		(at 30.377 152.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "dc5a53d1-ecf3-48f1-8d3b-b1768eef3394")
-	)
 	(label "6110-20"
 		(at 30.48 125.73 0)
 		(effects
@@ -1872,20 +1507,9 @@
 		)
 		(uuid "e041bc52-62bc-4b06-8385-9c4cd03696d4")
 	)
-	(label "6100-1"
-		(at 41.91 35.56 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f6c87b05-010b-40fc-ba4c-a3315a2dfffa")
-	)
 	(global_label "6110-13"
 		(shape input)
 		(at 53.34 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1905,9 +1529,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 119"
-			(at 53.34 94.0118 0)
-			(hide yes)
+		(property "Ref" "Ref 717"
+			(at 64.516 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1955,7 +1578,6 @@
 	(global_label "6110-17"
 		(shape input)
 		(at 53.34 107.95 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1975,45 +1597,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 124"
-			(at 53.34 111.7918 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "6110-31"
-		(shape input)
-		(at 53.34 170.18 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "19e5b45f-e9c9-406d-a113-27770fdc0302")
-		(property "Intersheetrefs" "139"
-			(at 65.1546 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Ref" "Ref 139"
-			(at 53.34 174.0218 0)
-			(hide yes)
+		(property "Ref" "Ref 917"
+			(at 64.516 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2061,7 +1646,6 @@
 	(global_label "6110-15"
 		(shape input)
 		(at 53.34 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2081,9 +1665,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 122"
-			(at 53.34 102.9018 0)
-			(hide yes)
+		(property "Ref" "Ref 817"
+			(at 64.516 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2094,10 +1677,44 @@
 			)
 		)
 	)
+	(global_label "6100-99"
+		(shape input)
+		(at 21.59 53.34 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "46bdb584-0e94-4317-a793-e247a5299d3d")
+		(property "Intersheetrefs" "106"
+			(at 21.59 63.9451 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "REF" "Ref 106"
+			(at 21.59 64.516 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "6110-23"
 		(shape input)
 		(at 53.34 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2117,9 +1734,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 130"
-			(at 53.34 138.4618 0)
-			(hide yes)
+		(property "Ref" "Ref 1217"
+			(at 64.516 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2133,7 +1749,6 @@
 	(global_label "6110-21"
 		(shape input)
 		(at 53.34 125.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2153,9 +1768,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 128"
-			(at 53.34 129.5718 0)
-			(hide yes)
+		(property "Ref" "Ref 1117"
+			(at 64.516 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2260,9 +1874,9 @@
 			)
 		)
 	)
-	(global_label "6110-33"
+	(global_label "6110-1"
 		(shape input)
-		(at 53.34 179.07 0)
+		(at 31.75 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2270,21 +1884,9 @@
 			)
 			(justify left)
 		)
-		(uuid "7de08175-e553-4eaf-b9a9-f38b5b988dda")
-		(property "Intersheetrefs" "141"
-			(at 65.1546 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Ref" "Ref 141"
-			(at 53.34 182.9118 0)
+		(uuid "64a53b36-2ab4-4298-8f31-c504ac2136db")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 42.3551 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2296,9 +1898,9 @@
 			)
 		)
 	)
-	(global_label "6110-29"
+	(global_label "6100-1"
 		(shape input)
-		(at 53.34 161.29 0)
+		(at 31.75 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2306,9 +1908,9 @@
 			)
 			(justify left)
 		)
-		(uuid "89ec399d-61e8-4bd5-afa6-d95776f3a754")
-		(property "Intersheetrefs" "137"
-			(at 65.1546 161.29 0)
+		(uuid "68f4e5c1-7494-453a-a1b9-c0a44a32f77b")
+		(property "Intersheetrefs" "106"
+			(at 42.3551 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2319,8 +1921,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 137"
-			(at 53.34 165.1318 0)
+		(property "REF" "Ref 106"
+			(at 31.75 39.4018 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2335,7 +1937,6 @@
 	(global_label "6110-5"
 		(shape input)
 		(at 53.34 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2343,7 +1944,7 @@
 			(justify left)
 		)
 		(uuid "93d3f552-562c-4843-a79b-789c3b060334")
-		(property "Intersheetrefs" "111"
+		(property "Intersheetrefs" "111, 317"
 			(at 63.9451 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -2355,9 +1956,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref111" "Ref 111"
-			(at 53.34 58.4518 0)
-			(hide yes)
+		(property "REF" "Ref 317"
+			(at 63.5 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2371,7 +1971,6 @@
 	(global_label "6110-19"
 		(shape input)
 		(at 53.34 116.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2391,9 +1990,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 126"
-			(at 53.34 120.6818 0)
-			(hide yes)
+		(property "Ref" "Ref 1017"
+			(at 64.516 116.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2438,46 +2036,9 @@
 			)
 		)
 	)
-	(global_label "6110-35"
-		(shape input)
-		(at 53.34 187.96 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "aaa5763a-9410-45b7-9cc5-27998ceba033")
-		(property "Intersheetrefs" "144"
-			(at 65.1546 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Ref" "Ref 144"
-			(at 53.34 191.8018 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "6110-7"
 		(shape input)
 		(at 53.34 63.5 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2485,7 +2046,7 @@
 			(justify left)
 		)
 		(uuid "d16100ac-8343-48b9-b87a-ea5e3b597609")
-		(property "Intersheetrefs" "113"
+		(property "Intersheetrefs" "113, 417"
 			(at 63.9451 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -2497,9 +2058,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 113"
-			(at 53.34 67.3418 0)
-			(hide yes)
+		(property "Ref" "Ref 417"
+			(at 63.246 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2513,7 +2073,6 @@
 	(global_label "6110-9"
 		(shape input)
 		(at 53.34 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2533,9 +2092,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 115"
-			(at 53.34 76.2318 0)
-			(hide yes)
+		(property "Ref" "Ref 517"
+			(at 63.246 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2549,7 +2107,6 @@
 	(global_label "6110-11"
 		(shape input)
 		(at 53.34 81.28 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2569,81 +2126,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 117"
-			(at 53.34 85.1218 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "6110-37"
-		(shape input)
-		(at 53.34 196.85 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "dd25a599-61e0-4fc4-bd7e-8d1997ab7242")
-		(property "Intersheetrefs" "146"
-			(at 65.1546 196.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Ref" "Ref 146"
-			(at 53.34 200.6918 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "6110-27"
-		(shape input)
-		(at 53.34 152.4 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ea7ef5c6-5ced-4612-a62b-1ac3203a7d93")
-		(property "Intersheetrefs" "135"
-			(at 65.1546 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Ref" "Ref 135"
-			(at 53.34 156.2418 0)
-			(hide yes)
+		(property "Ref" "Ref 617"
+			(at 64.77 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2657,7 +2141,6 @@
 	(global_label "6110-25"
 		(shape input)
 		(at 53.34 143.51 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2677,9 +2160,8 @@
 				(justify left)
 			)
 		)
-		(property "Ref" "Ref 133"
-			(at 53.34 147.3518 0)
-			(hide yes)
+		(property "Ref" "Ref 1317"
+			(at 64.516 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2687,85 +2169,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 179.07 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0a09ea1c-7db9-489a-84ae-b6a61fdfac46")
-		(property "Reference" "F17"
-			(at 47.752 175.768 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 177.546 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 182.372 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 179.07 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "004b2f43-f8c4-4f4f-b836-2c61ab46c79a")
-		)
-		(pin "2"
-			(uuid "7be7a116-2a9c-44ff-bf68-6692aa46af99")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F17")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -3002,85 +2405,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 170.18 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2dfd2b28-b133-49c1-9a29-0dae6cd5a650")
-		(property "Reference" "F16"
-			(at 47.752 166.878 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 168.656 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 173.482 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 170.18 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ee94c317-6b42-4344-8a2f-de89160bbfbb")
-		)
-		(pin "2"
-			(uuid "5a12153a-3236-4251-b2cb-bbe2a0769035")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:AC")
 		(at 25.4 15.24 0)
 		(unit 1)
@@ -3311,164 +2635,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(reference "F10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 187.96 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3f77606e-4892-4aec-8f61-23ba3be8efef")
-		(property "Reference" "F18"
-			(at 47.752 184.658 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 186.436 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 191.262 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 187.96 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 187.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b833a364-cd7a-4292-87d9-2ec3890915df")
-		)
-		(pin "2"
-			(uuid "8b3e3e1d-3b5a-4909-bba2-2a9615352d1c")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 196.85 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "41590b6a-d339-4373-9179-930a28e2b9d9")
-		(property "Reference" "F19"
-			(at 47.752 193.548 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 195.326 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 200.152 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 196.85 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 196.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "92b7ccbf-661c-47c7-ac19-154aa613f869")
-		)
-		(pin "2"
-			(uuid "cfbb9bea-f2fa-46d5-a86e-e278507c9005")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F19")
 					(unit 1)
 				)
 			)
@@ -3950,85 +3116,6 @@
 	)
 	(symbol
 		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 161.29 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b0b636b2-da08-4cda-96fb-995d14040998")
-		(property "Reference" "F15"
-			(at 47.752 157.988 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 159.766 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 164.592 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 161.29 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 161.29 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "61430847-a00f-454b-94a2-f4a77ce3c859")
-		)
-		(pin "2"
-			(uuid "04e6f645-651d-43b6-aa4e-ce7df59d5950")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
 		(at 45.72 125.73 180)
 		(unit 1)
 		(body_style 1)
@@ -4180,85 +3267,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(reference "F6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Device_AKL:Fuse")
-		(at 45.72 152.4 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "eb9ce750-0618-49b4-8105-7c257a441631")
-		(property "Reference" "F14"
-			(at 47.752 149.098 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "2.5A"
-			(at 48.006 150.876 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 155.702 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Fuse, Alternate KiCAD Library"
-			(at 45.72 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "40c801ab-768b-435e-8e1b-243f8d22b57f")
-		)
-		(pin "2"
-			(uuid "3ef379b6-9e63-468d-abac-34f91b0d62b8")
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(reference "F14")
 					(unit 1)
 				)
 			)
@@ -4471,53 +3479,7 @@
 		)
 	)
 	(sheet
-		(at 153.67 143.51)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "3b179dde-dddc-41ce-9cef-e034eb09a34a")
-		(property "Sheetname" "RelayBoard15"
-			(at 153.67 142.7984 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard15.kicad_sch"
-			(at 153.67 147.9046 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "17")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 153.67 205.74)
+		(at 153.67 146.05)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4533,7 +3495,7 @@
 		)
 		(uuid "4a264715-bccc-4b96-9142-d0be0711db55")
 		(property "Sheetname" "8300Block"
-			(at 153.67 205.0284 0)
+			(at 153.67 145.3384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4544,7 +3506,7 @@
 			)
 		)
 		(property "Sheetfile" "8300Block.kicad_sch"
-			(at 153.67 210.1346 0)
+			(at 153.67 150.4446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4609,52 +3571,6 @@
 		)
 	)
 	(sheet
-		(at 153.67 161.29)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "54ad3ac5-84ac-4e6d-a685-832e35ee3907")
-		(property "Sheetname" "RelayBoard17"
-			(at 153.67 160.5784 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard17.kicad_sch"
-			(at 153.67 165.6846 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "19")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 153.67 99.06)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
@@ -4701,7 +3617,7 @@
 		)
 	)
 	(sheet
-		(at 153.67 179.07)
+		(at 153.67 119.38)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4717,7 +3633,7 @@
 		)
 		(uuid "5b6c6e27-0c60-468e-a1f1-7c664c85c2bc")
 		(property "Sheetname" "5500Block"
-			(at 153.67 178.3584 0)
+			(at 153.67 118.6684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4728,7 +3644,7 @@
 			)
 		)
 		(property "Sheetfile" "5500Block.kicad_sch"
-			(at 153.67 183.4646 0)
+			(at 153.67 123.7746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4839,53 +3755,7 @@
 		)
 	)
 	(sheet
-		(at 153.67 125.73)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "6d9434d8-b89b-4dca-9aa6-fb6eb126237d")
-		(property "Sheetname" "RelayBoard13"
-			(at 153.67 125.0184 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard13.kicad_sch"
-			(at 153.67 130.1246 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "15")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 180.34 193.04)
+		(at 180.34 133.35)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4901,7 +3771,7 @@
 		)
 		(uuid "71834d8c-305c-4470-84a7-693aa7579de7")
 		(property "Sheetname" "6100Block"
-			(at 180.34 192.3284 0)
+			(at 180.34 132.6384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4912,7 +3782,7 @@
 			)
 		)
 		(property "Sheetfile" "6100Block.kicad_sch"
-			(at 180.34 197.4346 0)
+			(at 180.34 137.7446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4931,7 +3801,7 @@
 		)
 	)
 	(sheet
-		(at 180.34 205.74)
+		(at 180.34 146.05)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4947,7 +3817,7 @@
 		)
 		(uuid "765483da-5805-45fc-8bd1-776488c32096")
 		(property "Sheetname" "8200Block"
-			(at 180.34 205.0284 0)
+			(at 180.34 145.3384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4958,7 +3828,7 @@
 			)
 		)
 		(property "Sheetfile" "8200Block.kicad_sch"
-			(at 180.34 210.1346 0)
+			(at 180.34 150.4446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5023,7 +3893,7 @@
 		)
 	)
 	(sheet
-		(at 153.67 193.04)
+		(at 153.67 133.35)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5039,7 +3909,7 @@
 		)
 		(uuid "a5fd4270-ec42-4272-a6bb-c062e1587383")
 		(property "Sheetname" "6110Block"
-			(at 153.67 192.3284 0)
+			(at 153.67 132.6384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5050,7 +3920,7 @@
 			)
 		)
 		(property "Sheetfile" "6110Block.kicad_sch"
-			(at 153.67 197.4346 0)
+			(at 153.67 137.7446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5064,52 +3934,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(page "23")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 153.67 134.62)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "a9eaca14-1b23-4c8c-82d3-81df58f56a84")
-		(property "Sheetname" "RelayBoard14"
-			(at 153.67 133.9084 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard14.kicad_sch"
-			(at 153.67 139.0146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "16")
 				)
 			)
 		)
@@ -5161,52 +3985,6 @@
 		)
 	)
 	(sheet
-		(at 153.67 116.84)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "bf09c8e6-04c7-4ea8-9c85-b0321bb0c3d7")
-		(property "Sheetname" "RelayBoard12"
-			(at 153.67 116.1284 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard12.kicad_sch"
-			(at 153.67 121.2346 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "14")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 153.67 45.72)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
@@ -5248,52 +4026,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 153.67 152.4)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "ddcc41a1-8781-402b-bc7c-61989c07c6d3")
-		(property "Sheetname" "RelayBoard16"
-			(at 153.67 151.6884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "RelayBoard16.kicad_sch"
-			(at 153.67 156.7946 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "18")
 				)
 			)
 		)
@@ -5437,7 +4169,7 @@
 		)
 	)
 	(sheet
-		(at 179.07 179.07)
+		(at 179.07 119.38)
 		(size 12.7 3.81)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5453,7 +4185,7 @@
 		)
 		(uuid "f5a34656-8055-4c42-8a09-ea9db2942985")
 		(property "Sheetname" "5000Block"
-			(at 179.07 178.3584 0)
+			(at 179.07 118.6684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5464,7 +4196,7 @@
 			)
 		)
 		(property "Sheetfile" "5000Block.kicad_sch"
-			(at 179.07 183.4646 0)
+			(at 179.07 123.7746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5478,52 +4210,6 @@
 			(project "ElectricalCabinet"
 				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
 					(page "20")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 207.01 205.74)
-		(size 12.7 3.81)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "f6fb12df-a950-4f7a-a75e-570f1a64e422")
-		(property "Sheetname" "8100Block"
-			(at 207.01 205.0284 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "8100Block.kicad_sch"
-			(at 207.01 210.1346 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "ElectricalCabinet"
-				(path "/c34866b5-fe82-42ea-9d09-ac7e183279a1"
-					(page "26")
 				)
 			)
 		)

@@ -2550,7 +2550,7 @@
 				(justify right)
 			)
 		)
-		(property "Ref" "Ref 300"
+		(property "Ref" "Ref 331"
 			(at 39.116 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2631,8 +2631,7 @@
 			)
 		)
 		(property "Ref" "Ref 215"
-			(at 40.64 71.12 0)
-			(hide yes)
+			(at 39.116 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2678,8 +2677,7 @@
 			)
 		)
 		(property "Ref" "Ref 214"
-			(at 40.64 68.58 0)
-			(hide yes)
+			(at 39.116 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

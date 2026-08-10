@@ -3,11 +3,11 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "ab3e45fc-a6f7-4767-8bb0-23a4fe72a632")
-	(paper "A4")
+	(paper "USLetter")
 	(lib_symbols)
 	(global_label "5000-1"
 		(shape input)
-		(at 55.88 6.35 180)
+		(at 35.56 11.43 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16,7 +16,7 @@
 		)
 		(uuid "a4b79634-f9af-4379-8a78-2101e076f24e")
 		(property "Intersheetrefs" "109"
-			(at 45.2749 6.35 0)
+			(at 24.9549 11.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28,7 +28,7 @@
 			)
 		)
 		(property "Ref" "Ref 109"
-			(at 45.72 6.35 0)
+			(at 25.4 11.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -41,7 +41,7 @@
 	)
 	(global_label "5000-3"
 		(shape input)
-		(at 55.88 13.97 180)
+		(at 35.56 19.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -50,7 +50,7 @@
 		)
 		(uuid "d5e94038-a20b-4ac5-b61c-e972962c99a1")
 		(property "Intersheetrefs" "333"
-			(at 45.2749 13.97 0)
+			(at 24.9549 19.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62,7 +62,7 @@
 			)
 		)
 		(property "Ref" "Ref 333"
-			(at 37.846 13.97 0)
+			(at 17.526 19.05 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -75,7 +75,7 @@
 	)
 	(global_label "5000-2"
 		(shape input)
-		(at 55.88 10.16 180)
+		(at 35.56 15.24 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -84,7 +84,7 @@
 		)
 		(uuid "f5f357bb-efea-45e3-8181-24e66b304292")
 		(property "Intersheetrefs" "212"
-			(at 45.2749 10.16 0)
+			(at 24.9549 15.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -96,7 +96,7 @@
 			)
 		)
 		(property "Ref" "Ref 212"
-			(at 37.846 10.16 0)
+			(at 17.526 15.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
