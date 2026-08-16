@@ -421,7 +421,7 @@
         "uuid": "c34866b5-fe82-42ea-9d09-ac7e183279a1"
       }
     ],
-    "used_designators": "#PWR1-6,T1-2,R1-8,#FLG1-2,1000BLOCK1,J1-14,F1-20,O1-2,U1-226,C1,D1-8,K1-8",
+    "used_designators": "#PWR1-6,T1-2,R1-136,#FLG1-34,1000BLOCK1,J1-35,F1-20,O1-2,U1-226,C1-17,D1-136,K1-136",
     "variants": []
   },
   "sheets": [
@@ -478,30 +478,6 @@
       "RelayBoard11"
     ],
     [
-      "bf09c8e6-04c7-4ea8-9c85-b0321bb0c3d7",
-      "RelayBoard12"
-    ],
-    [
-      "6d9434d8-b89b-4dca-9aa6-fb6eb126237d",
-      "RelayBoard13"
-    ],
-    [
-      "a9eaca14-1b23-4c8c-82d3-81df58f56a84",
-      "RelayBoard14"
-    ],
-    [
-      "3b179dde-dddc-41ce-9cef-e034eb09a34a",
-      "RelayBoard15"
-    ],
-    [
-      "ddcc41a1-8781-402b-bc7c-61989c07c6d3",
-      "RelayBoard16"
-    ],
-    [
-      "54ad3ac5-84ac-4e6d-a685-832e35ee3907",
-      "RelayBoard17"
-    ],
-    [
       "f5a34656-8055-4c42-8a09-ea9db2942985",
       "5000Block"
     ],
@@ -514,20 +490,12 @@
       "6100Block"
     ],
     [
-      "a5fd4270-ec42-4272-a6bb-c062e1587383",
-      "6110Block"
-    ],
-    [
       "4a264715-bccc-4b96-9142-d0be0711db55",
       "8300Block"
     ],
     [
       "765483da-5805-45fc-8bd1-776488c32096",
       "8200Block"
-    ],
-    [
-      "f6fb12df-a950-4f7a-a75e-570f1a64e422",
-      "8100Block"
     ]
   ],
   "text_variables": {},

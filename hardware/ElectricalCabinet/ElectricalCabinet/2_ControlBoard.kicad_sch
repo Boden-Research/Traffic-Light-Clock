@@ -2438,6 +2438,7 @@
 		)
 		(property "Ref" "Ref 212"
 			(at 31.242 60.96 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2472,6 +2473,7 @@
 		)
 		(property "Ref" "Ref 211"
 			(at 39.116 58.42 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2518,6 +2520,7 @@
 		)
 		(property "Ref" "Ref 2400"
 			(at 40.386 66.04 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2550,7 +2553,7 @@
 				(justify right)
 			)
 		)
-		(property "Ref" "Ref 300"
+		(property "Ref" "Ref 331"
 			(at 39.116 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2631,7 +2634,7 @@
 			)
 		)
 		(property "Ref" "Ref 215"
-			(at 40.64 71.12 0)
+			(at 39.116 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2678,7 +2681,7 @@
 			)
 		)
 		(property "Ref" "Ref 214"
-			(at 40.64 68.58 0)
+			(at 39.116 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
