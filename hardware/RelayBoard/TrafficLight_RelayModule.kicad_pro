@@ -582,11 +582,14 @@
   },
   "pcbnew": {
     "last_paths": {
+      "gencad": "",
       "idf": "",
       "netlist": "",
       "plot": "Gerber/",
+      "pos_files": "",
       "specctra_dsn": "",
       "step": "",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -709,7 +712,7 @@
         "uuid": "1583d36e-7f9b-422e-997f-f66818aa5e45"
       }
     ],
-    "used_designators": "#PWR1-3,R1-8,#FLG1-3,J1-4,OC1-2,U1-3,C1-3,K1-8,D1-8",
+    "used_designators": "#PWR1-8,J1-4,R1-8,#FLG1-3,OC1-2,U1-3,K1-8,C1-3,D1-8",
     "variants": []
   },
   "sheets": [
