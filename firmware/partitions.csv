@@ -1,0 +1,22 @@
+# ===================================
+# ESP32-S3 8MB CUSTOM PARTITION TABLE
+# ===================================
+# Name,     Type,  SubType, Offset,  Size,     Flags
+
+# Non-Volatile Storage (NVS) for WiFi credentials and data pairs (16 KB)
+nvs,        data,  nvs,     ,        0x4000,
+
+# OTA Data partition to track active slot (8 KB)
+otadata,    data,  ota,     ,        0x2000,
+
+# PHY Initialization data for calibrating RF/WiFi parameters (4 KB)
+phy_init,   data,  phy,     ,        0x1000,
+
+# Active Application Slot 0 (2.75 MB)
+ota_0,      app,   ota_0,   ,        0x2c0000,
+
+# Backup/Target Application Slot 1 (2.75 MB)
+ota_1,      app,   ota_1,   ,        0x2c0000,
+
+# Remaining Flash used as a SPIFFS filesystem storage drive (~2.43 MB)
+storage,    data,  spiffs,  ,        0x270000,
