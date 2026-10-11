@@ -130,7 +130,7 @@ esp_err_t CWiFi::Initialize() {
     err = esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &WiFiEventHandler, nullptr, &_eventGotIp);
     if (err != ESP_OK) return err;
 
-    ESP_LOGI(TAG, "Wi-Fi initialized");
+    ESP_LOGI(TAG, "Wi-Fi initialized successfully");
     _wifiInitialized = true;
 
     return ESP_OK;
@@ -145,7 +145,7 @@ esp_err_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
     if (strlen(pass) + 1 > SIZEOFMEMBER(wifi_config_t, ap.password)) // +1 for null terminator
         return ESP_ERR_INVALID_SIZE;
 
-    ESP_LOGI(TAG, "Wi-Fi access point starting...");
+    ESP_LOGI(TAG, "Starting Wi-Fi access point...");
 
     // Initialize Wi-Fi access point
     _netifAP = esp_netif_create_default_wifi_ap();
@@ -170,11 +170,13 @@ esp_err_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
     err = esp_wifi_start();
     if (err != ESP_OK) return err;
 
+    ESP_LOGI(TAG, "Wi-Fi access point started successfully");
+
     return ESP_OK;
 }
 
 void CWiFi::StopAP() {
-    ESP_LOGI(TAG, "Wi-Fi access point stopping...");
+    ESP_LOGI(TAG, "Stopping Wi-Fi access point...");
     esp_wifi_stop();
 }
 
@@ -187,7 +189,7 @@ esp_err_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
     if (strlen(pass) > SIZEOFMEMBER(wifi_config_t, sta.password))
         return ESP_ERR_INVALID_SIZE;
 
-    ESP_LOGI(TAG, "Wi-Fi station connecting...");
+    ESP_LOGI(TAG, "Starting Wi-Fi station...");
 
     // Initialize Wi-Fi station
     _netifSTA = esp_netif_create_default_wifi_sta();
@@ -209,10 +211,12 @@ esp_err_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
     err = esp_wifi_start();
     if (err != ESP_OK) return err;
 
+    ESP_LOGI(TAG, "Wi-Fi station started successfully");
+
     return ESP_OK;
 }
 
 void CWiFi::DisconnectSTA() {
-    ESP_LOGI(TAG, "Wi-Fi station disconnecting...");
+    ESP_LOGI(TAG, "Stopping Wi-Fi station...");
     esp_wifi_stop();
 }

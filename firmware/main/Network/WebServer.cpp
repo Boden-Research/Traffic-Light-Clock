@@ -256,7 +256,7 @@ static esp_err_t SendFile(httpd_req_t*req, const char* file) {
 esp_err_t CWebServer::Initialize() {
     esp_err_t result;
 
-    ESP_LOGI(TAG, "Mounting file system");
+    ESP_LOGI(TAG, "Initializing web server...");
 
     // Mount SPIFFS
     esp_vfs_spiffs_conf_t conf = {
@@ -278,9 +278,10 @@ esp_err_t CWebServer::Initialize() {
         ESP_LOGE(TAG, "Failed to verify file system: %s", esp_err_to_name(result));
         return result;
     }
-    ESP_LOGI(TAG, "File system: Size=%d, Used=%d", total, used);
+    //ESP_LOGI(TAG, "File system: Size=%d, Used=%d", total, used);
 
-    ESP_LOGI(TAG, "Starting http server");
+    ESP_LOGI(TAG, "Web server initialized successfully");
+    ESP_LOGI(TAG, "Starting web server...");
 
     // Set up web server config
     httpd_config_t httpdConfig = HTTPD_DEFAULT_CONFIG();
@@ -308,6 +309,8 @@ esp_err_t CWebServer::Initialize() {
         httpd_stop(__httpdHandle);
         return result;
     }
+
+    ESP_LOGI(TAG, "Web server started successfully");
 
     return ESP_OK;
 }

@@ -15,6 +15,7 @@ typedef struct {
     WebServerApiHandler_t Handler;
 } WebServerApiHandlerRegistration_t;
 
+/// @brief Singleton class for providing an HTTP server implementation with API endpoint callbacks.
 class CWebServer {
     public:
         static constexpr const char* TAG = "CWebServer";

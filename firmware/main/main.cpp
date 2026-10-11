@@ -5,10 +5,16 @@
 
 #include "Network/WiFi.hpp"
 #include "Network/WebServer.hpp"
+#include "Hardware/LightDriver.hpp"
 
-#define AP_SSID    "TestNetwork"
-#define AP_KEY     "password"
-#define AP_CHANNEL 1
+#define AP_SSID           "TestNetwork"
+#define AP_KEY            "password"
+#define AP_CHANNEL        1
+
+#define LIGHTS_GPIO_DATA  5
+#define LIGHTS_GPIO_CLK   6
+#define LIGHTS_GPIO_LOAD  7
+#define LIGHTS_NUM_MOD    4
 
 static const char* TAG = "Main";
 
@@ -61,6 +67,20 @@ extern "C" void app_main(void)
     err = WebServer.RegisterAPIEndpoint("/hello", HTTP_GET, ApiEndpointHello);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to register \"hello\" endpoint: %s", esp_err_to_name(err));
+        abort();
+    }
+
+    // Initialize light driver
+    err = LightDriver.Initialize(LIGHTS_GPIO_DATA, LIGHTS_GPIO_CLK, LIGHTS_GPIO_LOAD, LIGHTS_NUM_MOD);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize light driver: %s", esp_err_to_name(err));
+        abort();
+    }
+
+    // Start light driver with all outputs off
+    err = LightDriver.Clear();
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to clear light driver state: %s", esp_err_to_name(err));
         abort();
     }
 
