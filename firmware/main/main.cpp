@@ -14,7 +14,7 @@
 #define LIGHTS_GPIO_DATA  5
 #define LIGHTS_GPIO_CLK   6
 #define LIGHTS_GPIO_LOAD  7
-#define LIGHTS_NUM_MOD    4
+#define LIGHTS_NUM_MOD    11
 
 static const char* TAG = "Main";
 

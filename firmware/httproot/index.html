@@ -1,20 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My First Website</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Welcome to My Website</h1>
-        </header>
-        <main>
-            <p>This is the main content area of your index file. You can start adding text, images, and links here.</p>
-        </main>
-        <footer>
-            <p>&copy; 2026 My Website</p>
-        </footer>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segment Light Control</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="panel">
+        <h1>Light Control</h1>
+
+        <div class="clock" aria-label="Interactive light display">
+            <div class="digit" data-digit="0"></div>
+            <div class="digit" data-digit="1"></div>
+
+            <div class="colon" aria-label="Colon lights">
+                <button
+                    type="button"
+                    class="colon-dot light"
+                    data-light-id="X0"
+                    aria-label="Colon light X0"
+                    aria-pressed="false"
+                    title="X0"
+                ></button>
+                <button
+                    type="button"
+                    class="colon-dot light"
+                    data-light-id="X1"
+                    aria-label="Colon light X1"
+                    aria-pressed="false"
+                    title="X1"
+                ></button>
+            </div>
+
+            <div class="digit" data-digit="2"></div>
+            <div class="digit" data-digit="3"></div>
+        </div>
+
+        <p class="instructions">
+            Click any light to toggle it on or off.
+        </p>
+
+        <div class="legend">
+            <span><i class="legend-light red"></i> Red</span>
+            <span><i class="legend-light yellow"></i> Yellow</span>
+            <span><i class="legend-light green"></i> Green</span>
+        </div>
+
+        <p id="api-status" role="status">Ready</p>
+    </main>
+</body>
 </html>

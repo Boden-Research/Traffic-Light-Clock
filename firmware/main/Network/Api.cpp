@@ -10,6 +10,8 @@
 
 #include "Api.hpp"
 
+#define LIGHTS_NUM_MOD    11
+
 // Singleton instance of CApi class, available everywhere
 CApi Api;
 
@@ -88,7 +90,7 @@ static esp_err_t ApiEndpointLight(httpd_req_t *req, const char* path, const char
     }
 
     // Validate the array size is correct
-    if (cJSON_GetArraySize(outputsArray) != 4) {
+    if (cJSON_GetArraySize(outputsArray) != LIGHTS_NUM_MOD) {
         // Array size is not correct
         ESP_LOGE(CApi::TAG, "Key 'outputs' has incorrect array size");
         err = httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, "Incorrect number of outputs");
@@ -97,7 +99,7 @@ static esp_err_t ApiEndpointLight(httpd_req_t *req, const char* path, const char
     }
 
     // Allocate memory for the output state buffer
-    outputStates = (uint8_t*)malloc(4);
+    outputStates = (uint8_t*)malloc(LIGHTS_NUM_MOD);
 
     // Parse out the output state
     outputIndex = 0;
