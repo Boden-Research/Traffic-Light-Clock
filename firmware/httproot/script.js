@@ -51,11 +51,11 @@ function getLightBit(lightId) {
 /*
  * Build the complete bitstream in the required order:
  *
- * Digit 0: A, B, C, D, E, F, G
- * Digit 1: A, B, C, D, E, F, G
- * Colon:   X0, X1
- * Digit 2: A, B, C, D, E, F, G
- * Digit 3: A, B, C, D, E, F, G
+ * Digit 0 : A, B, C, D, E, F, G
+ * Digit 1 : A, B, C, D, E, F, G
+ * Colon   : X0, X1
+ * Digit 2 : A, B, C, D, E, F, G
+ * Digit 3 : A, B, C, D, E, F, G
  *
  * Each segment contains red, yellow, green.
  * Bits are packed LSB-first into bytes.
