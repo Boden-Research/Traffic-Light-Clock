@@ -1,0 +1,106 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "b9226109-f7a0-433e-aec9-ef5c54c3c2ad")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 110.49 64.77)
+		(size 52.07 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6ccc99a3-ad8c-4148-946e-5f6e32605882")
+		(property "Sheetname" "TestBoard_Lights"
+			(at 110.49 64.0584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TestBoard_Lights.kicad_sch"
+			(at 110.49 103.4546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "TestBoard"
+				(path "/b9226109-f7a0-433e-aec9-ef5c54c3c2ad"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 55.88 64.77)
+		(size 52.07 38.1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e4a717c4-02a4-4706-93ee-b0522bde9780")
+		(property "Sheetname" "TestBoard_Controller"
+			(at 55.88 64.0584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TestBoard_Controller.kicad_sch"
+			(at 55.88 103.4546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "TestBoard"
+				(path "/b9226109-f7a0-433e-aec9-ef5c54c3c2ad"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
