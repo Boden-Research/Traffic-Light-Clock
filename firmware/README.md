@@ -103,10 +103,110 @@ Sets the current output state of the lights.
 
 This is a temporary API endpoint for testing/development.
 
-#### Data Format
-
+#### Request
 ```json
 {
     "outputs": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+```
+
+#### Response
+
+```json
+{
+    "Status": "OK"
+}
+```
+### GET: /API/animations
+
+Retrieves all available animations.
+
+#### Response
+
+```json
+[
+    {
+        "Name": "Animation 1",
+        "FrameRate": 10.0,
+        "Frames": [
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        ]
+    },
+    {
+        "Name": "Animation 2",
+        "FrameRate": 10.0,
+        "Frames": [
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        ]
+    },
+    {
+        "Name": "Test Animation",
+        "FrameRate": 10.0,
+        "Frames": [
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+        ]
+    },
+]
+```
+
+### GET: /API/animations?name=xxx
+
+Gets the animation definition, identified by the animation name.
+
+#### Response
+
+```json
+{
+    "Name": "xxx",
+    "FrameRate": 10.0,
+    "Frames": [
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    ]
+}
+```
+
+### POST: /API/animations
+
+Creates or updates an animation.
+
+#### Request
+
+```json
+{
+    "Name": "xxx",
+    "FrameRate": 10.0,
+    "Frames": [
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    ]
+}
+```
+
+#### Response
+
+```json
+{
+    "Status": "OK"
+}
+```
+
+### DELETE: /API/animations?name=xxx
+
+Deletes an existing animation.
+
+#### Response
+
+```json
+{
+    "Status": "OK"
 }
 ```

@@ -22,11 +22,11 @@ list(REMOVE_DUPLICATES INCLUDE_DIRS)
 idf_component_register(
     SRCS ${SOURCES}
     INCLUDE_DIRS ${INCLUDE_DIRS}
-    REQUIRES "spiffs" "esp_http_server" "esp_wifi" "esp_netif" "nvs_flash" "esp_event" "driver"
+    REQUIRES "spiffs" "esp_http_server" "esp_wifi" "esp_netif" "nvs_flash" "esp_event" "driver" "littlefs"
 )
 
 # Compile the httproot folder into a SPIFFS partition for flashing
-spiffs_create_partition_image(storage "../httproot" FLASH_IN_PROJECT)
+spiffs_create_partition_image(www "../httproot" FLASH_IN_PROJECT)
 
 # Enable all warnings as errors for this project
 target_compile_options(${COMPONENT_LIB} PRIVATE -Werror)

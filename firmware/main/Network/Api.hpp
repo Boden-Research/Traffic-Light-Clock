@@ -1,6 +1,6 @@
 #pragma once
 
-#include <esp_err.h>
+#include "../DataTypes.hpp"
 
 /// @brief Singleton class for handing API requests from the website.
 class CApi {
@@ -10,7 +10,7 @@ class CApi {
         /// @brief Initializes the API handler, registering the required API endpoints.
         /// @return 
         /// @return ESP_OK on success, otherwise returns an error code.
-        esp_err_t Initialize();
+        Result_t Initialize();
 
 };
 
