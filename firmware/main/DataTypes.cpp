@@ -4,10 +4,13 @@
 
 #include <cJSON.h>
 #include <esp_err.h>
+#include <esp_log.h>
 #include <esp_http_server.h>
 
 #include "DataTypes.hpp"
 #include "config.h"
+
+static const char* TAG = "DataTypes";
 
 const std::string_view GetResultDescription(Result_t result) {
     switch (result) {
@@ -76,10 +79,14 @@ Result_t EspErrToResult(esp_err_t err) {
 
 Result<LightStatePtr> ParseLightState(const cJSON& json) {
     // Sanity checks
-    if (!cJSON_IsArray(&json))
+    if (!cJSON_IsArray(&json)) {
+        ESP_LOGE(TAG, "Expected JSON array for light state");
         return Result<LightStatePtr>::Err(Result_t::InvalidJson);
-    if (cJSON_GetArraySize(&json) != LIGHT_STATE_NUM_BYTES)
+    }
+    if (cJSON_GetArraySize(&json) != LIGHT_STATE_NUM_BYTES) {
+        ESP_LOGE(TAG, "Expected JSON array of size %d for light state", LIGHT_STATE_NUM_BYTES);
         return Result<LightStatePtr>::Err(Result_t::InvalidJson);
+    }
 
     try {
         // Create the state
@@ -89,16 +96,20 @@ Result<LightStatePtr> ParseLightState(const cJSON& json) {
         int stateIndex = 0;
         for (const cJSON* stateItem = json.child; stateItem != nullptr; stateItem = stateItem->next) {
             // Validate we're a number
-            if (!cJSON_IsNumber(stateItem))
+            if (!cJSON_IsNumber(stateItem)) {
+                ESP_LOGE(TAG, "Expected number in light state array");
                 return Result<LightStatePtr>::Err(Result_t::InvalidJson);
+            }
 
             // Get the value
             const double value = stateItem->valuedouble;
 
             // Validate the value
             if (!std::isfinite(value) || value < 0.0 ||
-                value > 255.0 || std::floor(value) != value)
+                value > 255.0 || std::floor(value) != value) {
+                    ESP_LOGE(TAG, "Invalid value in light state array: %f", value);
                     return Result<LightStatePtr>::Err(Result_t::InvalidJson);
+                }
 
             // Save the required output state at current index
             lightState->at(stateIndex++) = static_cast<uint8_t>(value);
@@ -107,13 +118,14 @@ Result<LightStatePtr> ParseLightState(const cJSON& json) {
         // Success
         return Result<LightStatePtr>::Ok(std::move(lightState));
     } catch (const std::bad_alloc&) {
+        ESP_LOGE(TAG, "Out of memory while parsing light state");
         return Result<LightStatePtr>::Err(Result_t::OutOfMemory);
     }
 }
 
 Result<CJsonPtr> SerializeLightState(const LightState_t& state) {
     try {
-        // Crate array for frame
+        // Create array for frame
         CJsonPtr output(cJSON_CreateArray(), &cJSON_Delete);
         if (!output)
             return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
@@ -134,14 +146,17 @@ Result<CJsonPtr> SerializeLightState(const LightState_t& state) {
         // Success
         return Result<CJsonPtr>::Ok(std::move(output));
     } catch (const std::bad_alloc&) {
+        ESP_LOGE(TAG, "Out of memory while serializing light state");
         return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
     }
 }
 
 Result<LightAnimationPtr> ParseLightAnimation(const cJSON& json) {
     // Sanity checks
-    if (!cJSON_IsObject(&json))
+    if (!cJSON_IsObject(&json)) {
+        ESP_LOGE(TAG, "Expected JSON object for light animation");
         return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+    }
 
     try {
         // Parse out FrameRate element
@@ -149,25 +164,33 @@ Result<LightAnimationPtr> ParseLightAnimation(const cJSON& json) {
         if (!frameRate || !cJSON_IsNumber(frameRate) ||
             !std::isfinite(frameRate->valuedouble) ||
             frameRate->valuedouble <= 0.0 ||
-            frameRate->valuedouble > std::numeric_limits<float>::max())
+            frameRate->valuedouble > std::numeric_limits<float>::max()) {
+                ESP_LOGE(TAG, "Invalid FrameRate value in light animation");
                 return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+            }
         
         // Convert FrameRate to float
         const float frameRateValue = static_cast<float>(frameRate->valuedouble);
 
         // Validate converted FrameRate
-        if (!std::isfinite(frameRateValue) || frameRateValue <= 0.0)
+        if (!std::isfinite(frameRateValue) || frameRateValue <= 0.0) {
+            ESP_LOGE(TAG, "Invalid converted FrameRate value in light animation");
             return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+        }
 
         // Get the Frames array
         const cJSON* frames = cJSON_GetObjectItemCaseSensitive(&json, "Frames");
-        if (!frames || !cJSON_IsArray(frames))
+        if (!frames || !cJSON_IsArray(frames)) {
+            ESP_LOGE(TAG, "Expected Frames array in light animation");
             return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+        }
 
         // Get the number of frames
         const int numFrames = cJSON_GetArraySize(frames);
-        if (numFrames <= 0 || numFrames > ANIMATION_MAX_NUM_FRAMES)
+        if (numFrames <= 0 || numFrames > ANIMATION_MAX_NUM_FRAMES) {
+            ESP_LOGE(TAG, "Invalid number of frames in light animation");
             return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+        }
 
         // Allocate animation
         LightAnimationPtr animation = std::make_unique<LightAnimation_t>();
@@ -182,8 +205,10 @@ Result<LightAnimationPtr> ParseLightAnimation(const cJSON& json) {
         const cJSON* frame;
         cJSON_ArrayForEach(frame, frames) {
             // Sanity check
-            if (!cJSON_IsArray(frame) || cJSON_GetArraySize(frame) != LIGHT_STATE_NUM_BYTES)
+            if (!cJSON_IsArray(frame) || cJSON_GetArraySize(frame) != LIGHT_STATE_NUM_BYTES) {
+                ESP_LOGE(TAG, "Invalid frame in light animation");
                 return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+            }
 
             // Create the frame state
             LightState_t parsedFrame {};
@@ -193,16 +218,20 @@ Result<LightAnimationPtr> ParseLightAnimation(const cJSON& json) {
             const cJSON* stateItem;
             cJSON_ArrayForEach(stateItem, frame) {
                 // Validate we're a number
-                if (!cJSON_IsNumber(stateItem))
+                if (!cJSON_IsNumber(stateItem)) {
+                    ESP_LOGE(TAG, "Invalid state item in light animation");
                     return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+                }
 
                 // Get the value
                 const double value = stateItem->valuedouble;
 
                 // Validate the value
                 if (!std::isfinite(value) || value < 0.0 ||
-                    value > 255.0 || std::floor(value) != value)
+                    value > 255.0 || std::floor(value) != value) {
+                        ESP_LOGE(TAG, "Invalid state value in light animation");
                         return Result<LightAnimationPtr>::Err(Result_t::InvalidJson);
+                }
 
                 // Save the required output state at current index
                 parsedFrame.at(stateIndex++) = static_cast<uint8_t>(value);
@@ -224,60 +253,79 @@ Result<CJsonPtr> SerializeLightAnimation(const std::string_view name, const Ligh
     if (name.empty())
         return Result<CJsonPtr>::Err(Result_t::InvalidArg);
     if (!std::isfinite(animation.FrameRate) || animation.FrameRate <= 0.0f ||
-        animation.Frames.empty() || animation.Frames.size() > ANIMATION_MAX_NUM_FRAMES)
+        animation.Frames.empty() || animation.Frames.size() > ANIMATION_MAX_NUM_FRAMES) {
+            ESP_LOGE(TAG, "Invalid animation frame rate/number of frames");
             return Result<CJsonPtr>::Err(Result_t::InvalidArg);
+        }
 
     try {
         // Create output object to hold data
         CJsonPtr output(cJSON_CreateObject(), &cJSON_Delete);
-        if (!output)
+        if (!output) {
+            ESP_LOGE(TAG, "Failed to create JSON object for light animation");
             return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+        }
 
         // Serialize the animation name
         std::string str(name);
-        if (!cJSON_AddStringToObject(output.get(), "Name", str.c_str()))
+        if (!cJSON_AddStringToObject(output.get(), "Name", str.c_str())) {
+            ESP_LOGE(TAG, "Failed to add animation name to JSON object");
             return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+        }
 
         // Serialize the frame rate
-        if (!cJSON_AddNumberToObject(output.get(), "FrameRate", animation.FrameRate))
+        if (!cJSON_AddNumberToObject(output.get(), "FrameRate", animation.FrameRate)) {
+            ESP_LOGE(TAG, "Failed to add frame rate to JSON object");
             return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+        }
 
         // Create array to hold frames
         // No smart pointer, because "output" already owns it
         cJSON* frameArray = cJSON_AddArrayToObject(output.get(), "Frames");
-        if (!frameArray)
+        if (!frameArray) {
+            ESP_LOGE(TAG, "Failed to create JSON array for frames");
             return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+        }
 
         // Serialize the frame sequence
         for (const LightState_t& state : animation.Frames) {
             // Crate array for frame
             CJsonPtr stateJson(cJSON_CreateArray(), &cJSON_Delete);
-            if (!stateJson)
+            if (!stateJson) {
+                ESP_LOGE(TAG, "Failed to create JSON array for frame");
                 return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+            }
 
             // Serialize a single frame
             for (uint8_t stateByte : state) {
                 // Create number for this light state
                 CJsonPtr stateItem(cJSON_CreateNumber(stateByte), &cJSON_Delete);
-                if (!stateItem)
+                if (!stateItem) {
+                    ESP_LOGE(TAG, "Failed to create JSON number for light state");
                     return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+                }
 
                 // Add the light state byte to the frame
-                if (!cJSON_AddItemToArray(stateJson.get(), stateItem.get()))
+                if (!cJSON_AddItemToArray(stateJson.get(), stateItem.get())) {
+                    ESP_LOGE(TAG, "Failed to add light state to JSON array");
                     return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+                }
                 stateItem.release();
             }
 
             // Add the frame to the output
-            if (!cJSON_AddItemToArray(frameArray, stateJson.get()))
+            if (!cJSON_AddItemToArray(frameArray, stateJson.get())) {
                 // Not really an OOM error as no memory is allocated, but this causes a 500 response to the caller, which is appropriate
+                ESP_LOGE(TAG, "Failed to add frame to JSON array");
                 return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
+            }
             stateJson.release();
         }
 
         // Success
         return Result<CJsonPtr>::Ok(std::move(output));
     } catch (const std::bad_alloc&) {
+        ESP_LOGE(TAG, "Out of memory");
         return Result<CJsonPtr>::Err(Result_t::OutOfMemory);
     }
 }

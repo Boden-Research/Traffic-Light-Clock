@@ -1,3 +1,10 @@
+#include <cmath>
+#include <climits>
+#include <array>
+#include <vector>
+#include <memory>
+#include <utility>
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -11,44 +18,10 @@
 
 #include "LightDriver.hpp"
 
-#define CLOCK_DELAY_US 10
+#define SPI_CLOCK_SPEED_HZ     1e6 // 1MHz
 
 // Singleton instance of CLightDriver class, available everywhere
 CLightDriver LightDriver;
-
-static void LogLightState(LightState_t& state) {
-    ESP_LOG_BUFFER_HEX_LEVEL(CLightDriver::TAG, state.data(), 11, ESP_LOG_DEBUG);
-}
-
-static void SendBit(bool bit, gpio_num_t dataPin, gpio_num_t clockPin) {
-    gpio_set_level(dataPin, bit ? 1 : 0);
-    esp_rom_delay_us(CLOCK_DELAY_US);
-    gpio_set_level(clockPin, 1);
-    esp_rom_delay_us(CLOCK_DELAY_US);
-    gpio_set_level(clockPin, 0);
-    esp_rom_delay_us(CLOCK_DELAY_US);
-}
-
-static void SendByte(uint8_t byte, gpio_num_t dataPin, gpio_num_t clockPin) {
-    for (uint8_t bit = 0; bit < 7; bit++) {
-        SendBit(byte & 0x01, dataPin, clockPin);
-        byte >>= 1;
-    }
-}
-
-static void SendLoad(gpio_num_t loadPin) {
-    gpio_set_level(loadPin, 1);
-    esp_rom_delay_us(CLOCK_DELAY_US);
-    gpio_set_level(loadPin, 0);
-}
-
-static void SendBuffer(uint8_t* buffer, size_t bufferLen, gpio_num_t dataPin, gpio_num_t clockPin, gpio_num_t loadPin) {
-    while (bufferLen > 0) {
-        SendByte(*buffer++, dataPin, clockPin);
-        bufferLen--;
-    }
-    SendLoad(loadPin);
-}
 
 Result_t CLightDriver::Initialize(int dataPin, int clkPin, int loadPin, int numModules)
 {
@@ -64,21 +37,6 @@ Result_t CLightDriver::Initialize(int dataPin, int clkPin, int loadPin, int numM
     _loadPin = (gpio_num_t)loadPin;
     _numModules = numModules;
 
-    // Set up the LOAD pin
-    gpio_config_t gpioConfig = {};
-    gpioConfig.pin_bit_mask = (1ULL << _dataPin) | (1ULL << _clkPin) | (1ULL << _loadPin);
-    gpioConfig.mode = GPIO_MODE_OUTPUT;
-    gpioConfig.pull_up_en = GPIO_PULLUP_DISABLE;
-    gpioConfig.pull_down_en = GPIO_PULLDOWN_ENABLE;
-    gpioConfig.intr_type = GPIO_INTR_DISABLE;
-    err = gpio_config(&gpioConfig);
-    if (err != ESP_OK)
-        return Result_t::InitLightFailed;
-    gpio_set_level(_dataPin, 0);
-    gpio_set_level(_clkPin, 0);
-    gpio_set_level(_loadPin, 0);
-
-/*
     // Set up the SPI bus
     spi_bus_config_t busConfig = {};
     busConfig.miso_io_num = -1; // Not used
@@ -88,85 +46,199 @@ Result_t CLightDriver::Initialize(int dataPin, int clkPin, int loadPin, int numM
     busConfig.quadhd_io_num = -1;
     busConfig.max_transfer_sz = numModules;
     err = spi_bus_initialize(SPI2_HOST, &busConfig, SPI_DMA_CH_AUTO);
-    if (err != ESP_OK)
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to initialize SPI bus");
         return Result_t::InitLightFailed;
+    }
 
     // Configure and add the SPI device
     spi_device_interface_config_t deviceConfig = {};
-    deviceConfig.clock_speed_hz = 1e3; // 1e6 == 1,000,000 == 1MHz
+    deviceConfig.clock_speed_hz = SPI_CLOCK_SPEED_HZ;
     deviceConfig.mode = 0; // CPOL=0, CPHA=0: Clock idle low, active high; data clocked in on low-to-high transition
-    deviceConfig.spics_io_num = -1;
+    deviceConfig.spics_io_num = (int)_loadPin;
     deviceConfig.queue_size = 1;
     deviceConfig.flags = SPI_DEVICE_NO_DUMMY; // Not reading anything back, so don't care about inserting dummy bits
     err = spi_bus_add_device(SPI2_HOST, &deviceConfig, &_spiHandle);
-    if (err != ESP_OK)
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to add SPI device");
         return Result_t::InitLightFailed;
-*/
+    }
+
+    // Create a mutex for protecting animation state
+    _animationMutex = xSemaphoreCreateMutex();
+    if (_animationMutex == nullptr) {
+        ESP_LOGE(TAG, "Failed to create animation mutex");
+        return Result_t::InitLightFailed;
+    }
+
+    // Create the animation timer
+    esp_timer_create_args_t timerArgs = {};
+    timerArgs.callback = &CLightDriver::AnimationTimerCallback;
+    timerArgs.arg = this;
+    timerArgs.dispatch_method = ESP_TIMER_TASK;
+    timerArgs.name = "LightAnim";
+    err = esp_timer_create(&timerArgs, &_animationTimer);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to create animation timer");
+        return Result_t::InitLightFailed;
+    }
 
     ESP_LOGI(TAG, "Light driver initialized successfully");
 
     return Result_t::OK;
 }
 
-Result_t CLightDriver::Update(LightState_t& state) {
-//    Result_t result;
+Result_t CLightDriver::Update(const LightState_t& state) {
+    // Reverse the buffer to that the last byte in the buffer is sent first
+    // Because of the cascading nature of the shift registers, the last module in the chain needs to receive its data first
+    LightState_t reversedState = state;
+    std::reverse(reversedState.begin(), reversedState.end());
 
-    LogLightState(state);
+    // Prepare the SPI transaction structure
+    spi_transaction_t transaction = {};
+    transaction.length = _numModules * 8; // Length in bits
+    transaction.tx_buffer = reversedState.data();
 
-    SendBuffer(state.data(), _numModules, _dataPin, _clkPin, _loadPin);
-    SendBuffer(state.data(), _numModules, _dataPin, _clkPin, _loadPin);
-    SendBuffer(state.data(), _numModules, _dataPin, _clkPin, _loadPin);
-
-/*
-    // Set up the transaction
-    spi_transaction_t tx = {};
-    tx.length = _numModules;
-    tx.tx_buffer = state.data();
-
-    // Transmit the new state and return result
-    result = EspErrToResult(spi_device_transmit(_spiHandle, &tx));
-    if (result != Result_t::OK)
-        return result;
-
-
-    // Pulse the LOAD pin
-    // TODO: Is there a cleaner way to do this?
-    gpio_set_level(_loadPin, 1);
-    vTaskDelay(1);
-    gpio_set_level(_loadPin, 0);
-*/
-
-    return Result_t::OK;
+    // Transmit the buffer over SPI
+    return EspErrToResult(spi_device_transmit(_spiHandle, &transaction));
 }
 
 Result_t CLightDriver::Clear() {
-//    esp_err_t err;
+    LightState_t state {};
 
-    // Create buffer for holding output values
-    uint8_t* buff = (uint8_t*)malloc(_numModules);
-    if (!buff)
-        return Result_t::OutOfMemory; // Out of memory
+    return Update(state);
+}
 
-    // Zero out the buffer
-    memset(buff, 0, _numModules);
+Result_t CLightDriver::StartAnimation(LightAnimationPtr animation) {
+    // Sanity checks, round 1
+    if (!animation) {
+        ESP_LOGE(TAG, "Invalid animation pointer");
+        return Result_t::InvalidArg;
+    }
 
-    SendBuffer(buff, _numModules, _dataPin, _clkPin, _loadPin);
-/*
-    // Set up a transaction to send new state
-    spi_transaction_t tx = {};
-    tx.length = _numModules;
-    tx.tx_buffer = buff;
+    // Take ownership of the animation object, even if we discard it later
+    LightAnimationPtr tempAnimation = std::move(animation);
 
-    // Transmit the new state and return result
-    err = spi_device_transmit(_spiHandle, &tx);
-*/
+    // Sanity checks, round 2
+    if (!std::isfinite(tempAnimation->FrameRate) ||
+        tempAnimation->FrameRate <= 0.0f ||
+        tempAnimation->Frames.empty() ||
+        _animationTimer == nullptr ||
+        _animationMutex == nullptr) {
+            ESP_LOGE(TAG, "Invalid animation state or uninitialized resources");
+            return Result_t::InvalidArg;
+        }
 
-    // Clean up buffer
-    // Do this whether transmission succeeds or fails
-    free(buff);
-    buff = nullptr;
+    ESP_LOGD(TAG, "Starting new animation: FrameRate=%.2f FPS, NumFrames=%zu", tempAnimation->FrameRate, tempAnimation->Frames.size());
 
-    // Return result
-//    return EspErrToResult(err);
+    // Stop the previous schedule before replacing its state
+    esp_err_t err = esp_timer_stop(_animationTimer);
+    if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
+        ESP_LOGE(TAG, "Failed to stop previous animation timer");
+        return Result_t::Failed;
+    }
+
+    // Acquire the animation mutex to ensure exclusive access to the animation state
+    xSemaphoreTake(_animationMutex, portMAX_DELAY);
+    
+    // Store the animation and mark it as playing
+    _animation = std::move(tempAnimation);
+    _animationStartUs = esp_timer_get_time();
+    _currentFrame = 0;
+    _animationPlaying = true;
+
+    // Immediately display the first frame of the new animation
+    // Remember the result for later checking outside the critical section
+    Result_t result = Update(_animation->Frames[0]);
+
+    // Release the animation mutex after updating the state
+    xSemaphoreGive(_animationMutex);
+
+    // Check if updating the first frame succeeded
+    if (result != Result_t::OK) {
+        // Failed to update the initial frame
+        ESP_LOGE(TAG, "Failed to start animation: initial frame update failed");
+
+        // No animation currently playing
+        xSemaphoreTake(_animationMutex, portMAX_DELAY);
+        _animationPlaying = false;
+        xSemaphoreGive(_animationMutex);
+
+        // Return failure reason to the caller
+        return result;
+    }
+
+    // Periodic callback interval, in microseconds
+    const uint64_t periodUs = static_cast<uint64_t>(1.0e6 / _animation->FrameRate); // 1MHz tick rate
+
+    // Start the periodic timer for the animation
+    err = esp_timer_start_periodic(_animationTimer, periodUs);
+    if (err != ESP_OK) {
+        // Failed to start the periodic timer
+        ESP_LOGE(TAG, "Failed to start animation: timer start failed");
+
+        // Mark the animation as not playing before returning
+        xSemaphoreTake(_animationMutex, portMAX_DELAY);
+        _animationPlaying = false;
+        xSemaphoreGive(_animationMutex);
+
+        // Return failure reason to the caller
+        return Result_t::InitLightFailed;
+    }
+
+    ESP_LOGD(TAG, "Animation started successfully: FrameRate=%.2f FPS, NumFrames=%zu", _animation->FrameRate, _animation->Frames.size());
+
+    // Success
     return Result_t::OK;
+}
+
+void CLightDriver::AnimationTimerCallback(void* arg)
+{
+    CLightDriver* self = static_cast<CLightDriver*>(arg);
+
+    // Acquire the animation mutex to safely check the animation state
+    xSemaphoreTake(self->_animationMutex, portMAX_DELAY);
+
+    if (!self->_animationPlaying) {
+        // Nothing to do
+        xSemaphoreGive(self->_animationMutex);
+        esp_timer_stop(self->_animationTimer);
+        return;
+    }
+
+    // Calculate the elapsed time since the animation started, in microseconds
+    const int64_t elapsedUs = esp_timer_get_time() - self->_animationStartUs;
+
+    // Determine the current frame index based on the elapsed time and frame rate
+    const size_t frameIndex = static_cast<size_t>(elapsedUs * self->_animation->FrameRate / 1000000.0);
+
+    // If the frame index exceeds the number of frames, stop the animation
+    if (frameIndex >= self->_animation->Frames.size()) {
+        // Animation has finished, stop it
+        self->_animationPlaying = false;
+        xSemaphoreGive(self->_animationMutex);
+
+        esp_timer_stop(self->_animationTimer);
+
+        return;
+    }
+
+    if (frameIndex != self->_currentFrame) {
+        // Update the light to the current frame
+        Result_t result = self->Update(self->_animation->Frames[frameIndex]);
+
+        if (result == Result_t::OK)
+            // Update the current frame index only if the update was successful
+            self->_currentFrame = frameIndex;
+        else {
+            // Failed to update the light, stop the animation
+            self->_animationPlaying = false;
+            xSemaphoreGive(self->_animationMutex);
+            esp_timer_stop(self->_animationTimer);
+            return;
+        }
+    }
+
+    // Release the animation mutex after processing the current frame
+    xSemaphoreGive(self->_animationMutex);
 }

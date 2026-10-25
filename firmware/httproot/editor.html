@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="editor.css">
+    <script src="editor.js" defer></script>
+</head>
+<body>
+    <main class="panel">
+        <h1>Animation Editor</h1>
+
+        <nav>
+            <a href="index.html">Light Control</a>
+            <a href="animations.html">Animations</a>
+        </nav>
+
+        <div class="editor-row">
+            <select id="load-select" aria-label="Stored animations"></select>
+            <button type="button" id="load-button">Load</button>
+            <button type="button" id="refresh-button">Refresh</button>
+            <button type="button" id="new-button">New</button>
+        </div>
+
+        <div class="editor-row">
+            <label for="name-input">Name</label>
+            <input id="name-input" type="text" autocomplete="off" spellcheck="false" maxlength="64">
+            <label for="rate-input">FPS</label>
+            <input id="rate-input" type="number" min="0.1" step="0.1" value="10">
+        </div>
+
+        <div class="clock" aria-label="Frame editor display">
+            <div class="digit" data-digit="0"></div>
+            <div class="digit" data-digit="1"></div>
+
+            <div class="colon" aria-label="Colon lights">
+                <button type="button" class="colon-dot light" data-light-id="X0"
+                    aria-label="Colon light X0" aria-pressed="false" title="X0"></button>
+                <button type="button" class="colon-dot light" data-light-id="X1"
+                    aria-label="Colon light X1" aria-pressed="false" title="X1"></button>
+            </div>
+
+            <div class="digit" data-digit="2"></div>
+            <div class="digit" data-digit="3"></div>
+        </div>
+
+        <div class="editor-row frame-tools">
+            <button type="button" id="add-button">Add frame</button>
+            <button type="button" id="duplicate-button">Duplicate</button>
+            <button type="button" id="clear-button">Clear</button>
+            <button type="button" id="fill-button">All on</button>
+            <button type="button" id="invert-button">Invert</button>
+            <button type="button" id="left-button" title="Move frame earlier">&larr;</button>
+            <button type="button" id="right-button" title="Move frame later">&rarr;</button>
+            <button type="button" id="delete-button" class="danger">Delete frame</button>
+        </div>
+
+        <p id="frame-label" class="frame-label"></p>
+        <div id="frame-strip" class="frame-strip" role="listbox" aria-label="Frames"></div>
+
+        <div class="editor-row action-row">
+            <button type="button" id="send-frame-button">Show frame on clock</button>
+            <button type="button" id="preview-button">Preview</button>
+            <button type="button" id="play-button">Play on clock</button>
+            <button type="button" id="save-button" class="primary">Save</button>
+        </div>
+
+        <p id="status" role="status"></p>
+    </main>
+</body>
+</html>

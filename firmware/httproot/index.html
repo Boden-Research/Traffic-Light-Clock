@@ -12,6 +12,10 @@
     <main class="panel">
         <h1>Light Control</h1>
 
+        <nav>
+            <a href="animations.html">Animations</a>
+        </nav>
+
         <div class="clock" aria-label="Interactive light display">
             <div class="digit" data-digit="0"></div>
             <div class="digit" data-digit="1"></div>
@@ -42,6 +46,32 @@
         <p class="instructions">
             Click any light to toggle it on or off.
         </p>
+
+        <form id="hex-form" class="hex-form" novalidate>
+            <label for="hex-input">Raw output (11 bytes, hex)</label>
+            <div class="hex-row">
+                <input
+                    id="hex-input"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="00 00 00 00 00 00 00 00 00 00 00"
+                >
+                <button type="submit">Send</button>
+            </div>
+        </form>
+
+        <form id="animation-form" class="hex-form" novalidate>
+            <label for="animation-file">Custom animation (JSON file)</label>
+            <div class="hex-row">
+                <input
+                    id="animation-file"
+                    type="file"
+                    accept=".json,application/json"
+                >
+                <button type="submit">Play</button>
+            </div>
+        </form>
 
         <div class="legend">
             <span><i class="legend-light red"></i> Red</span>

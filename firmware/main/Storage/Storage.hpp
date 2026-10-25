@@ -27,6 +27,12 @@ class CStorage {
         /// @return A Result_t indicating success or any failures.
         Result_t Mount(FileSystemType_t type, const std::string_view partitionLabel, const std::string_view mountPoint, bool mayFormat);
 
+        /// @brief Ensures that a directory exists, creating it if necessary.
+        /// @param mountPoint (in) The mount point where the directory will be located, same as was passed to Initialize().
+        /// @param directoryPath (in) The path to the directory.
+        /// @return A Result_t indicating success or any failures.
+        Result_t EnsureDirectoryExists(const std::string_view mountPoint, const std::string_view directoryPath);
+
         /// @brief Gets the full path to the specified file, normalizing file paths and ensuring no traversal outside of the mount point.
         /// @param mountPoint (in) The mount point where the file will be located, same as was passed to Initialize().
         /// @param filePath (in) The path to the file.

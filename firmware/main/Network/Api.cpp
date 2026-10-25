@@ -33,22 +33,61 @@ static const char* _procStringGetAnimationByName = "GetAnimationByName";
 static const char* _procStringUploadAnimation = "UploadAnimation";
 static const char* _procStringDeleteAnimationByName = "DeleteAnimationByName";
 static const char* _procStringPostLight = "PostLight";
+static const char* _procStringExecuteAnimationCommand = "ExecuteAnimationCommand";
+static const char* _procStringPlaybackCustom = "PlaybackCustom";
+static const char* _procStringInitialize = "Initialize";
 
-// Retrieves the animation name from the HTTP request path
-// Path must be "/API/animations/(name)"
-// Returns a Result containing the animation name, or an error code
-static Result<std::string> GetAnimationNameFromPath(const std::string_view path) {
+// Name and optional first suffix component of an animation request path
+struct AnimationPathParts {
+    std::string Name;
+    std::optional<std::string> Command;
+};
+
+// Retrieves the animation path parts from the HTTP request path
+// Path must be "/API/animations/(name)[/(suffix)]"
+// Returns a Result containing the animation path parts, or an error code
+static Result<AnimationPathParts> GetAnimationPathPartsFromPath(const std::string_view path) {
+    constexpr size_t prefixLen = 16; // Length of "/API/animations/"
+
     try {
-        return Result<std::string>::Ok(std::string(path.substr(16)));
+        // Sanity check
+        if (path.size() < prefixLen)
+            return Result<AnimationPathParts>::Err(Result_t::InvalidArg);
+
+        // Extract the part of the path after the prefix
+        std::string_view rest = path.substr(prefixLen);
+
+        // Find the end of the animation name in the path
+        size_t nameEnd = rest.find('/');
+
+        // If no slash is found, the path contains only the animation name
+        AnimationPathParts parts;
+        if (nameEnd == std::string_view::npos) {
+            parts.Name = std::string(rest);
+            return Result<AnimationPathParts>::Ok(std::move(parts));
+        }
+
+        // Extract the animation name from the path, up to the first slash
+        parts.Name = std::string(rest.substr(0, nameEnd));
+
+        // Extract the command from the rest of the path, if present
+        std::string_view tail = rest.substr(nameEnd + 1);
+        std::string_view suffix = tail.substr(0, tail.find('/'));
+        if (!suffix.empty())
+            parts.Command = std::string(suffix);
+
+        // Return the extracted animation path parts
+        return Result<AnimationPathParts>::Ok(std::move(parts));
     } catch (const std::bad_alloc&) {
-        return Result<std::string>::Err(Result_t::OutOfMemory);
+        // Out of memory
+        return Result<AnimationPathParts>::Err(Result_t::OutOfMemory);
     }
 }
 
 // Sends an HTTP error response to the client
 // Returns a Result_t result code
 static bool SendErrorResponse(httpd_req_t *req, Result_t result,
-    const std::string_view requestPath, const std::string_view procedure)
+    const std::string_view requestPath)
 {
     const std::string_view resultString = GetResultDescription(result);
 
@@ -64,50 +103,34 @@ static bool SendErrorResponse(httpd_req_t *req, Result_t result,
         case Result_t::FileLoadEOF:
         case Result_t::BufferTooSmall:
         case Result_t::OutOfStorageSpace:
-            ESP_LOGE(CApi::TAG, "%.*s: Error: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseWithStringBody(req, HttpStatus_t::HTTP500InternalServerError,
                 resultString) == Result_t::OK;
         
         case Result_t::ParseFail:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
+        case Result_t::RequestBodyEmpty:
             return CWebServer::SendHttpResponseWithProblemDetailsBody(req, HttpStatus_t::HTTP400BadRequest,
                 "Parse fail", resultString, requestPath) == Result_t::OK;
 
         case Result_t::ParamNotFound:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseWithProblemDetailsBody(req, HttpStatus_t::HTTP400BadRequest,
                 "Param missing", resultString, requestPath) == Result_t::OK;
 
         case Result_t::RequestTooBig:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseWithProblemDetailsBody(req, HttpStatus_t::HTTP400BadRequest,
                 "Request too big", resultString, requestPath) == Result_t::OK;
 
-        case Result_t::RequestBodyEmpty:
         case Result_t::InvalidJson:
         case Result_t::FileBadName:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseWithProblemDetailsBody(req, HttpStatus_t::HTTP422UnprocessableContent,
                 "Invalid entitiy", resultString, requestPath) == Result_t::OK;
 
         case Result_t::ReceiveTimeout:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP408RequestTimeout) == Result_t::OK;
         
         case Result_t::ReceiveFail:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             break;
 
         case Result_t::FileNotFound:
-            ESP_LOGW(CApi::TAG, "%.*s: %.*s", procedure.size(), procedure.data(),
-                resultString.size(), resultString.data());
             return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
 
         case Result_t::HttpSendFailure:
@@ -128,23 +151,32 @@ static bool ApiEndpointGetAllAnimations(httpd_req_t *req, const std::string& pat
     const std::optional<std::string>& query, const std::optional<std::string>& fragment)
 {
     try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to get all animations", _procStringGetAllAnimations);
+
         // Create response JSON array
         CJsonPtr json(cJSON_CreateArray(), &cJSON_Delete);
-        if (!json)
-            return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        if (!json) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to create JSON array", _procStringGetAllAnimations);
+            return SendErrorResponse(req, Result_t::OutOfMemory, path);
+        }
 
         // Start iteration
         Result<AnimationStoreIterator> iterator = AnimationStore.OpenAnimationIterator();
-        if (!iterator)
-            return SendErrorResponse(req, iterator.error(), path, _procStringGetAllAnimations);
+        if (!iterator) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to open animation iterator", _procStringGetAllAnimations);
+            return SendErrorResponse(req, iterator.error(), path);
+        }
 
         // Iterate over available animations, adding them to the JSON array
         std::string animationName;
         Result_t result;
         while (AnimationStore.NextAnimation(iterator.value(), animationName, result)) {
             // Handle iterator errors
-            if (result != Result_t::OK)
-                return SendErrorResponse(req, result, path, _procStringGetAllAnimations);
+            if (result != Result_t::OK) {
+                ESP_LOGE(CApi::TAG, "%s: Iterator error: %s",
+                    _procStringGetAllAnimations, GetResultDescription(result).data());
+                return SendErrorResponse(req, result, path);
+            }
 
             // Load the animation
             Result<LightAnimationPtr> animation = AnimationStore.Load(animationName);
@@ -159,15 +191,20 @@ static bool ApiEndpointGetAllAnimations(httpd_req_t *req, const std::string& pat
                 continue;
 
             // Add animation to output
-            if (!cJSON_AddItemToArray(json.get(), animationJson.value().get()))
-                return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+            if (!cJSON_AddItemToArray(json.get(), animationJson.value().get())) {
+                ESP_LOGE(CApi::TAG, "%s: Failed to add animation to JSON array", _procStringGetAllAnimations);
+                return SendErrorResponse(req, Result_t::OutOfMemory, path);
+            }
             animationJson.value().release();
         }
+
+        ESP_LOGD(CApi::TAG, "%s: Successfully serialized all animations", _procStringGetAllAnimations);
 
         // Send response to client
         return CWebServer::SendHttpResponseWithJsonBody(req, HttpStatus_t::HTTP200OK, json) == Result_t::OK;
     } catch (const std::bad_alloc&) {
-        return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringGetAllAnimations);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
     }
 }
 
@@ -176,30 +213,48 @@ static bool ApiEndpointGetAnimationByName(httpd_req_t *req, const std::string& p
     const std::optional<std::string>& query, const std::optional<std::string>& fragment)
 {
     try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to get animation by name", _procStringGetAnimationByName);
+
         // Get the animation name from the request path
-        Result<std::string> name = GetAnimationNameFromPath(path);
-        if (!name)
-            return SendErrorResponse(req, name.error(), path, _procStringGetAnimationByName);
+        Result<AnimationPathParts> animationPath = GetAnimationPathPartsFromPath(path);
+        if (!animationPath) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to get animation name from path: %s",
+                _procStringGetAnimationByName, GetResultDescription(animationPath.error()).data());
+            return SendErrorResponse(req, animationPath.error(), path);
+        }
 
         // Validate animation name
-        if (!CAnimationStore::ValidateAnimationName(name.value())) {
-            ESP_LOGW(CApi::TAG, "%s: Invalid animation name: %s", _procStringGetAnimationByName, name.value().c_str());
+        if (!CAnimationStore::ValidateAnimationName(animationPath.value().Name)) {
+            ESP_LOGE(CApi::TAG, "%s: Invalid animation name: %s",
+                _procStringGetAnimationByName, animationPath.value().Name.c_str());
             return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
         }
 
-        // Load the animation
-        Result<LightAnimationPtr> animation = AnimationStore.Load(name.value());
-        if (!animation)
-            return SendErrorResponse(req, animation.error(), path, _procStringGetAnimationByName);
+        ESP_LOGD(CApi::TAG, "%s: Animation name: %s",
+            _procStringGetAnimationByName, animationPath.value().Name.c_str());
 
-        Result<CJsonPtr> animationJson = SerializeLightAnimation(name.value(), *animation.value().get());
-        if (!animationJson)
-            return SendErrorResponse(req, animationJson.error(), path, _procStringGetAnimationByName);
+        // Load the animation
+        Result<LightAnimationPtr> animation = AnimationStore.Load(animationPath.value().Name);
+        if (!animation) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to load animation: %s",
+                _procStringGetAnimationByName, GetResultDescription(animation.error()).data());
+            return SendErrorResponse(req, animation.error(), path);
+        }
+
+        Result<CJsonPtr> animationJson = SerializeLightAnimation(animationPath.value().Name, *animation.value().get());
+        if (!animationJson) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to serialize animation: %s",
+                _procStringGetAnimationByName, GetResultDescription(animationJson.error()).data());
+            return SendErrorResponse(req, animationJson.error(), path);
+        }
+
+        ESP_LOGD(CApi::TAG, "%s: Successfully serialized animation", _procStringGetAnimationByName);
 
         // Send response to client
         return CWebServer::SendHttpResponseWithJsonBody(req, HttpStatus_t::HTTP200OK, animationJson.value()) == Result_t::OK;
     } catch (const std::bad_alloc&) {
-        return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringGetAnimationByName);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
     }
 }
 
@@ -208,53 +263,85 @@ static bool ApiEndpointUploadAnimation(httpd_req_t *req, const std::string& path
     const std::optional<std::string>& query, const std::optional<std::string>& fragment)
 {
     try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to upload animation", _procStringUploadAnimation);
+
         // Read in the entire request body
         Result<CJsonPtr> json = CWebServer::ReceiveRequestJsonBody(req);
-        if (!json)
-            return SendErrorResponse(req, json.error(), path, _procStringUploadAnimation);
+        if (!json) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to receive request JSON body: %s",
+                _procStringUploadAnimation, GetResultDescription(json.error()).data());
+            return SendErrorResponse(req, json.error(), path);
+        }
 
         // Extract the animation name
         cJSON* jsonName = cJSON_GetObjectItem(json.value().get(), "Name");
-        if (!jsonName || !cJSON_IsString(jsonName))
-            return SendErrorResponse(req, Result_t::InvalidJson, path, _procStringUploadAnimation);
+        if (!jsonName || !cJSON_IsString(jsonName)) {
+            ESP_LOGE(CApi::TAG, "%s: Invalid JSON: Missing or invalid 'Name' field",
+                _procStringUploadAnimation);
+            return SendErrorResponse(req, Result_t::InvalidJson, path);
+        }
 
         // Validate animation name
-        if (!CAnimationStore::ValidateAnimationName(jsonName->string))
-            return SendErrorResponse(req, Result_t::FileBadName, path, _procStringUploadAnimation);
+        if (!CAnimationStore::ValidateAnimationName(jsonName->valuestring)) {
+            ESP_LOGE(CApi::TAG, "%s: Invalid animation name: %s",
+                _procStringUploadAnimation, jsonName->valuestring);
+            return SendErrorResponse(req, Result_t::FileBadName, path);
+        }
+
+        ESP_LOGD(CApi::TAG, "%s: Animation name: %s",
+            _procStringUploadAnimation, jsonName->valuestring);
 
         // Parse the animation
         Result<LightAnimationPtr> animation = ParseLightAnimation(*json.value().get());
-        if (!animation)
-            return SendErrorResponse(req, animation.error(), path, _procStringUploadAnimation);
+        if (!animation) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to parse animation: %s",
+                _procStringUploadAnimation, GetResultDescription(animation.error()).data());
+            return SendErrorResponse(req, animation.error(), path);
+        }
 
         // Determine if the animation already exists
-        Result<bool> replaced = AnimationStore.Exists(jsonName->string);
-        if (!replaced)
-            return SendErrorResponse(req, replaced.error(), path, _procStringUploadAnimation);
+        Result<bool> replaced = AnimationStore.Exists(jsonName->valuestring);
+        if (!replaced) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to check if animation exists: %s",
+                _procStringUploadAnimation, GetResultDescription(replaced.error()).data());
+            return SendErrorResponse(req, replaced.error(), path);
+        }
 
         // Save the animation
-        Result_t result = AnimationStore.Save(jsonName->string, animation.value());
-        if (result != Result_t::OK)
-            return SendErrorResponse(req, result, path, _procStringUploadAnimation);
+        Result_t result = AnimationStore.Save(jsonName->valuestring, animation.value());
+        if (result != Result_t::OK) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to save animation: %s",
+                _procStringUploadAnimation, GetResultDescription(result).data());
+            return SendErrorResponse(req, result, path);
+        }
 
         // Reserialize the animation for output
-        Result<CJsonPtr> response = SerializeLightAnimation(jsonName->string, *animation.value());
-        if (!response)
-            return SendErrorResponse(req, response.error(), path, _procStringUploadAnimation);
+        Result<CJsonPtr> response = SerializeLightAnimation(jsonName->valuestring, *animation.value());
+        if (!response) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to serialize animation for response: %s",
+                _procStringUploadAnimation, GetResultDescription(response.error()).data());
+            return SendErrorResponse(req, response.error(), path);
+        }
 
-        if (replaced)
+        if (replaced.value()) {
             // Animation was replaced
+            ESP_LOGD(CApi::TAG, "%s: Successfully replaced animation: %s",
+                _procStringUploadAnimation, jsonName->valuestring);
             return CWebServer::SendHttpResponseWithJsonBody(req, HttpStatus_t::HTTP200OK, response.value()) == Result_t::OK;
-        else {
+        } else {
             // Animation was created
+            ESP_LOGD(CApi::TAG, "%s: Successfully created animation: %s",
+                _procStringUploadAnimation, jsonName->valuestring);
+
             // Construct location where animation was created
-            std::string location = "/API/animations/" + std::string(jsonName->string);
+            std::string location = "/API/animations/" + std::string(jsonName->valuestring);
 
             // Send response to caller
             return CWebServer::SendHttpResponseWithLocationAndJsonBody(req, HttpStatus_t::HTTP201Created, location, response.value()) == Result_t::OK;
         }
     } catch (const std::bad_alloc&) {
-        return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringUploadAnimation);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
     }
 }
 
@@ -263,26 +350,146 @@ static bool ApiEndpointDeleteAnimationByName(httpd_req_t *req, const std::string
     const std::optional<std::string>& query, const std::optional<std::string>& fragment)
 {
     try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to delete animation by name", _procStringDeleteAnimationByName);
+
         // Get the animation name from the request path
-        Result<std::string> name = GetAnimationNameFromPath(path);
-        if (!name)
-            return SendErrorResponse(req, name.error(), path, _procStringGetAnimationByName);
+        Result<AnimationPathParts> animationPath = GetAnimationPathPartsFromPath(path);
+        if (!animationPath) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to get animation name from path: %s",
+                _procStringDeleteAnimationByName, GetResultDescription(animationPath.error()).data());
+            return SendErrorResponse(req, animationPath.error(), path);
+        }
 
         // Validate animation name
-        if (!CAnimationStore::ValidateAnimationName(name.value())) {
-            ESP_LOGW(CApi::TAG, "%s: Invalid animation name: %s", _procStringDeleteAnimationByName, name.value().c_str());
+        if (!CAnimationStore::ValidateAnimationName(animationPath.value().Name)) {
+            ESP_LOGW(CApi::TAG, "%s: Invalid animation name: %s",
+                _procStringDeleteAnimationByName, animationPath.value().Name.c_str());
             return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
         }
 
+        ESP_LOGD(CApi::TAG, "%s: Animation name: %s",
+            _procStringDeleteAnimationByName, animationPath.value().Name.c_str());
+
         // Try to delete the animation
-        Result_t result = AnimationStore.Delete(name.value());
-        if (result != Result_t::OK)
-            return SendErrorResponse(req, result, path, _procStringDeleteAnimationByName);
+        Result_t result = AnimationStore.Delete(animationPath.value().Name);
+        if (result != Result_t::OK) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to delete animation: %s",
+                _procStringDeleteAnimationByName, GetResultDescription(result).data());
+            return SendErrorResponse(req, result, path);
+        }
+
+        ESP_LOGD(CApi::TAG, "%s: Successfully deleted animation: %s",
+            _procStringDeleteAnimationByName, animationPath.value().Name.c_str());
 
         // Send response
         return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP204NoContent) == Result_t::OK;
     } catch (const std::bad_alloc&) {
-        return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringDeleteAnimationByName);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
+    }
+}
+
+static bool ApiEndpointExecuteAnimationCommand(httpd_req_t *req, const std::string& path,
+    const std::optional<std::string>& query, const std::optional<std::string>& fragment)
+{
+    try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to execute animation command", _procStringExecuteAnimationCommand);
+
+            // Get the animation name from the request path
+        Result<AnimationPathParts> animationPath = GetAnimationPathPartsFromPath(path);
+        if (!animationPath) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to get animation name from path: %s",
+                _procStringExecuteAnimationCommand, GetResultDescription(animationPath.error()).data());
+            return SendErrorResponse(req, animationPath.error(), path);
+        }
+
+        // Make sure the animation exists, and a valid command is provided
+        if (!AnimationStore.Exists(animationPath.value().Name)) {
+            ESP_LOGE(CApi::TAG, "%s: Animation does not exist: %s",
+                _procStringExecuteAnimationCommand, animationPath.value().Name.c_str());
+            return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
+        }
+        if (!animationPath.value().Command.has_value()) {
+            ESP_LOGE(CApi::TAG, "%s: No command provided for animation: %s",
+                _procStringExecuteAnimationCommand, animationPath.value().Name.c_str());
+            return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
+        }
+
+        ESP_LOGD(CApi::TAG, "%s: Executing command '%s' for animation '%s'",
+            _procStringExecuteAnimationCommand,
+            animationPath.value().Command.value().c_str(),
+            animationPath.value().Name.c_str());
+
+        // We now have a valid animation and command, so we can execute the command
+        if (animationPath.value().Command.value() == "run") {
+            // Load the animation from the store
+            Result<LightAnimationPtr> animation = AnimationStore.Load(animationPath.value().Name);
+            if (!animation) {
+                ESP_LOGE(CApi::TAG, "%s: Failed to load animation: %s",
+                    _procStringExecuteAnimationCommand, GetResultDescription(animation.error()).data());
+                return SendErrorResponse(req, animation.error(), path);
+            }
+
+            // Send the animation to the driver for execution
+            Result_t result = LightDriver.StartAnimation(std::move(animation.value()));
+            if (result != Result_t::OK) {
+                ESP_LOGE(CApi::TAG, "%s: Failed to start animation: %s",
+                    _procStringExecuteAnimationCommand, GetResultDescription(result).data());
+                return SendErrorResponse(req, result, path);
+            }
+
+            ESP_LOGD(CApi::TAG, "%s: Successfully started animation", _procStringExecuteAnimationCommand);
+            return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP202Accepted) == Result_t::OK;
+        }
+
+        // Return error for unsupported commands
+        ESP_LOGE(CApi::TAG, "%s: Unsupported command for animation: %s",
+            _procStringExecuteAnimationCommand, animationPath.value().Command.value().c_str());
+        return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP404NotFound) == Result_t::OK;
+    } catch (const std::bad_alloc&) {
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringExecuteAnimationCommand);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
+    }
+}
+
+// Playback custom API endpoint handler for POST "/API/playback/custom"
+static bool ApiEndpointPlaybackCustom(httpd_req_t *req, const std::string& path,
+    const std::optional<std::string>& query, const std::optional<std::string>& fragment)
+{
+    try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to play custom animation", _procStringPlaybackCustom);
+
+        // Read in the entire request body
+        Result<CJsonPtr> json = CWebServer::ReceiveRequestJsonBody(req);
+        if (!json) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to receive request JSON body: %s",
+                _procStringPlaybackCustom, GetResultDescription(json.error()).data());
+            return SendErrorResponse(req, json.error(), path);
+        }
+
+        // Parse the animation
+        Result<LightAnimationPtr> animation = ParseLightAnimation(*json.value().get());
+        if (!animation) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to parse animation: %s",
+                _procStringPlaybackCustom, GetResultDescription(animation.error()).data());
+            return SendErrorResponse(req, animation.error(), path);
+        }
+
+        // Send the playback request to the driver
+        Result_t result = LightDriver.StartAnimation(std::move(animation.value()));
+        if (result != Result_t::OK) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to start animation: %s",
+                _procStringPlaybackCustom, GetResultDescription(result).data());
+            return SendErrorResponse(req, result, path);
+        }
+
+        ESP_LOGD(CApi::TAG, "%s: Successfully started animation", _procStringPlaybackCustom);
+
+        // Send response
+        return CWebServer::SendHttpResponseNoBody(req, HttpStatus_t::HTTP204NoContent) == Result_t::OK;
+    } catch (const std::bad_alloc&) {
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringPlaybackCustom);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
     }
 }
 
@@ -291,40 +498,58 @@ static bool ApiEndpointPostLight(httpd_req_t *req, const std::string& path,
     const std::optional<std::string>& query, const std::optional<std::string>& fragment)
 {
     try {
+        ESP_LOGD(CApi::TAG, "%s: Handling request to update light state", _procStringPostLight);
+
         // Read in the entire request body
         Result<CJsonPtr> json = CWebServer::ReceiveRequestJsonBody(req);
-        if (!json)
-            return SendErrorResponse(req, json.error(), path, _procStringUploadAnimation);
+        if (!json) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to receive request JSON body: %s", _procStringPostLight, GetResultDescription(json.error()).data());
+            return SendErrorResponse(req, json.error(), path);
+        }
 
         // Get the "outputs" array
         // We can declare this here because we only need to delete the json, not any objects retrieved from it
         cJSON* outputsArray = cJSON_GetObjectItem(json.value().get(), "outputs");
-        if (outputsArray == NULL || !cJSON_IsArray(outputsArray))
-            return SendErrorResponse(req, Result_t::InvalidJson, path, _procStringPostLight);
+        if (outputsArray == NULL || !cJSON_IsArray(outputsArray)) {
+            ESP_LOGE(CApi::TAG, "%s: Missing or invalid 'outputs' array in JSON body", _procStringPostLight);
+            return SendErrorResponse(req, Result_t::InvalidJson, path);
+        }
 
         Result<LightStatePtr> lightState = ParseLightState(*outputsArray);
-        if (!lightState)
-            return SendErrorResponse(req, lightState.error(), path, _procStringUploadAnimation);
+        if (!lightState) {
+            ESP_LOGE(CApi::TAG, "%s: Failed to parse light state: %s",
+                _procStringPostLight, GetResultDescription(lightState.error()).data());
+            return SendErrorResponse(req, lightState.error(), path);
+        }
 
         // Send the updated state to the driver
         LightDriver.Update(*lightState.value().get());
 
+        ESP_LOGI(CApi::TAG, "%s: Successfully updated light state", _procStringPostLight);
+
         // Craft response
         CJsonPtr response(cJSON_CreateObject(), &cJSON_Delete);
-        if (!response)
-            return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
-        if (!cJSON_AddStringToObject(response.get(), "Status", "OK"))
-            return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        if (!response) {
+            ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringPostLight);
+            return SendErrorResponse(req, Result_t::OutOfMemory, path);
+        }
+        if (!cJSON_AddStringToObject(response.get(), "Status", "OK")) {
+            ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringPostLight);
+            return SendErrorResponse(req, Result_t::OutOfMemory, path);
+        }
 
         // Send the response
         return CWebServer::SendHttpResponseWithJsonBody(req, HttpStatus_t::HTTP200OK, response) == Result_t::OK;
     } catch (const std::bad_alloc&) {
-        return SendErrorResponse(req, Result_t::OutOfMemory, path, _procStringGetAllAnimations);
+        ESP_LOGE(CApi::TAG, "%s: Out of memory", _procStringPostLight);
+        return SendErrorResponse(req, Result_t::OutOfMemory, path);
     }
 }
 
 Result_t CApi::Initialize() {
     Result_t result;
+
+    ESP_LOGD(CApi::TAG, "%s: Initializing API", _procStringInitialize);
 
     // Register API endpoints
     result = WebServer.RegisterAPIEndpoint("/API/lights", HTTP_POST, ApiEndpointPostLight);
@@ -350,6 +575,16 @@ Result_t CApi::Initialize() {
     result = WebServer.RegisterAPIEndpoint("/API/animations/*", HTTP_DELETE, ApiEndpointDeleteAnimationByName);
     if (result != Result_t::OK)
         return result;
+
+    result = WebServer.RegisterAPIEndpoint("/API/animations/*", HTTP_POST, ApiEndpointExecuteAnimationCommand);
+    if (result != Result_t::OK)
+        return result;
+
+    result = WebServer.RegisterAPIEndpoint("/API/playback/custom", HTTP_POST, ApiEndpointPlaybackCustom);
+    if (result != Result_t::OK)
+        return result;
+
+    ESP_LOGD(CApi::TAG, "%s: Finished registering API endpoints", _procStringInitialize);
 
     return Result_t::OK;
 }

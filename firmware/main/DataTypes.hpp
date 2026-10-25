@@ -13,10 +13,6 @@
 
 #include "config.h"
 
-constexpr std::size_t LIGHT_STATE_NUM_BYTES = ((NUM_LIGHT_OUTPUTS + CHAR_BIT - 1) / CHAR_BIT); // Evaluates to 11
-
-using LightState_t = std::array<uint8_t, LIGHT_STATE_NUM_BYTES>;
-
 /// @brief Enum for returning results from functions.
 enum class Result_t : uint8_t {
     OK,                 // No error
@@ -47,6 +43,10 @@ enum class Result_t : uint8_t {
     InitWiFiFailed,     // Failed to initialize WiFi
     InitLightFailed,    // Failed to initialize light driver
 };
+
+constexpr std::size_t LIGHT_STATE_NUM_BYTES = ((NUM_LIGHT_OUTPUTS + CHAR_BIT - 1) / CHAR_BIT); // Evaluates to 11
+
+using LightState_t = std::array<uint8_t, LIGHT_STATE_NUM_BYTES>;
 
 struct LightAnimation_t {
     float FrameRate;

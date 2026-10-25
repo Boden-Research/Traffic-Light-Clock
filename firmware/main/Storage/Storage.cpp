@@ -24,63 +24,101 @@ CStorage Storage;
 Result_t CStorage::Mount(FileSystemType_t type, const std::string_view partitionLabel, const std::string_view mountPoint, bool mayFormat) {
     ESP_LOGI(TAG, "Mounting storage \"%.*s\"...", partitionLabel.size(), partitionLabel.data());
 
-    // Create strings from parameters
-    std::string partitionLabelStr(partitionLabel);
-    std::string mountPointStr(mountPoint);
+    try {
+        // Create strings from parameters
+        std::string partitionLabelStr(partitionLabel);
+        std::string mountPointStr(mountPoint);
 
-    // Mount the file system
-    esp_err_t err;
-    size_t total = 0;
-    size_t used = 0;
-    esp_vfs_spiffs_conf_t confSpifs = {};
-    esp_vfs_littlefs_conf_t confLittlefs = {};
-    switch (type) {
-        case FileSystemType_t::SPIFFS:
-            // Mount SPIFFS
-            confSpifs.base_path = mountPointStr.c_str(),
-            confSpifs.partition_label = partitionLabelStr.c_str(),
-            confSpifs.max_files = 5,
-            confSpifs.format_if_mount_failed = mayFormat;
+        // Mount the file system
+        esp_err_t err;
+        size_t total = 0;
+        size_t used = 0;
+        esp_vfs_spiffs_conf_t confSpifs = {};
+        esp_vfs_littlefs_conf_t confLittlefs = {};
+        switch (type) {
+            case FileSystemType_t::SPIFFS:
+                // Mount SPIFFS
+                confSpifs.base_path = mountPointStr.c_str(),
+                confSpifs.partition_label = partitionLabelStr.c_str(),
+                confSpifs.max_files = 5,
+                confSpifs.format_if_mount_failed = mayFormat;
 
-            err = esp_vfs_spiffs_register(&confSpifs);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to initialize SPIFFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
-                return EspErrToResult(err);
-            }
+                err = esp_vfs_spiffs_register(&confSpifs);
+                if (err != ESP_OK) {
+                    ESP_LOGE(TAG, "Failed to initialize SPIFFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
+                    return EspErrToResult(err);
+                }
 
-            // Verify file system
-            err = esp_spiffs_info(partitionLabelStr.c_str(), &total, &used);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to verify SPIFFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
-                return EspErrToResult(err);
-            }
-            break;
+                // Verify file system
+                err = esp_spiffs_info(partitionLabelStr.c_str(), &total, &used);
+                if (err != ESP_OK) {
+                    ESP_LOGE(TAG, "Failed to verify SPIFFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
+                    return EspErrToResult(err);
+                }
+                break;
 
-        case FileSystemType_t::LittleFS:
-            // Mount LittleFS
-            confLittlefs.base_path = mountPointStr.c_str();
-            confLittlefs.partition_label = partitionLabelStr.c_str();
-            confLittlefs.format_if_mount_failed = mayFormat;
+            case FileSystemType_t::LittleFS:
+                // Mount LittleFS
+                confLittlefs.base_path = mountPointStr.c_str();
+                confLittlefs.partition_label = partitionLabelStr.c_str();
+                confLittlefs.format_if_mount_failed = mayFormat;
 
-            err = esp_vfs_littlefs_register(&confLittlefs);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to initialize LittleFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
-                return EspErrToResult(err);
-            }
+                err = esp_vfs_littlefs_register(&confLittlefs);
+                if (err != ESP_OK) {
+                    ESP_LOGE(TAG, "Failed to initialize LittleFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
+                    return EspErrToResult(err);
+                }
 
-            // Verify file system
-            err = esp_littlefs_info(partitionLabelStr.c_str(), &total, &used);
-            if (err != ESP_OK) {
-                ESP_LOGE(TAG, "Failed to verify LittleFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
-                return EspErrToResult(err);
-            }
-            break;
+                // Verify file system
+                err = esp_littlefs_info(partitionLabelStr.c_str(), &total, &used);
+                if (err != ESP_OK) {
+                    ESP_LOGE(TAG, "Failed to verify LittleFS file system \"%.*s\": %s", partitionLabel.size(), partitionLabel.data(), esp_err_to_name(err));
+                    return EspErrToResult(err);
+                }
+                break;
 
+        }
+
+        ESP_LOGI(TAG, "Storage mounted successfully");
+
+        // Success
+        return Result_t::OK;
+    } catch (const std::bad_alloc&) {
+        ESP_LOGE(TAG, "Out of memory");
+        return Result_t::OutOfMemory;
     }
+}
 
-    ESP_LOGI(TAG, "Storage mounted successfully");
+Result_t CStorage::EnsureDirectoryExists(const std::string_view mountPoint, const std::string_view directoryPath) {
+    try {
+        ESP_LOGD(TAG, "Ensuring directory exists: %.*s/%.*s",
+            static_cast<int>(mountPoint.size()), mountPoint.data(),
+            static_cast<int>(directoryPath.size()), directoryPath.data());
 
-    return Result_t::OK;
+        // Get the full path to the directory
+        Result<std::string> fullPath = GetFilePath(mountPoint, directoryPath);
+        if (!fullPath) {
+            ESP_LOGE(TAG, "Failed to get full path for directory: %.*s",
+                static_cast<int>(directoryPath.size()), directoryPath.data());
+            return fullPath.error();
+        }
+
+        // Create the directory if it doesn't exist
+        std::error_code err;
+        std::filesystem::create_directories(fullPath.value(), err);
+        if (err) {
+            ESP_LOGE(TAG, "Failed to create directory: %.*s",
+                static_cast<int>(fullPath.value().size()), fullPath.value().c_str());
+            return Result_t::Failed;
+        }
+
+        // Success
+        return Result_t::OK;
+    } catch (const std::bad_alloc&) {
+        // Out of memory
+        ESP_LOGE(TAG, "Out of memory");
+        return Result_t::OutOfMemory;
+    }
 }
 
 Result<std::string> CStorage::GetFilePath(const std::string_view mountPoint,

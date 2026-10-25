@@ -97,116 +97,296 @@ This adds up to 86 bits, or 11 bytes total, for a full frame display.
 
 The web server allows users to interact with the clock using a web page. Web page will make HTTP requests to registered API endpoints for performing actions on the clock.
 
+### Data Types
+
+A number of JSON data types are used in the API.
+
+#### LightState
+
+Represents a single light state that can be displayed on the clock face. It consists of a JSON array of integer byte values, 11 in total.
+
+```json
+[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+```
+
+#### LightAnimation
+
+Represents a sequence of [LightState] frames that can be played back at a given frame rate.
+
+```json
+{
+    "Name": "xxx",
+    "FrameRate": 10.0,
+    "Frames": [
+        LightState,
+        LightState,
+        LightState
+    ]
+}
+```
+
+#### ProblemDetails
+
+An industry standard JSON structure for descibing a problem enocuntered in an API.
+
+```json
+{
+    "title": "Problem reason",
+    "status": 403,
+    "detail": "Short description of the problem",
+    "instance": "/API/path/to/entity"
+}
+```
+
 ### POST: /API/lights
 
 Sets the current output state of the lights.
 
 This is a temporary API endpoint for testing/development.
 
-#### Request
-```json
+Request body:
+
+```
 {
-    "outputs": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    "outputs": LightState
 }
 ```
 
-#### Response
+#### Responses
 
+##### HTTP 200 Ok
+
+Lights successfully updated.
+
+Response body:
 ```json
 {
     "Status": "OK"
 }
 ```
+
+##### HTTP 400 Bad Request
+
+Request body contains invalid JSON. Server was unable to parse request.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 422 Unprocessable Content
+
+Request body was valid JSON, but the JSON failed validation.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
 ### GET: /API/animations
 
 Retrieves all available animations.
 
-#### Response
+#### Responses
 
+##### HTTP 200 Ok
+
+Animations listed successfully.
+
+Response body:
 ```json
 [
-    {
-        "Name": "Animation 1",
-        "FrameRate": 10.0,
-        "Frames": [
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-        ]
-    },
-    {
-        "Name": "Animation 2",
-        "FrameRate": 10.0,
-        "Frames": [
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-        ]
-    },
-    {
-        "Name": "Test Animation",
-        "FrameRate": 10.0,
-        "Frames": [
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-            [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-        ]
-    },
+    LightAnimation,
+    LightAnimation,
+    LightAnimation,
+    ...
 ]
 ```
 
-### GET: /API/animations?name=xxx
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
+### GET: /API/animations/{name}
 
 Gets the animation definition, identified by the animation name.
 
-#### Response
+#### Responses
 
-```json
-{
-    "Name": "xxx",
-    "FrameRate": 10.0,
-    "Frames": [
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-    ]
-}
+##### HTTP 200 Ok
+
+Animation retrieval successful.
+
+Response body:
+```
+LightAnimation
 ```
 
-### POST: /API/animations
+##### HTTP 422 Unprocessable Content
+
+Requested animation name is illegal.
+
+TODO: This is the incorrect HTTP status code for this kind of failure.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 404 Not Found
+
+Animation name does not exist.
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
+### POST/PUT: /API/animations
 
 Creates or updates an animation.
 
-#### Request
-
-```json
-{
-    "Name": "xxx",
-    "FrameRate": 10.0,
-    "Frames": [
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-        [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-    ]
-}
+Request body:
+```
+LightAnimation
 ```
 
-#### Response
+#### Responses
 
-```json
-{
-    "Status": "OK"
-}
+##### HTTP 200 OK
+
+Animation updated successfully.
+
+Response body:
+```
+LightAnimation
 ```
 
-### DELETE: /API/animations?name=xxx
+##### HTTP 201 Created
+
+Animation created successfully.
+
+Response headers:
+```
+Location: /API/animations/<name>
+```
+
+Response body:
+```
+LightAnimation
+```
+
+##### HTTP 400 Bad Request
+
+Request body contains invalid JSON. Server was unable to parse request.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 422 Unprocessable Content
+
+Request body was valid JSON, but the JSON failed validation.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
+### DELETE: /API/animations/{name}
 
 Deletes an existing animation.
 
-#### Response
+#### Responses
 
-```json
-{
-    "Status": "OK"
-}
+##### HTTP 204 No Content
+
+Animation was successfully deleted.
+
+##### HTTP 404 Not Found
+
+Animation name was not found.
+
+##### HTTP 422 Unprocessable Content
+
+Requested animation name is illegal.
+
+TODO: This is the incorrect HTTP status code for this kind of failure.
+
+Response body:
 ```
+ProblemDetails
+```
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
+### POST: /API/animations/{name}/run
+
+Starts the named animation on the clock face.
+
+Request body:
+None, empty request
+
+#### Responses
+
+##### HTTP 202 Accepted
+
+Animation was found, loaded, and sent to the light driver for playback.
+
+Response body:
+None, empry response
+
+##### HTTP 404 Not Found
+
+Animation name was not found, or something other than "run" was supplied.
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.
+
+### POST: /API/playback/custom
+
+Immediately starts playback of a custom animation. Animation name is entirely ignored.
+
+Request body:
+```
+LightAnimation
+```
+
+#### Responses
+
+##### HTTP 204 No Content
+
+Animation playback was successfully started.
+
+##### HTTP 400 Bad Request
+
+Request body contains invalid JSON. Server was unable to parse request.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 422 Unprocessable Content
+
+Request body was valid JSON, but the JSON failed validation.
+
+Response body:
+```
+ProblemDetails
+```
+
+##### HTTP 500 Internal Server Error
+
+Something went wrong. Response body contains failure description.

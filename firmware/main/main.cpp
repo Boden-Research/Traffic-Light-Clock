@@ -29,10 +29,10 @@ extern "C" void app_main(void)
     esp_log_level_set("*", ESP_LOG_ERROR);
     esp_log_level_set(CStorage::TAG, ESP_LOG_DEBUG);
     esp_log_level_set(CAnimationStore::TAG, ESP_LOG_DEBUG);
-    esp_log_level_set(CWiFi::TAG, ESP_LOG_DEBUG);
-    esp_log_level_set(CWebServer::TAG, ESP_LOG_DEBUG);
+    esp_log_level_set(CWiFi::TAG, ESP_LOG_INFO);
+    esp_log_level_set(CWebServer::TAG, ESP_LOG_INFO);
     esp_log_level_set(CApi::TAG, ESP_LOG_DEBUG);
-    esp_log_level_set(CLightDriver::TAG, ESP_LOG_DEBUG);
+    esp_log_level_set(CLightDriver::TAG, ESP_LOG_INFO);
 
     // Initialize animation storage
     result = AnimationStore.Initialize();
@@ -92,29 +92,4 @@ extern "C" void app_main(void)
     }
 
     // Safe to exit here, as tasks are running
-
-    uint8_t temp;
-    LightState_t state {};
-    for (;;) {
-
-        for (uint8_t bit = 0; bit < 7; bit++) {
-            vTaskDelay(pdMS_TO_TICKS(1000));
-            temp = 1 << bit;
-            for (uint8_t i = 0; i < 11; i++)
-                state.at(i) = temp;
-            LightDriver.Update(state);
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(1000));
-        temp = 0xFF;
-        for (uint8_t i = 0; i < 11; i++)
-            state.at(i) = temp;
-        LightDriver.Update(state);
-
-        vTaskDelay(pdMS_TO_TICKS(1000));
-        temp = 0x00;
-        for (uint8_t i = 0; i < 11; i++)
-            state.at(i) = temp;
-        LightDriver.Update(state);
-    }
 }
