@@ -6,6 +6,7 @@
 #include <esp_netif_types.h>
 
 #include "../EventBus/EventBus.hpp"
+#include "../DataTypes.hpp"
 
 /// @brief singleton class for providing network interaction and notifications.
 class CWiFi {
@@ -15,14 +16,14 @@ class CWiFi {
 
         /// @brief Initializes Wi-Fi driver and network stack.
         /// @return ESP_OK on success, otherwise returns an error code.
-        esp_err_t Initialize();
+        Result_t Initialize();
 
         /// @brief Sets up a new Wi-Fi access point and DHCP server for clients to connect to.
         /// @param ssid The SSID of the network to create.
         /// @param pass The password clients must use to connect to this access point.
         /// @param channel The Wi-Fi channel to run the access point on.
         /// @return ESP_OK on success, otherwise returns an error code.
-        esp_err_t StartAP(const char* ssid, const char* pass, uint8_t channel);
+        Result_t StartAP(const char* ssid, const char* pass, uint8_t channel);
 
         /// @brief Shuts down any runing Wi-Fi access point and DHCP server.
         void StopAP();
@@ -31,7 +32,7 @@ class CWiFi {
         /// @param ssid The SSID of the network to connect to.
         /// @param pass The password to use to connect to the network.
         /// @return ESP_OK on success, otherwise returns an error code.
-        esp_err_t ConnectSTA(const char* ssid, const char* pass);
+        Result_t ConnectSTA(const char* ssid, const char* pass);
 
         /// @brief Disconnects from any connected Wi-Fi access point.
         void DisconnectSTA();

@@ -26,9 +26,30 @@ body {
 }
 
 h1 {
-    margin: 0 0 30px;
+    margin: 0 0 15px;
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    padding: 8px 16px;
+    color: #f0f0f0;
+    background: #323a43;
+    border: 1px solid #414952;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #3f4953;
 }
 
 .clock {
@@ -224,4 +245,42 @@ h1 {
     .colon {
         gap: 18px;
     }
+}
+.hex-form {
+    margin-top: 20px;
+}
+
+.hex-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.hex-row {
+    display: flex;
+    gap: 8px;
+}
+
+.hex-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+    font-family: monospace;
+    color: #f0f0f0;
+    background: #111519;
+    border: 1px solid #414952;
+    border-radius: 6px;
+}
+
+.hex-row input.invalid {
+    border-color: #e04848;
+}
+
+.hex-row button {
+    padding: 8px 16px;
+    color: #f0f0f0;
+    background: #353c43;
+    border: 1px solid #414952;
+    border-radius: 6px;
+    cursor: pointer;
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <link rel="stylesheet" href="animations.css">
+    <script src="animations.js" defer></script>
+</head>
+<body>
+    <main class="panel">
+        <h1>Animations</h1>
+
+        <div class="toolbar">
+            <a href="index.html" class="button-link">Back</a>
+            <a href="editor.html" class="button-link">New</a>
+            <button type="button" id="refresh-button">Refresh</button>
+            <button type="button" id="upload-button">Upload</button>
+            <input id="upload-input" type="file" accept=".json,application/json" multiple hidden>
+        </div>
+
+        <p id="status" class="status" role="status"></p>
+
+        <table class="file-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Frames</th>
+                    <th>FPS</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="animation-list"></tbody>
+        </table>
+    </main>
+</body>
+</html>

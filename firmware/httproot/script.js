@@ -1,4 +1,5 @@
 const API_URL = "/API/lights";
+const PLAYBACK_CUSTOM_URL = "/API/playback/custom";
 
 const SEGMENTS = ["A", "B", "C", "D", "E", "F", "G"];
 const COLORS = [
@@ -6,6 +7,9 @@ const COLORS = [
     { name: "yellow", code: "y" },
     { name: "green", code: "g" }
 ];
+
+// Bits 86-87 have no light; they're kept as typed in the hex input.
+let hiddenBits = 0;
 
 const digits = document.querySelectorAll(".digit");
 const statusElement = document.getElementById("api-status");
@@ -95,6 +99,8 @@ function getOutputBytes() {
         outputs.push(byte);
     }
 
+    outputs[outputs.length - 1] |= hiddenBits;
+
     return outputs;
 }
 
@@ -105,14 +111,78 @@ document.querySelectorAll(".light").forEach((light) => {
 
         light.setAttribute("aria-pressed", String(isOn));
 
+        updateHexInput();
         sendLightStates();
     });
 });
 
+const hexInput = document.getElementById("hex-input");
+
+// Light IDs in serialization order (bit 0 first).
+function getLightIdsInOrder() {
+    const ids = [];
+
+    function addDigit(digitIndex) {
+        for (const segment of SEGMENTS) {
+            for (const { code } of COLORS) {
+                ids.push(`${digitIndex}${segment}${code}`);
+            }
+        }
+    }
+
+    addDigit(0);
+    addDigit(1);
+    ids.push("X0", "X1");
+    addDigit(2);
+    addDigit(3);
+
+    return ids;
+}
+
+const LIGHT_IDS = getLightIdsInOrder();
+
+function formatHexBytes(bytes) {
+    return bytes
+        .map((byte) => byte.toString(16).toUpperCase().padStart(2, "0"))
+        .join(" ");
+}
+
+function updateHexInput() {
+    hexInput.value = formatHexBytes(getOutputBytes());
+    hexInput.classList.remove("invalid");
+}
+
+function setLightsFromBytes(bytes) {
+    hiddenBits = bytes[bytes.length - 1] & 0xC0;
+
+    LIGHT_IDS.forEach((lightId, bit) => {
+        const light = document.querySelector(
+            `[data-light-id="${lightId}"]`
+        );
+        const isOn = ((bytes[bit >> 3] >> (bit & 7)) & 1) === 1;
+
+        light.classList.toggle("on", isOn);
+        light.setAttribute("aria-pressed", String(isOn));
+    });
+}
+
+// Update the lights live while a complete, valid value is typed.
+hexInput.addEventListener("input", () => {
+    const bytes = parseHexBytes(hexInput.value);
+
+    hexInput.classList.remove("invalid");
+
+    if (bytes) {
+        setLightsFromBytes(bytes);
+    }
+});
+
 // Send the complete display state after every click.
 async function sendLightStates() {
-    const outputs = getOutputBytes();
+    await sendOutputs(getOutputBytes());
+}
 
+async function sendOutputs(outputs) {
     statusElement.textContent = "Sending...";
 
     try {
@@ -134,3 +204,83 @@ async function sendLightStates() {
         statusElement.textContent = `API error: ${error.message}`;
     }
 }
+
+// Parse a hex string into exactly 11 bytes; returns null if invalid.
+function parseHexBytes(text) {
+    const hex = text.replace(/[\s,:-]|0x/gi, "");
+
+    if (!/^[0-9a-f]{22}$/i.test(hex)) {
+        return null;
+    }
+
+    return hex.match(/../g).map((pair) => parseInt(pair, 16));
+}
+
+document.getElementById("hex-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const outputs = parseHexBytes(hexInput.value);
+
+    if (!outputs) {
+        hexInput.classList.add("invalid");
+        statusElement.textContent =
+            "Invalid input: enter exactly 11 bytes (22 hex digits)";
+        return;
+    }
+
+    setLightsFromBytes(outputs);
+    updateHexInput();
+    sendOutputs(getOutputBytes());
+});
+
+document.getElementById("animation-form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const file = document.getElementById("animation-file").files[0];
+
+    if (!file) {
+        statusElement.textContent = "Choose a JSON animation file first";
+        return;
+    }
+
+    let animation;
+
+    try {
+        animation = JSON.parse(await file.text());
+    } catch (error) {
+        statusElement.textContent = "Invalid JSON file";
+        return;
+    }
+
+    statusElement.textContent = "Uploading animation...";
+
+    try {
+        const response = await fetch(PLAYBACK_CUSTOM_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(animation)
+        });
+
+        if (!response.ok) {
+            let detail = "";
+
+            try {
+                const problem = await response.json();
+                detail = problem.detail || problem.title || "";
+            } catch (_) {
+                // Response body is not ProblemDetails JSON.
+            }
+
+            throw new Error(`HTTP ${response.status}${detail ? `: ${detail}` : ""}`);
+        }
+
+        statusElement.textContent = "Animation playing";
+    } catch (error) {
+        console.error("Failed to play animation:", error);
+        statusElement.textContent = `API error: ${error.message}`;
+    }
+});
+
+updateHexInput();

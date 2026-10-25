@@ -1,0 +1,111 @@
+.panel {
+    max-width: 700px;
+}
+
+.editor-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 0 16px;
+}
+
+.editor-row label {
+    font-size: 0.9rem;
+}
+
+.editor-row input,
+.editor-row select {
+    min-width: 0;
+    padding: 8px;
+    color: #f0f0f0;
+    background: #111519;
+    border: 1px solid #414952;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+#name-input {
+    flex: 1 1 180px;
+}
+
+#rate-input {
+    width: 80px;
+}
+
+#load-select {
+    flex: 1 1 180px;
+}
+
+.editor-row button,
+.frame-strip button {
+    padding: 8px 12px;
+    color: #f0f0f0;
+    background: #323a43;
+    border: 1px solid #414952;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.editor-row button:hover:not(:disabled) {
+    background: #3f4953;
+}
+
+.editor-row button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.editor-row button.danger:hover:not(:disabled) {
+    background: #7a2b2b;
+}
+
+.editor-row button.primary {
+    background: #2b6a46;
+}
+
+.frame-tools {
+    margin-top: 24px;
+}
+
+.frame-label {
+    margin: 0 0 8px;
+    color: #bdc5ce;
+    font-size: 0.9rem;
+}
+
+.frame-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    max-height: 180px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+.frame-strip button {
+    min-width: 44px;
+    padding: 6px 8px;
+    font-family: monospace;
+}
+
+.frame-strip button.selected {
+    background: #2b6a46;
+    border-color: #25f078;
+}
+
+#status {
+    min-height: 1.2em;
+    margin: 0;
+    color: #aab4bf;
+    font-size: 0.85rem;
+}
+
+#status.error {
+    color: #ff7b7b;
+}

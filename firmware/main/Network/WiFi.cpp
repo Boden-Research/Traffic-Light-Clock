@@ -29,7 +29,7 @@
 // Gets the size, in bytes, of a member of a struct
 #define SIZEOFMEMBER(type, member) sizeof(((type*)0)->member)
 
-// Singleton instance of WiFi class, available everywhere
+// Singleton instance of CWiFi class, available everywhere
 CWiFi WiFi;
 
 // callback for all events from the network driver
@@ -91,11 +91,11 @@ void CWiFi::WiFiEventHandler(void* arg, esp_event_base_t event_base, int32_t eve
     }
 }
 
-esp_err_t CWiFi::Initialize() {
+Result_t CWiFi::Initialize() {
     esp_err_t err;
 
     if (_wifiInitialized)
-        return ESP_OK; // Already initialized
+        return Result_t::OK; // Already initialized
 
     ESP_LOGI(TAG, "Initializing Wi-Fi...");
 
@@ -107,43 +107,46 @@ esp_err_t CWiFi::Initialize() {
     }
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Error initializing flash: %s", esp_err_to_name(err));
-        return err;
+        return Result_t::InitFlashFailed;
     }
 
     // Initialize Wi-Fi driver
     err = esp_netif_init();
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Error initializing network: %s", esp_err_to_name(err));
-        return err;
+        return Result_t::InitWiFiFailed;
     }
     
     // Start networking task to drive events
     err = esp_event_loop_create_default();
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Error initializing network event loop: %s", esp_err_to_name(err));
-        return err;
+        return Result_t::InitWiFiFailed;
     }
 
     // Register Wi-Fi/DHCP events
     err = esp_event_handler_instance_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &WiFiEventHandler, nullptr, &_eventAnyId);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
+
     err = esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &WiFiEventHandler, nullptr, &_eventGotIp);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
 
     ESP_LOGI(TAG, "Wi-Fi initialized successfully");
     _wifiInitialized = true;
 
-    return ESP_OK;
+    return Result_t::OK;
 }
 
-esp_err_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
+Result_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
     esp_err_t err;
 
     // Sanity checks
     if (strlen(ssid) > SIZEOFMEMBER(wifi_config_t, ap.ssid))
-        return ESP_ERR_INVALID_SIZE;
+        return Result_t::InvalidArg;
     if (strlen(pass) + 1 > SIZEOFMEMBER(wifi_config_t, ap.password)) // +1 for null terminator
-        return ESP_ERR_INVALID_SIZE;
+        return Result_t::InvalidArg;
 
     ESP_LOGI(TAG, "Starting Wi-Fi access point...");
 
@@ -151,7 +154,8 @@ esp_err_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
     _netifAP = esp_netif_create_default_wifi_ap();
     wifi_init_config_t wifiInitConfig = WIFI_INIT_CONFIG_DEFAULT();
     err = esp_wifi_init(&wifiInitConfig);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
 
     // Create Wi-Fi access point settings
     wifi_config_t wifiConfig = {};
@@ -164,15 +168,20 @@ esp_err_t CWiFi::StartAP(const char* ssid, const char* pass, uint8_t channel) {
 
     // Start Wi-Fi
     err = esp_wifi_set_mode(WIFI_MODE_AP);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
+
     err = esp_wifi_set_config(WIFI_IF_AP, &wifiConfig);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
+
     err = esp_wifi_start();
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
 
     ESP_LOGI(TAG, "Wi-Fi access point started successfully");
 
-    return ESP_OK;
+    return Result_t::OK;
 }
 
 void CWiFi::StopAP() {
@@ -180,14 +189,14 @@ void CWiFi::StopAP() {
     esp_wifi_stop();
 }
 
-esp_err_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
+Result_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
     esp_err_t err;
 
     // Sanity checks
     if (strlen(ssid) > SIZEOFMEMBER(wifi_config_t, sta.ssid))
-        return ESP_ERR_INVALID_SIZE;
+        return Result_t::InvalidArg;
     if (strlen(pass) > SIZEOFMEMBER(wifi_config_t, sta.password))
-        return ESP_ERR_INVALID_SIZE;
+        return Result_t::InvalidArg;
 
     ESP_LOGI(TAG, "Starting Wi-Fi station...");
 
@@ -195,7 +204,8 @@ esp_err_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
     _netifSTA = esp_netif_create_default_wifi_sta();
     wifi_init_config_t wifiInitConfig = WIFI_INIT_CONFIG_DEFAULT();
     err = esp_wifi_init(&wifiInitConfig);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
 
     // Create Wi-Fi station settings
     wifi_config_t wifiConfig = {};
@@ -205,15 +215,20 @@ esp_err_t CWiFi::ConnectSTA(const char* ssid, const char* pass) {
 
     // Start Wi-Fi
     err = esp_wifi_set_mode(WIFI_MODE_STA);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
+
     err = esp_wifi_set_config(WIFI_IF_STA, &wifiConfig);
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
+
     err = esp_wifi_start();
-    if (err != ESP_OK) return err;
+    if (err != ESP_OK)
+        return Result_t::InitWiFiFailed;
 
     ESP_LOGI(TAG, "Wi-Fi station started successfully");
 
-    return ESP_OK;
+    return Result_t::OK;
 }
 
 void CWiFi::DisconnectSTA() {
